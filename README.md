@@ -30,9 +30,11 @@ Kho lưu trữ chứa 3 thư mục chính:
    git clone <github-repo-url>
    cd Targeted-ABSA-for-Vietnamese-Gameshows
    ```
-2. **Kích hoạt môi trường chạy (Ví dụ bằng Conda):**
+2. **Kích hoạt môi trường chạy và cài đặt thư viện phụ thuộc:**
+   Kích hoạt môi trường Conda (nếu có) và chạy lệnh cài đặt qua tệp `requirements.txt`:
    ```bash
    conda activate se365
+   pip install -r requirements.txt
    ```
 3. **Di chuyển vào thư mục Demo và chạy server:**
    ```bash
