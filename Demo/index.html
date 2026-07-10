@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="vi" class="h-full bg-slate-950 text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Targeted ABSA Demo System - Music Gameshows</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            outfit: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(99, 102, 241, 0.3);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(99, 102, 241, 0.6);
+    }
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .glow-hover:hover {
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.25);
+      border-color: rgba(99, 102, 241, 0.5);
+    }
+    .animate-spin-slow {
+      animation: spin 3s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="h-full flex flex-col font-outfit overflow-hidden">
+
+  <!-- Header / Navbar -->
+  <header class="glass-panel border-b border-slate-800 px-6 py-4 flex items-center justify-between shrink-0 z-10 shadow-lg">
+    <div class="flex items-center gap-3">
+      <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-600 to-fuchsia-500 flex items-center justify-center shadow-md shadow-brand-500/20">
+        <i class="fa-solid fa-brain text-white text-lg"></i>
+      </div>
+      <div>
+        <h1 class="text-xl font-bold tracking-tight bg-gradient-to-r from-brand-400 to-fuchsia-400 bg-clip-text text-transparent">Targeted ABSA Dashboard</h1>
+        <p class="text-xs text-slate-400">Vietnamese Music Gameshow Social Listening</p>
+      </div>
+    </div>
+    
+    <nav class="flex gap-1 bg-slate-900/80 p-1 rounded-xl border border-slate-800">
+      <button onclick="switchTab('overview')" id="tab-overview" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 bg-brand-600 text-white shadow">
+        <i class="fa-solid fa-chart-line mr-2"></i>Tổng quan
+      </button>
+      <button onclick="switchTab('demo')" id="tab-demo" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg text-slate-400 hover:text-white transition-all duration-200">
+        <i class="fa-solid fa-laptop-code mr-2"></i>Live Playground
+      </button>
+      <button onclick="switchTab('dataset')" id="tab-dataset" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg text-slate-400 hover:text-white transition-all duration-200">
+        <i class="fa-solid fa-database mr-2"></i>Dataset Explorer
+      </button>
+      <button onclick="switchTab('experiments')" id="tab-experiments" class="tab-btn px-4 py-2 text-sm font-medium rounded-lg text-slate-400 hover:text-white transition-all duration-200">
+        <i class="fa-solid fa-flask mr-2"></i>Kết quả thực nghiệm
+      </button>
+    </nav>
+
+    <div class="flex items-center gap-4 text-xs text-slate-400 bg-slate-900/60 px-3 py-1.5 rounded-lg border border-slate-800">
+      <div class="flex items-center gap-1.5">
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>Local Server Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-1 overflow-hidden relative">
+
+    <!-- Tab 1: Overview -->
+    <div id="content-overview" class="tab-content h-full p-6 overflow-y-auto space-y-6">
+      <!-- Welcome Hero -->
+      <div class="p-8 rounded-2xl bg-gradient-to-r from-brand-950/40 via-slate-900/40 to-slate-950 border border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-3xl">
+          <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-400 border border-brand-500/20 uppercase tracking-wider">Đề tài đồ án môn học</span>
+          <h2 class="text-3xl font-bold text-white tracking-tight">Targeted Aspect-Based Sentiment Analysis (Targeted ABSA) cho Gameshow Việt Nam</h2>
+          <p class="text-slate-400 leading-relaxed">
+            Hệ thống tự động phát hiện, trích xuất thực thể đối tượng (Target), thuộc tính khía cạnh đánh giá (Aspect) và phân tích cảm cực tính cảm xúc (Sentiment) từ các bình luận thu thập trên các chương trình thực tế âm nhạc sôi động hàng đầu như <strong>Anh Trai Say Hi</strong> và <strong>Rap Việt Mùa 3</strong>.
+          </p>
+          <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-slate-400">
+            <span><i class="fa-solid fa-users mr-1.5 text-brand-400"></i><strong>Thực hiện:</strong> Nhóm 9 (Nguyễn Minh Phú, Võ Hoàng Minh)</span>
+            <span><i class="fa-solid fa-graduation-cap mr-1.5 text-fuchsia-400"></i><strong>GVHD:</strong> TS. Đỗ Trọng Hợp, ThS. Nguyễn Ngọc Quí</span>
+          </div>
+        </div>
+        <div class="shrink-0 flex items-center justify-center">
+          <button onclick="switchTab('demo')" class="px-6 py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl shadow-lg shadow-brand-600/20 hover:shadow-brand-500/30 transition duration-200 transform hover:-translate-y-0.5 flex items-center gap-2">
+            Thử nghiệm ngay <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng bình luận thô</span>
+            <i class="fa-solid fa-comments text-brand-400 text-xl"></i>
+          </div>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">8,276</span>
+            <span class="text-xs text-slate-500">RV: 3.2k \| ATSH: 5k</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-400">Thu thập trực tiếp từ YouTube API v3</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Bình luận có nhãn</span>
+            <i class="fa-solid fa-comment-dots text-emerald-400 text-xl"></i>
+          </div>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">2,825</span>
+            <span class="text-xs text-emerald-500"><i class="fa-solid fa-check"></i> Đã làm sạch</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-400">Sau khi lọc spam và bình luận rác</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng bộ tứ ý kiến</span>
+            <i class="fa-solid fa-cube text-fuchsia-400 text-xl"></i>
+          </div>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white">8,098</span>
+            <span class="text-xs text-fuchsia-400">Quadruples</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-400">Trung bình 2.87 ý kiến/bình luận</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
+          <div class="flex items-center justify-between">
+            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Độ đồng thuận (Kappa)</span>
+            <i class="fa-solid fa-handshake-angle text-amber-400 text-xl"></i>
+          </div>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-4xl font-bold text-white" id="kappa-score">0.6559</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Đáng kể</span>
+          </div>
+          <p class="mt-2 text-xs text-slate-400">Đo bằng Gold vs LLM Val datasets</p>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="glass-panel p-6 rounded-xl lg:col-span-2">
+          <h3 class="text-lg font-semibold text-white mb-4"><i class="fa-solid fa-chart-bar mr-2 text-brand-400"></i>Phân bố Khía cạnh đánh giá (Aspect Distribution)</h3>
+          <div class="h-80 relative">
+            <canvas id="chart-aspects"></canvas>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+          <div class="glass-panel p-6 rounded-xl">
+            <h3 class="text-base font-semibold text-white mb-4"><i class="fa-solid fa-chart-pie mr-2 text-emerald-400"></i>Phân cực cảm xúc (Sentiment)</h3>
+            <div class="h-44 relative flex justify-center">
+              <canvas id="chart-sentiments"></canvas>
+            </div>
+          </div>
+          <div class="glass-panel p-6 rounded-xl">
+            <h3 class="text-base font-semibold text-white mb-4"><i class="fa-solid fa-chart-pie mr-2 text-fuchsia-400"></i>Nguồn dữ liệu (Source Ratio)</h3>
+            <div class="h-44 relative flex justify-center">
+              <canvas id="chart-sources"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Live Playground -->
+    <div id="content-demo" class="tab-content h-full hidden flex flex-col md:flex-row overflow-hidden">
+      <!-- Input Left Column -->
+      <div class="w-full md:w-[450px] p-6 border-b md:border-b-0 md:border-r border-slate-800 flex flex-col gap-6 overflow-y-auto shrink-0 bg-slate-900/20">
+        <div class="space-y-2">
+          <h2 class="text-lg font-semibold text-white flex items-center gap-2">
+            <i class="fa-solid fa-keyboard text-brand-400"></i> Nhập câu bình luận
+          </h2>
+          <p class="text-xs text-slate-400">Nhập câu bình luận bất kỳ hoặc chọn mẫu bình luận có sẵn dưới đây.</p>
+        </div>
+
+        <div class="flex-1 flex flex-col gap-4">
+          <textarea id="demo-input" class="w-full h-40 bg-slate-950 border border-slate-800 rounded-xl p-4 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20 transition resize-none" placeholder="Nhập bình luận YouTube tiếng Việt về chương trình giải trí (VD: HIEUTHUHAI rap hay quá nhưng vũ đạo ALIN hơi chán, beat rất đỉnh)"></textarea>
+          
+          <div class="flex justify-between items-center gap-3">
+            <button onclick="loadRandomSample()" class="px-4 py-2 text-xs font-semibold bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white rounded-lg transition flex items-center gap-1.5">
+              <i class="fa-solid fa-shuffle"></i> Lấy bình luận mẫu
+            </button>
+            <div class="flex items-center gap-2">
+              <label for="compare-mode" class="text-xs text-slate-400 cursor-pointer">Chế độ So sánh</label>
+              <input type="checkbox" id="compare-mode" class="w-4 h-4 rounded text-brand-600 bg-slate-950 border-slate-800 focus:ring-brand-500 cursor-pointer">
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Chọn Mô hình xử lý</label>
+          <div class="space-y-2" id="model-select-container">
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-950/60 cursor-pointer transition glow-hover">
+              <input type="radio" name="model" value="xlm-r" checked class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
+              <div class="flex-1">
+                <span class="text-sm font-semibold text-white block">XLM-RoBERTa-Base</span>
+                <span class="text-[10px] text-brand-400 px-1.5 py-0.5 rounded bg-brand-500/10 border border-brand-500/20 uppercase font-bold tracking-widest mt-1 inline-block">Fine-tuned (Mặc định)</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-950/60 cursor-pointer transition glow-hover">
+              <input type="radio" name="model" value="phobert" class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
+              <div class="flex-1">
+                <span class="text-sm font-semibold text-white block">PhoBERT-Base</span>
+                <span class="text-[10px] text-indigo-400 px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 uppercase font-bold tracking-widest mt-1 inline-block">Fine-tuned (Baseline)</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-950/60 cursor-pointer transition glow-hover">
+              <input type="radio" name="model" value="qwen" class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
+              <div class="flex-1">
+                <span class="text-sm font-semibold text-white block">Qwen2.5-3B-Instruct</span>
+                <span class="text-[10px] text-fuchsia-400 px-1.5 py-0.5 rounded bg-fuchsia-500/10 border border-fuchsia-500/20 uppercase font-bold tracking-widest mt-1 inline-block">LLM Base (Local GPU)</span>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-950/60 cursor-pointer transition glow-hover">
+              <input type="radio" name="model" value="llama" class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
+              <div class="flex-1">
+                <span class="text-sm font-semibold text-white block">Llama-3.2-3B-Instruct</span>
+                <span class="text-[10px] text-amber-400 px-1.5 py-0.5 rounded bg-amber-500/10 border border-amber-500/20 uppercase font-bold tracking-widest mt-1 inline-block">LLM Base (Local GPU)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button onclick="runInference()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl shadow-lg shadow-brand-600/25 hover:shadow-brand-500/35 transition duration-200 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Phân tích bình luận
+        </button>
+      </div>
+
+      <!-- Output Right Column -->
+      <div class="flex-1 p-6 overflow-y-auto flex flex-col gap-6 bg-slate-950/40">
+        <!-- Initial / Empty State -->
+        <div id="output-empty" class="flex-1 flex flex-col items-center justify-center text-slate-500 gap-4 py-20">
+          <i class="fa-solid fa-chart-simple text-6xl text-slate-800 animate-pulse"></i>
+          <p class="text-sm text-slate-400 max-w-sm text-center">Bấm nút "Phân tích bình luận" ở cột bên trái để thực hiện phân tích Targeted ABSA.</p>
+        </div>
+
+        <!-- Loading State -->
+        <div id="output-loading" class="flex-1 hidden flex-col items-center justify-center gap-4 py-20">
+          <i class="fa-solid fa-spinner text-brand-500 text-5xl animate-spin"></i>
+          <div class="text-center space-y-1">
+            <p class="text-sm font-semibold text-white">Mô hình đang thực hiện suy luận...</p>
+            <p class="text-xs text-slate-500">Đang chạy Qwen/Llama hoặc so khớp bộ dữ liệu và áp dụng bộ luật...</p>
+          </div>
+        </div>
+
+        <!-- Single Model Result -->
+        <div id="output-single" class="hidden space-y-6">
+          <div class="glass-panel p-6 rounded-2xl space-y-4">
+            <div class="flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-microchip"></i> Model: <strong class="text-slate-200" id="single-model-name">XLM-RoBERTa</strong></span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-stopwatch"></i> Thời gian suy luận: <strong class="text-slate-200" id="single-inference-time">12 ms</strong></span>
+            </div>
+            
+            <div class="space-y-2">
+              <label class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Bình luận gốc & Highlight thực thể</label>
+              <div id="single-highlighted-text" class="text-lg text-slate-100 bg-slate-950/80 p-5 rounded-xl border border-slate-900 leading-relaxed min-h-[70px]">
+                HIEUTHUHAI rap quá cháy nhưng phần visual của Negav hơi chán.
+              </div>
+            </div>
+          </div>
+
+          <!-- Predictions Table -->
+          <div class="glass-panel rounded-2xl overflow-hidden shadow-lg">
+            <div class="px-6 py-4 border-b border-slate-800 bg-slate-900/40 flex items-center justify-between">
+              <h3 class="text-sm font-semibold text-white uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-list-check text-brand-400"></i> Bảng bộ tứ ý kiến trích xuất được
+              </h3>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-brand-500/10 text-brand-400 border border-brand-500/20" id="single-cached-badge">Silver DB Lookup</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left text-slate-200">
+                <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
+                  <tr>
+                    <th scope="col" class="px-6 py-3">Đối tượng (Target)</th>
+                    <th scope="col" class="px-6 py-3">Khía cạnh (Aspect)</th>
+                    <th scope="col" class="px-6 py-3">Cảm xúc (Sentiment)</th>
+                    <th scope="col" class="px-6 py-3">Đoạn ý kiến (Opinion Span)</th>
+                    <th scope="col" class="px-6 py-3">Cường độ (Intensity)</th>
+                  </tr>
+                </thead>
+                <tbody id="single-table-body" class="divide-y divide-slate-800/60 bg-slate-900/20">
+                  <!-- Rows go here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparative Mode Result -->
+        <div id="output-compare" class="hidden space-y-6">
+          <div class="glass-panel p-6 rounded-2xl">
+            <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-2">Bình luận gốc</h3>
+            <div id="compare-original-text" class="text-slate-200 text-base bg-slate-950/80 p-4 rounded-xl border border-slate-900 leading-relaxed"></div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="compare-grid">
+            <!-- Columns for different models will be inserted here dynamically -->
+          </div>
+        </div>
+
+        <!-- Raw JSON Accordion -->
+        <div id="raw-json-panel" class="hidden glass-panel rounded-2xl overflow-hidden">
+          <button onclick="toggleRawJson()" class="w-full px-6 py-4 flex items-center justify-between text-sm font-semibold text-slate-300 hover:text-white bg-slate-900/40 hover:bg-slate-900/60 transition">
+            <span><i class="fa-solid fa-code mr-2 text-brand-400"></i> Xem dữ liệu Raw JSON phản hồi từ API</span>
+            <i id="json-chevron" class="fa-solid fa-chevron-down transition duration-200"></i>
+          </button>
+          <div id="json-content" class="hidden border-t border-slate-800 bg-slate-950 p-5 overflow-x-auto">
+            <pre class="text-xs text-brand-300 font-mono" id="raw-json-viewer"></pre>
+          </div>
+        </div>
+
+        <!-- Save History Section (Log) -->
+        <div id="session-history-panel" class="hidden glass-panel rounded-2xl overflow-hidden shadow-lg">
+          <div class="px-6 py-4 border-b border-slate-800 bg-slate-900/40 flex items-center justify-between">
+            <h3 class="text-sm font-semibold text-white uppercase tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-history text-indigo-400"></i> Lịch sử chạy thử phiên hiện tại (Session History Log)
+            </h3>
+            <div class="flex gap-2">
+              <button onclick="exportHistory('csv')" class="px-3 py-1.5 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition flex items-center gap-1">
+                <i class="fa-solid fa-file-csv"></i> Export CSV
+              </button>
+              <button onclick="exportHistory('json')" class="px-3 py-1.5 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition flex items-center gap-1">
+                <i class="fa-solid fa-file-code"></i> Export JSON
+              </button>
+              <button onclick="clearHistory()" class="px-3 py-1.5 bg-red-950/40 border border-red-900/50 hover:border-red-900 text-red-200 rounded-lg text-xs font-semibold transition flex items-center gap-1">
+                <i class="fa-solid fa-trash-can"></i> Xóa log
+              </button>
+            </div>
+          </div>
+          <div class="overflow-x-auto max-h-60">
+            <table class="w-full text-xs text-left text-slate-300">
+              <thead class="text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800 sticky top-0">
+                <tr>
+                  <th scope="col" class="px-4 py-2">Thời gian</th>
+                  <th scope="col" class="px-4 py-2">Mô hình</th>
+                  <th scope="col" class="px-4 py-2">Bình luận</th>
+                  <th scope="col" class="px-4 py-2">Số bộ tứ trích xuất</th>
+                  <th scope="col" class="px-4 py-2">Độ trễ</th>
+                </tr>
+              </thead>
+              <tbody id="history-table-body" class="divide-y divide-slate-800/60 bg-slate-900/20">
+                <!-- History logs inserted here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Dataset Explorer -->
+    <div id="content-dataset" class="tab-content h-full hidden flex flex-col overflow-hidden">
+      <!-- Filter controls -->
+      <div class="glass-panel p-4 border-b border-slate-800 flex flex-wrap items-center gap-4 shrink-0 bg-slate-900/30">
+        <!-- Search bar -->
+        <div class="flex-1 min-w-[200px] relative">
+          <input type="text" id="dataset-search" oninput="loadDataset(1)" class="w-full bg-slate-950 border border-slate-800 rounded-lg py-2 pl-9 pr-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-brand-500 transition" placeholder="Tìm bình luận hoặc target...">
+          <i class="fa-solid fa-magnifying-glass position absolute left-3 top-3 text-slate-500 text-sm"></i>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap items-center gap-3">
+          <select id="dataset-aspect" onchange="loadDataset(1)" class="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg p-2 focus:outline-none focus:border-brand-500 transition">
+            <option value="">Tất cả Khía cạnh (Aspect)</option>
+            <option value="VOCAL">VOCAL</option>
+            <option value="PERFORMANCE">PERFORMANCE</option>
+            <option value="VISUAL">VISUAL</option>
+            <option value="SONG">SONG</option>
+            <option value="STAGE_PRODUCTION">STAGE_PRODUCTION</option>
+            <option value="PERSONALITY">PERSONALITY</option>
+            <option value="TEAMWORK">TEAMWORK</option>
+            <option value="SHOW_FORMAT">SHOW_FORMAT</option>
+            <option value="GENERAL">GENERAL</option>
+          </select>
+
+          <select id="dataset-sentiment" onchange="loadDataset(1)" class="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg p-2 focus:outline-none focus:border-brand-500 transition">
+            <option value="">Tất cả Cảm xúc (Sentiment)</option>
+            <option value="positive">positive</option>
+            <option value="negative">negative</option>
+            <option value="neutral">neutral</option>
+            <option value="mixed">mixed</option>
+          </select>
+
+          <select id="dataset-source" onchange="loadDataset(1)" class="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg p-2 focus:outline-none focus:border-brand-500 transition">
+            <option value="">Tất cả Nguồn (Source)</option>
+            <option value="Rap Việt">Rap Việt</option>
+            <option value="Anh Trai Say Hi">Anh Trai Say Hi</option>
+          </select>
+        </div>
+
+        <!-- Type Selector -->
+        <div class="flex bg-slate-950 p-1 rounded-lg border border-slate-800 shrink-0">
+          <button onclick="switchDatasetType('silver')" id="db-type-silver" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-600 text-white transition">
+            Silver (8,098 bộ tứ)
+          </button>
+          <button onclick="switchDatasetType('gold')" id="db-type-gold" class="px-3 py-1.5 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition">
+            Gold (334 bộ tứ)
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Dataset Table -->
+      <div class="flex-1 overflow-auto bg-slate-950/20">
+        <table class="w-full text-sm text-left text-slate-200 border-collapse">
+          <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800 sticky top-0 z-10">
+            <tr>
+              <th scope="col" class="px-6 py-4 w-[100px]">Nguồn</th>
+              <th scope="col" class="px-6 py-4 min-w-[300px]">Nội dung bình luận (Highlight Opinion Span)</th>
+              <th scope="col" class="px-6 py-4 w-[150px]">Đối tượng</th>
+              <th scope="col" class="px-6 py-4 w-[160px]">Khía cạnh</th>
+              <th scope="col" class="px-6 py-4 w-[120px]">Cảm xúc</th>
+              <th scope="col" class="px-6 py-4 w-[120px]">Cường độ</th>
+            </tr>
+          </thead>
+          <tbody id="dataset-table-body" class="divide-y divide-slate-800/50">
+            <!-- Dynamic data rows -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Table Footer / Pagination -->
+      <div class="glass-panel p-4 border-t border-slate-800 flex items-center justify-between shrink-0 text-sm text-slate-400 bg-slate-900/30">
+        <div id="dataset-total-info">
+          Hiển thị 1-50 của 8,098 bộ tứ ý kiến
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="prevDatasetPage()" id="btn-page-prev" class="px-3 py-1.5 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition">
+            <i class="fa-solid fa-chevron-left mr-1"></i> Trang trước
+          </button>
+          <span class="px-3 py-1.5 bg-slate-950 border border-slate-800 text-slate-200 rounded-lg font-medium" id="dataset-page-info">Trang 1 / 162</span>
+          <button onclick="nextDatasetPage()" id="btn-page-next" class="px-3 py-1.5 bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-300 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition">
+            Trang sau <i class="fa-solid fa-chevron-right ml-1"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Experiments & Analysis -->
+    <div id="content-experiments" class="tab-content h-full hidden p-6 overflow-y-auto space-y-6">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+        
+        <!-- Table 1: Model performance -->
+        <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
+          <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
+            <i class="fa-solid fa-trophy text-amber-400"></i> Bảng 1: Đối sánh hiệu năng các mô hình (Strict Match)
+          </h3>
+          <p class="text-xs text-slate-400">Kết quả kiểm thử trên bộ đánh giá Gold Standard (150 bình luận - 334 bộ tứ). Mô hình được đánh giá trên tiêu chí so khớp bộ ba tuyệt đối.</p>
+          <div class="overflow-x-auto rounded-lg border border-slate-800/80">
+            <table class="w-full text-sm text-left text-slate-300">
+              <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
+                <tr>
+                  <th scope="col" class="px-4 py-3">Mô hình / Kiến trúc</th>
+                  <th scope="col" class="px-4 py-3 text-center">Joint F1</th>
+                  <th scope="col" class="px-4 py-3 text-center">Joint Accuracy</th>
+                  <th scope="col" class="px-4 py-3">Đặc trưng</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
+                <tr class="bg-brand-950/20 border-l-2 border-brand-500">
+                  <td class="px-4 py-3.5 font-semibold text-white">XLM-RoBERTa-Base (Đề xuất)</td>
+                  <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.2700</td>
+                  <td class="px-4 py-3.5 text-center font-bold text-brand-400">39.09%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Mã hóa đa ngữ tốt, chịu lỗi teencode, suy luận nhanh (20ms)</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">PhoBERT-Base</td>
+                  <td class="px-4 py-3.5 text-center">0.2400</td>
+                  <td class="px-4 py-3.5 text-center">36.06%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Đơn ngữ tốt, nhưng khó xử lý các từ mượn code-mixing tiếng Anh</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">Llama-3.2-3B-Instruct (Zero-shot)</td>
+                  <td class="px-4 py-3.5 text-center">0.1560</td>
+                  <td class="px-4 py-3.5 text-center">8.00%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Khả năng suy luận tốt nhưng hay ảo giác và trượt ranh giới từ</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">Qwen2.5-3B-Instruct (Zero-shot)</td>
+                  <td class="px-4 py-3.5 text-center">0.1240</td>
+                  <td class="px-4 py-3.5 text-center">5.33%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Hiểu ngữ nghĩa tốt nhưng điểm thấp do đánh giá Strict Exact Match</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Table 2: Ablation Study -->
+        <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
+          <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
+            <i class="fa-solid fa-vials text-indigo-400"></i> Bảng 2: Nghiên cứu cắt bỏ thành phần (Ablation Study)
+          </h3>
+          <p class="text-xs text-slate-400">Sử dụng XLM-R làm backbone lõi để tinh chỉnh và kiểm tra sự thay đổi khi cắt bỏ/gộp thêm các kiến trúc tối ưu hóa.</p>
+          <div class="overflow-x-auto rounded-lg border border-slate-800/80">
+            <table class="w-full text-sm text-left text-slate-300">
+              <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
+                <tr>
+                  <th scope="col" class="px-4 py-3">Cấu hình tinh chỉnh</th>
+                  <th scope="col" class="px-4 py-3 text-center">Joint F1</th>
+                  <th scope="col" class="px-4 py-3 text-center">Joint Accuracy</th>
+                  <th scope="col" class="px-4 py-3">Phân tích tác động</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">Merge Dataset (Gộp 3 câu)</td>
+                  <td class="px-4 py-3.5 text-center">0.2480</td>
+                  <td class="px-4 py-3.5 text-center">37.58%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">F1 giảm do chuỗi dài hơn, nhưng ép mô hình học được ngữ cảnh dài</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">Feature Fusion (Local + Global CLS)</td>
+                  <td class="px-4 py-3.5 text-center">0.2550</td>
+                  <td class="px-4 py-3.5 text-center">38.18%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Ghép vector đoạn với token CLS giúp tăng hiệu năng phân loại</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">Fusion + Focal Loss</td>
+                  <td class="px-4 py-3.5 text-center font-semibold text-brand-400">0.2620</td>
+                  <td class="px-4 py-3.5 text-center font-semibold text-brand-400">36.97%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Focal loss ép mô hình chú ý nhãn hiếm (F1 tăng, Acc giảm nhẹ)</td>
+                </tr>
+                <tr>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">Fusion + Focal Loss + CRF</td>
+                  <td class="px-4 py-3.5 text-center text-red-400">0.2180</td>
+                  <td class="px-4 py-3.5 text-center text-red-400">31.82%</td>
+                  <td class="px-4 py-3.5 text-xs text-slate-400">Lớp CRF tối ưu hóa NER quá đà làm giảm chất lượng biểu diễn aspect</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heatmap Table for Sentiment Classifier -->
+      <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
+        <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-fire text-fuchsia-400"></i> Bảng 3: Heatmap Phân tích mô-đun Phân loại cảm xúc độc lập (Sentiment-only Upper bound)
+        </h3>
+        <p class="text-xs text-slate-400">Đánh giá độc lập mô-đun Sentiment bằng cấu trúc phân loại chuỗi đôi (Sequence-Pair Classification) khi giả định vị trí Target hoàn hảo. Giúp tìm ra ngưỡng tối đa lý thuyết (Upper Bound).</p>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+          <div class="overflow-x-auto rounded-lg border border-slate-800/80">
+            <table class="w-full text-xs text-left text-slate-300 table-fixed">
+              <thead class="text-[10px] text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
+                <tr>
+                  <th scope="col" class="px-3 py-2.5 w-1/4">Attention Mode</th>
+                  <th scope="col" class="px-3 py-2.5 w-1/4">Loss Function</th>
+                  <th scope="col" class="px-3 py-2.5 text-center w-1/4">Accuracy</th>
+                  <th scope="col" class="px-3 py-2.5 text-center w-1/4">Macro-F1</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 bg-slate-900/10">
+                <tr class="bg-emerald-950/20">
+                  <td class="px-3 py-2 font-medium text-slate-200">gated_fusion</td>
+                  <td class="px-3 py-2 font-medium text-slate-200">CrossEntropy</td>
+                  <td class="px-3 py-2 text-center font-bold text-emerald-400 bg-emerald-500/10">0.8873</td>
+                  <td class="px-3 py-2 text-center font-bold text-emerald-400 bg-emerald-500/10">0.7462</td>
+                </tr>
+                <tr class="bg-emerald-950/10">
+                  <td class="px-3 py-2">cls</td>
+                  <td class="px-3 py-2">CrossEntropy</td>
+                  <td class="px-3 py-2 text-center text-emerald-400 bg-emerald-500/5">0.8873</td>
+                  <td class="px-3 py-2 text-center">0.7433</td>
+                </tr>
+                <tr class="bg-emerald-950/10">
+                  <td class="px-3 py-2">cls</td>
+                  <td class="px-3 py-2">FocalLoss</td>
+                  <td class="px-3 py-2 text-center text-emerald-400 bg-emerald-500/5">0.8839</td>
+                  <td class="px-3 py-2 text-center">0.7392</td>
+                </tr>
+                <tr class="bg-emerald-950/10">
+                  <td class="px-3 py-2">attention_pooling</td>
+                  <td class="px-3 py-2">CrossEntropy</td>
+                  <td class="px-3 py-2 text-center">0.8851</td>
+                  <td class="px-3 py-2 text-center">0.7377</td>
+                </tr>
+                <tr class="bg-emerald-950/10">
+                  <td class="px-3 py-2">gated_fusion</td>
+                  <td class="px-3 py-2">FocalLoss</td>
+                  <td class="px-3 py-2 text-center">0.8861</td>
+                  <td class="px-3 py-2 text-center font-medium">0.7453</td>
+                </tr>
+                <tr class="bg-amber-950/10">
+                  <td class="px-3 py-2">cls</td>
+                  <td class="px-3 py-2">WeightedCrossEntropy</td>
+                  <td class="px-3 py-2 text-center text-amber-500">0.8551</td>
+                  <td class="px-3 py-2 text-center">0.7188</td>
+                </tr>
+                <tr class="bg-amber-950/10">
+                  <td class="px-3 py-2">attention_pooling</td>
+                  <td class="px-3 py-2">WeightedCrossEntropy</td>
+                  <td class="px-3 py-2 text-center text-amber-500">0.8543</td>
+                  <td class="px-3 py-2 text-center">0.7236</td>
+                </tr>
+                <tr class="bg-red-950/10">
+                  <td class="px-3 py-2">gated_fusion</td>
+                  <td class="px-3 py-2">WeightedCrossEntropy</td>
+                  <td class="px-3 py-2 text-center text-red-400">0.8461</td>
+                  <td class="px-3 py-2 text-center">0.7120</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="space-y-3 text-sm text-slate-300 bg-slate-900/40 p-5 rounded-xl border border-slate-800 leading-relaxed">
+            <h4 class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-lightbulb text-amber-400"></i>Nhận xét từ kết quả:</h4>
+            <ul class="list-disc pl-5 space-y-2 text-xs text-slate-400">
+              <li>Mô hình đạt độ chính xác phân loại cảm xúc cực kỳ ấn tượng là <strong>88.73%</strong> (F1 ~74%) khi biết trước vị trí Target chính xác.</li>
+              <li>Khi kết nối toàn trình (End-to-End), Sentiment-F1 tụt xuống chỉ còn <strong>~60%</strong>. Điều này chứng minh nút thắt hiệu năng nằm ở nhánh nhận dạng thực thể <strong>NER (Target Detection)</strong>.</li>
+              <li>Sự chênh lệch này thể hiện hiện tượng <strong>Lan truyền lỗi (Error Propagation)</strong> trong kiến trúc học đa nhiệm song song.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case study of Typical Errors -->
+      <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
+        <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-red-400"></i> Phân tích các lỗi điển hình (Case Studies)
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
+            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 uppercase">Lỗi 1: Sentiment Confusion</span>
+            <p class="text-xs font-semibold text-white">Xung đột cảm xúc trên cùng 1 target</p>
+            <div class="text-[11px] bg-slate-950 p-2.5 rounded border border-slate-900 text-slate-400 font-mono space-y-1">
+              <div><strong>Text:</strong> "...ali ko hợp mảng hát lắm, nhảy với diễn thì ổng giỏi..."</div>
+              <div class="text-emerald-400"><strong>Gold:</strong> VOCAL (-) & PERFORMANCE (+)</div>
+              <div class="text-red-400"><strong>Pred:</strong> PERFORMANCE (-)</div>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed"><strong>Nguyên nhân:</strong> Cơ chế Mean Pooling gộp chung toàn bộ ngữ cảnh của target 'ali' làm nhiễu cảm xúc khen chê trái ngược nhau trong cùng một câu.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
+            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 uppercase">Lỗi 2: Boundary / Implicit Failure</span>
+            <p class="text-xs font-semibold text-white">Lỗi trượt ranh giới & Trở lui ẩn</p>
+            <div class="text-[11px] bg-slate-950 p-2.5 rounded border border-slate-900 text-slate-400 font-mono space-y-1">
+              <div><strong>Text:</strong> "mình thik team Andree và team anh Thái..."</div>
+              <div class="text-emerald-400"><strong>Gold:</strong> 'team Andree', 'team anh Thái'</div>
+              <div class="text-red-400"><strong>Pred:</strong> [IMPLICIT] (do trượt target)</div>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed"><strong>Nguyên nhân:</strong> Nhánh NER không bắt được tên riêng và tự động lùi về (fallback) dùng token [CLS] để dự đoán, sinh ra nhãn target ẩn [IMPLICIT].</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
+            <span class="px-2 py-0.5 rounded text-[9px] font-bold bg-red-500/10 text-red-400 border border-red-500/20 uppercase">Lỗi 3: Aspect Misclassification</span>
+            <p class="text-xs font-semibold text-white">Nhầm lẫn khía cạnh gần nghĩa</p>
+            <div class="text-[11px] bg-slate-950 p-2.5 rounded border border-slate-900 text-slate-400 font-mono space-y-1">
+              <div><strong>Text:</strong> "thích Hu, Liu, DT và đặc biệt HTH"</div>
+              <div class="text-emerald-400"><strong>Gold:</strong> PERSONALITY</div>
+              <div class="text-red-400"><strong>Pred:</strong> PERFORMANCE</div>
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed"><strong>Nguyên nhân:</strong> Ranh giới giữa "thích tính cách nghệ sĩ" và "thích phần trình diễn" rất mong manh, mô hình dễ nhầm lẫn do các từ khen chung chung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- JS Code for Spa features -->
+  <script>
+    // Global state
+    let activeTab = 'overview';
+    let statsData = null;
+    let datasetType = 'silver';
+    let datasetPage = 1;
+    let datasetLimit = 15;
+    let sessionHistory = [];
+    
+    // Charts objects
+    let chartAspects = null;
+    let chartSentiments = null;
+    let chartSources = null;
+
+    // Load initial stats
+    async function loadStats() {
+      try {
+        const response = await fetch('/api/stats');
+        statsData = await response.json();
+        
+        // Update Cohen's Kappa score UI
+        document.getElementById('kappa-score').innerText = statsData.cohens_kappa.toFixed(4);
+        
+        // Render charts
+        renderCharts(statsData);
+      } catch (err) {
+        console.error("Error loading stats:", err);
+      }
+    }
+
+    // Render Chart.js graphs
+    function renderCharts(data) {
+      // 1. Aspect Bar Chart
+      const aspectCtx = document.getElementById('chart-aspects').getContext('2d');
+      const aspectLabels = Object.keys(data.aspect_distribution).sort((a,b) => data.aspect_distribution[b] - data.aspect_distribution[a]);
+      const aspectValues = aspectLabels.map(l => data.aspect_distribution[l]);
+      
+      const aspectColors = [
+        '#6366f1', '#8b5cf6', '#ec4899', '#f43f5e', 
+        '#f59e0b', '#10b981', '#06b6d4', '#3b82f6', '#9ca3af'
+      ];
+      
+      if (chartAspects) chartAspects.destroy();
+      chartAspects = new Chart(aspectCtx, {
+        type: 'bar',
+        data: {
+          labels: aspectLabels,
+          datasets: [{
+            label: 'Số lượng bộ tứ',
+            data: aspectValues,
+            backgroundColor: aspectColors.slice(0, aspectLabels.length),
+            borderRadius: 6,
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          indexAxis: 'y',
+          plugins: {
+            legend: { display: false },
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#94a3b8' }
+            },
+            y: {
+              grid: { display: false },
+              ticks: { color: '#94a3b8', font: { weight: 'bold' } }
+            }
+          }
+        }
+      });
+
+      // 2. Sentiment Doughnut
+      const sentimentCtx = document.getElementById('chart-sentiments').getContext('2d');
+      const sentimentLabels = ['positive', 'negative', 'neutral', 'mixed'];
+      const sentimentValues = sentimentLabels.map(l => data.sentiment_distribution[l] || 0);
+      const sentimentColors = ['#10b981', '#f43f5e', '#6b7280', '#a855f7'];
+
+      if (chartSentiments) chartSentiments.destroy();
+      chartSentiments = new Chart(sentimentCtx, {
+        type: 'doughnut',
+        data: {
+          labels: sentimentLabels,
+          datasets: [{
+            data: sentimentValues,
+            backgroundColor: sentimentColors,
+            borderColor: 'rgba(15, 23, 42, 0.8)',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: { color: '#94a3b8', boxWidth: 12 }
+            }
+          },
+          cutout: '65%'
+        }
+      });
+
+      // 3. Source Ratio Doughnut
+      const sourceCtx = document.getElementById('chart-sources').getContext('2d');
+      const sourceLabels = Object.keys(data.source_distribution);
+      const sourceValues = sourceLabels.map(l => data.source_distribution[l]);
+      const sourceColors = ['#ec4899', '#06b6d4'];
+
+      if (chartSources) chartSources.destroy();
+      chartSources = new Chart(sourceCtx, {
+        type: 'pie',
+        data: {
+          labels: sourceLabels,
+          datasets: [{
+            data: sourceValues,
+            backgroundColor: sourceColors,
+            borderColor: 'rgba(15, 23, 42, 0.8)',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'right',
+              labels: { color: '#94a3b8', boxWidth: 12 }
+            }
+          }
+        }
+      });
+    }
+
+    // Switch Tabs
+    function switchTab(tabId) {
+      activeTab = tabId;
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white', 'shadow');
+        btn.classList.add('text-slate-400', 'hover:text-white');
+      });
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      document.getElementById(`tab-${tabId}`).classList.remove('text-slate-400', 'hover:text-white');
+      document.getElementById(`tab-${tabId}`).classList.add('bg-brand-600', 'text-white', 'shadow');
+      document.getElementById(`content-${tabId}`).classList.remove('hidden');
+
+      if (tabId === 'overview') {
+        loadStats();
+      } else if (tabId === 'dataset') {
+        loadDataset(1);
+      }
+    }
+
+    // Load Random Sample Comment
+    async function loadRandomSample() {
+      const dbType = datasetType === 'gold' ? 'gold' : 'silver';
+      // Load first page of dataset randomly to get comments
+      const response = await fetch(`/api/dataset?page=${Math.floor(Math.random()*40) + 1}&limit=5&type=${dbType}`);
+      const res = await response.json();
+      if (res.data && res.data.length > 0) {
+        const item = res.data[Math.floor(Math.random() * res.data.length)];
+        document.getElementById('demo-input').value = item.text;
+      }
+    }
+
+    // Run Inference Request
+    async function runInference() {
+      const text = document.getElementById('demo-input').value.trim();
+      const model = document.querySelector('input[name="model"]:checked').value;
+      const isCompare = document.getElementById('compare-mode').checked;
+
+      if (!text) {
+        alert("Vui lòng nhập bình luận trước!");
+        return;
+      }
+
+      document.getElementById('output-empty').classList.add('hidden');
+      document.getElementById('output-single').classList.add('hidden');
+      document.getElementById('output-compare').classList.add('hidden');
+      document.getElementById('raw-json-panel').classList.add('hidden');
+      document.getElementById('output-loading').classList.remove('hidden');
+
+      try {
+        if (!isCompare) {
+          // Single model execution
+          const response = await fetch('/api/predict', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({text: text, model: model})
+          });
+          const res = await response.json();
+          
+          document.getElementById('output-loading').classList.add('hidden');
+          document.getElementById('output-single').classList.remove('hidden');
+          document.getElementById('raw-json-panel').classList.remove('hidden');
+          document.getElementById('session-history-panel').classList.remove('hidden');
+
+          // Render Single Result
+          document.getElementById('single-model-name').innerText = getModelName(res.model);
+          document.getElementById('single-inference-time').innerText = `${res.inference_time_ms} ms`;
+          
+          const cacheBadge = document.getElementById('single-cached-badge');
+          if (res.cached) {
+            cacheBadge.innerText = "Silver DB Lookup";
+            cacheBadge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-brand-500/10 text-brand-400 border border-brand-500/20";
+          } else {
+            cacheBadge.innerText = "Inference (Predict)";
+            cacheBadge.className = "px-2 py-0.5 rounded text-[10px] font-bold bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20";
+          }
+
+          // Highlight target entities in original text
+          document.getElementById('single-highlighted-text').innerHTML = highlightText(res.text, res.targets);
+
+          // Populate Table
+          const tableBody = document.getElementById('single-table-body');
+          tableBody.innerHTML = '';
+          if (res.targets && res.targets.length > 0) {
+            res.targets.forEach(t => {
+              const aspectBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300">${t.aspect}</span>`;
+              const sentimentBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold ${getSentimentClass(t.sentiment)}">${t.sentiment}</span>`;
+              
+              tableBody.innerHTML += `
+                <tr class="hover:bg-slate-900/30 transition">
+                  <td class="px-6 py-4 font-semibold text-white">${t.target}</td>
+                  <td class="px-6 py-4">${aspectBadge}</td>
+                  <td class="px-6 py-4">${sentimentBadge}</td>
+                  <td class="px-6 py-4 italic text-slate-300">"${t.opinion_span || 'null'}"</td>
+                  <td class="px-6 py-4"><span class="capitalize text-xs text-slate-400">${t.intensity || 'moderate'}</span></td>
+                </tr>
+              `;
+            });
+          } else {
+            tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-slate-500 font-semibold">None</td></tr>`;
+          }
+
+          // Populate raw JSON
+          document.getElementById('raw-json-viewer').innerText = JSON.stringify(res, null, 2);
+          
+          // Save to history
+          addHistoryItem(res.model, res.text, res.targets ? res.targets.length : 0, res.inference_time_ms, res.targets);
+        } else {
+          // Compare mode (sequential execution to save memory, updating UI incrementally)
+          document.getElementById('output-loading').classList.add('hidden');
+          document.getElementById('output-compare').classList.remove('hidden');
+          document.getElementById('session-history-panel').classList.remove('hidden');
+
+          document.getElementById('compare-original-text').innerText = text;
+          
+          const compareGrid = document.getElementById('compare-grid');
+          compareGrid.innerHTML = '';
+          
+          const modelsToCompare = ['xlm-r', 'phobert', 'qwen', 'llama'];
+          
+          // Render placeholders
+          modelsToCompare.forEach(m => {
+            compareGrid.innerHTML += `
+              <div id="compare-card-${m}" class="glass-panel p-5 rounded-2xl flex flex-col gap-4">
+                <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="h-2 w-2 rounded-full ${m === 'xlm-r' ? 'bg-indigo-500' : m === 'phobert' ? 'bg-sky-500' : m === 'qwen' ? 'bg-fuchsia-500' : 'bg-violet-500'}"></span>
+                    <h4 class="font-bold text-white text-sm">${getModelName(m)}</h4>
+                  </div>
+                  <span id="compare-time-${m}" class="text-[10px] text-slate-400 font-medium font-mono">Đang chờ...</span>
+                </div>
+                <div id="compare-body-${m}" class="space-y-2 flex-1 flex items-center justify-center min-h-[100px]">
+                  <div class="flex flex-col items-center gap-2">
+                    <div class="h-5 w-5 rounded-full border-2 border-slate-800 border-t-slate-500 animate-spin"></div>
+                    <span class="text-[10px] text-slate-500 font-medium">Đang chờ...</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          
+          // Run predictions sequentially
+          for (const m of modelsToCompare) {
+            const bodyEl = document.getElementById(`compare-body-${m}`);
+            const timeEl = document.getElementById(`compare-time-${m}`);
+            
+            bodyEl.innerHTML = `
+              <div class="flex flex-col items-center gap-2">
+                <div class="h-5 w-5 rounded-full border-2 border-slate-700 border-t-brand-500 animate-spin"></div>
+                <span class="text-[10px] text-brand-400 font-semibold animate-pulse">Đang suy luận...</span>
+              </div>
+            `;
+            
+            try {
+              const r = await fetch('/api/predict', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({text: text, model: m})
+              });
+              const res = await r.json();
+              
+              timeEl.innerText = `${res.inference_time_ms} ms`;
+              
+              let quadsHtml = '';
+              if (res.targets && res.targets.length > 0) {
+                res.targets.forEach(t => {
+                  quadsHtml += `
+                    <div class="p-3 bg-slate-950/80 rounded-xl border border-slate-900/60 text-xs flex flex-col gap-2">
+                      <!-- Row 1: Target - Aspect - Sentiment -->
+                      <div class="flex items-center justify-between flex-wrap gap-2">
+                        <div class="flex items-center gap-1.5">
+                          <strong class="text-white text-sm">${t.target}</strong>
+                          <span class="px-1.5 py-0.5 rounded text-[9px] font-semibold bg-slate-900 border border-slate-800 text-slate-400">${t.aspect}</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded text-[9px] font-bold ${getSentimentClass(t.sentiment)}">${t.sentiment}</span>
+                      </div>
+                      <!-- Row 2: Opinion Span -->
+                      <div class="text-[11px] text-slate-400 border-t border-slate-900/40 pt-1.5 flex items-start gap-1">
+                        <span class="text-slate-500 font-medium select-none">Opinion:</span>
+                        <span class="italic text-amber-200/90 font-normal">"${t.opinion_span || 'None'}"</span>
+                      </div>
+                    </div>
+                  `;
+                });
+              } else {
+                quadsHtml = `<div class="p-6 text-center text-slate-500 font-bold text-sm">None</div>`;
+              }
+              
+              bodyEl.className = "space-y-2 flex-1"; // reset alignment class
+              bodyEl.innerHTML = quadsHtml;
+              
+              addHistoryItem(res.model, res.text, res.targets ? res.targets.length : 0, res.inference_time_ms, res.targets);
+            } catch (err) {
+              console.error(err);
+              timeEl.innerText = "Lỗi";
+              bodyEl.className = "space-y-2 flex-1 flex items-center justify-center min-h-[100px]";
+              bodyEl.innerHTML = `<div class="p-4 text-center text-rose-500 font-semibold text-xs">Lỗi kết nối API!</div>`;
+            }
+          }
+        }
+      } catch (err) {
+        document.getElementById('output-loading').classList.add('hidden');
+        document.getElementById('output-empty').classList.remove('hidden');
+        alert("Lỗi khi kết nối API! Vui lòng thử lại.");
+        console.error(err);
+      }
+    }
+
+    // Helper functions
+    function getModelName(modelKey) {
+      switch (modelKey.toLowerCase()) {
+        case 'xlm-r': return 'XLM-RoBERTa-Base (Fine-tune)';
+        case 'phobert': return 'PhoBERT-Base (fine-tune)';
+        case 'qwen': return 'Qwen2.5-3B-Instruct (Base)';
+        case 'llama': return 'Llama-3.2-3B-Instruct (Base)';
+        default: return modelKey;
+      }
+    }
+
+    function getSentimentClass(sentiment) {
+      switch (sentiment.toLowerCase()) {
+        case 'positive': return 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+        case 'negative': return 'bg-rose-500/10 text-rose-400 border border-rose-500/20';
+        case 'neutral': return 'bg-slate-500/10 text-slate-400 border border-slate-500/20';
+        case 'mixed': return 'bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/20';
+        default: return 'bg-slate-500/10 text-slate-400 border border-slate-500/20';
+      }
+    }
+
+    function highlightText(rawText, targets) {
+      if (!targets || targets.length === 0) return rawText;
+      
+      // We will mark the start and end of tags for each character index
+      let opens = Array(rawText.length + 1).fill("").map(() => []);
+      let closes = Array(rawText.length + 1).fill("").map(() => []);
+      
+      // Collect all spans to highlight
+      let highlights = [];
+      targets.forEach((t, tIdx) => {
+        if (t.opinion_span && t.opinion_span !== 'null') {
+          const escaped = t.opinion_span.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+          const regex = new RegExp(escaped, 'gi');
+          let match;
+          while ((match = regex.exec(rawText)) !== null) {
+            highlights.push({
+              start: match.index,
+              end: match.index + t.opinion_span.length,
+              type: 'opinion_span',
+              aspect: t.aspect,
+              sentiment: t.sentiment,
+              priority: 2
+            });
+          }
+        }
+        if (t.target) {
+          const escaped = t.target.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+          const regex = new RegExp(escaped, 'gi');
+          let match;
+          while ((match = regex.exec(rawText)) !== null) {
+            highlights.push({
+              start: match.index,
+              end: match.index + t.target.length,
+              type: 'target',
+              aspect: t.aspect,
+              sentiment: t.sentiment,
+              priority: 1
+            });
+          }
+        }
+      });
+      
+      // Filter out exact duplicates
+      let seen = new Set();
+      highlights = highlights.filter(h => {
+        const key = `${h.start}_${h.end}_${h.type}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      
+      // Sort so nested tags close and open correctly
+      highlights.sort((a, b) => {
+        if (a.start !== b.start) return a.start - b.start;
+        if (a.end !== b.end) return b.end - a.end; // wider span first
+        return b.priority - a.priority; // higher priority wraps lower
+      });
+      
+      // Map highlights to opening and closing tags
+      highlights.forEach(h => {
+        let opTag = "";
+        let clTag = "";
+        if (h.type === 'opinion_span') {
+          // Yellow underline for opinion span
+          opTag = `<span class="bg-amber-500/10 border-b-2 border-amber-500 text-amber-200 px-0.5 rounded-sm" title="Opinion Span cho khía cạnh ${h.aspect}">`;
+          clTag = `</span>`;
+        } else {
+          // Aspect-colored badge for target
+          const aspectColor = getAspectColor(h.aspect);
+          const sentimentIcon = h.sentiment === 'positive' ? '🟢' : h.sentiment === 'negative' ? '🔴' : '⚪';
+          opTag = `<span class="px-1.5 py-0.5 rounded text-sm font-semibold border ${aspectColor} cursor-help transition relative group hover:brightness-125" title="Đối tượng: ${h.target} | Aspect: ${h.aspect}">`;
+          clTag = `<span class="text-[10px] ml-1 opacity-80">${sentimentIcon}</span></span>`;
+        }
+        
+        opens[h.start].push(opTag);
+        closes[h.end].unshift(clTag); // closes reverse order of opens
+      });
+      
+      // Rebuild HTML text
+      let html = "";
+      for (let i = 0; i <= rawText.length; i++) {
+        if (closes[i]) {
+          html += closes[i].join("");
+        }
+        if (opens[i]) {
+          html += opens[i].join("");
+        }
+        if (i < rawText.length) {
+          html += rawText[i];
+        }
+      }
+      
+      return html;
+    }
+
+    function getAspectColor(aspect) {
+      switch(aspect) {
+        case 'VOCAL': return 'bg-pink-500/10 text-pink-400 border-pink-500/20';
+        case 'PERFORMANCE': return 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20';
+        case 'VISUAL': return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
+        case 'SONG': return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+        case 'STAGE_PRODUCTION': return 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20';
+        case 'PERSONALITY': return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+        case 'TEAMWORK': return 'bg-purple-500/10 text-purple-400 border-purple-500/20';
+        case 'SHOW_FORMAT': return 'bg-sky-500/10 text-sky-400 border-sky-500/20';
+        default: return 'bg-slate-500/10 text-slate-400 border-slate-500/20';
+      }
+    }
+
+    function toggleRawJson() {
+      const content = document.getElementById('json-content');
+      const chevron = document.getElementById('json-chevron');
+      content.classList.toggle('hidden');
+      chevron.classList.toggle('rotate-180');
+    }
+
+    // Log History Functions
+    function addHistoryItem(model, text, targetCount, delay, results) {
+      const timeStr = new Date().toLocaleTimeString();
+      sessionHistory.unshift({time: timeStr, model: model, text: text, count: targetCount, delay: delay, results: results});
+      
+      updateHistoryTable();
+    }
+
+    function updateHistoryTable() {
+      const body = document.getElementById('history-table-body');
+      body.innerHTML = '';
+      sessionHistory.forEach(item => {
+        body.innerHTML += `
+          <tr class="hover:bg-slate-900/30 transition text-[11px] text-slate-300">
+            <td class="px-4 py-2 text-slate-500 font-medium">${item.time}</td>
+            <td class="px-4 py-2 font-semibold text-slate-200">${getModelName(item.model)}</td>
+            <td class="px-4 py-2 max-w-sm truncate text-slate-400" title="${item.text}">${item.text}</td>
+            <td class="px-4 py-2 text-center text-brand-400 font-bold">${item.count}</td>
+            <td class="px-4 py-2 text-slate-400">${item.delay} ms</td>
+          </tr>
+        `;
+      });
+    }
+
+    function clearHistory() {
+      sessionHistory = [];
+      updateHistoryTable();
+    }
+
+    function exportHistory(type) {
+      if (sessionHistory.length === 0) {
+        alert("Lịch sử đang trống!");
+        return;
+      }
+
+      let dataStr = '';
+      let mimeType = '';
+      let filename = `absa_demo_history_${new Date().getTime()}`;
+
+      if (type === 'json') {
+        dataStr = JSON.stringify(sessionHistory, null, 2);
+        mimeType = 'application/json';
+        filename += '.json';
+      } else {
+        // CSV
+        dataStr = 'Time,Model,Comment Text,Targets Count,Delay(ms)\n';
+        sessionHistory.forEach(item => {
+          const cleanText = item.text.replace(/"/g, '""');
+          dataStr += `"${item.time}","${getModelName(item.model)}","${cleanText}",${item.count},${item.delay}\n`;
+        });
+        mimeType = 'text/csv';
+        filename += '.csv';
+      }
+
+      const blob = new Blob([dataStr], {type: mimeType});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Dataset Explorer API calls
+    async function loadDataset(page) {
+      datasetPage = page;
+      const search = document.getElementById('dataset-search').value;
+      const aspect = document.getElementById('dataset-aspect').value;
+      const sentiment = document.getElementById('dataset-sentiment').value;
+      const source = document.getElementById('dataset-source').value;
+      
+      const tableBody = document.getElementById('dataset-table-body');
+      tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-slate-500"><i class="fa-solid fa-spinner animate-spin text-lg mr-2"></i> Đang tải dữ liệu...</td></tr>`;
+
+      try {
+        const response = await fetch(`/api/dataset?page=${page}&limit=${datasetLimit}&search=${encodeURIComponent(search)}&aspect=${aspect}&sentiment=${sentiment}&source=${encodeURIComponent(source)}&type=${datasetType}`);
+        const res = await response.json();
+        
+        // Render data rows
+        tableBody.innerHTML = '';
+        if (res.data && res.data.length > 0) {
+          res.data.forEach(item => {
+            const aspectBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300">${item.aspect}</span>`;
+            const sentimentBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold ${getSentimentClass(item.sentiment)}">${item.sentiment}</span>`;
+            const textHighlighted = highlightText(item.text, [{ target: item.target, aspect: item.aspect, sentiment: item.sentiment, opinion_span: item.opinion_span }]);
+            const sourceBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${item.source === 'Rap Việt' ? 'bg-pink-950/40 text-pink-400 border border-pink-900/50' : 'bg-cyan-950/40 text-cyan-400 border border-cyan-900/50'}">${item.source}</span>`;
+            
+            tableBody.innerHTML += `
+              <tr class="hover:bg-slate-900/20 transition text-slate-300">
+                <td class="px-6 py-4">${sourceBadge}</td>
+                <td class="px-6 py-4 leading-relaxed font-normal">${textHighlighted}</td>
+                <td class="px-6 py-4 font-semibold text-white">${item.target}</td>
+                <td class="px-6 py-4">${aspectBadge}</td>
+                <td class="px-6 py-4">${sentimentBadge}</td>
+                <td class="px-6 py-4"><span class="capitalize text-xs text-slate-400">${item.intensity || 'moderate'}</span></td>
+              </tr>
+            `;
+          });
+        } else {
+          tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-slate-500">Không tìm thấy dữ liệu phù hợp với bộ lọc.</td></tr>`;
+        }
+
+        // Update Pagination Info
+        const total = res.total;
+        const totalPages = Math.ceil(total / datasetLimit);
+        
+        const startIdx = (page - 1) * datasetLimit + 1;
+        const endIdx = Math.min(page * datasetLimit, total);
+        
+        document.getElementById('dataset-total-info').innerText = total > 0 ? `Hiển thị ${startIdx}-${endIdx} của ${total.toLocaleString()} bộ tứ ý kiến` : `Hiển thị 0 của 0 bộ tứ`;
+        document.getElementById('dataset-page-info').innerText = `Trang ${page} / ${totalPages || 1}`;
+        
+        document.getElementById('btn-page-prev').disabled = (page === 1);
+        document.getElementById('btn-page-next').disabled = (page === totalPages || total === 0);
+
+      } catch (err) {
+        tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-rose-500">Lỗi nạp dữ liệu!</td></tr>`;
+        console.error(err);
+      }
+    }
+
+    function highlightOpinionSpan(text, span) {
+      if (!span || span === 'null') return text;
+      // Safe regex escape
+      const escapedSpan = span.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      const regex = new RegExp(`(${escapedSpan})`, 'gi');
+      return text.replace(regex, `<span class="bg-amber-500/20 border-b-2 border-amber-500 text-amber-200 px-0.5 py-0.5 rounded-sm">$1</span>`);
+    }
+
+    function prevDatasetPage() {
+      if (datasetPage > 1) loadDataset(datasetPage - 1);
+    }
+
+    function nextDatasetPage() {
+      loadDataset(datasetPage + 1);
+    }
+
+    function switchDatasetType(type) {
+      datasetType = type;
+      document.getElementById('db-type-silver').className = type === 'silver' ? 'px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-600 text-white transition' : 'px-3 py-1.5 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition';
+      document.getElementById('db-type-gold').className = type === 'gold' ? 'px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-600 text-white transition' : 'px-3 py-1.5 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition';
+      loadDataset(1);
+    }
+
+    // Startup Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      loadStats();
+    });
+  </script>
+</body>
+</html>

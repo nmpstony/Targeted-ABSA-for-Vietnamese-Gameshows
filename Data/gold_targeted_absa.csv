@@ -1,0 +1,370 @@
+,comment_id,text,target,sentiment,opinion_span,intensity,aspect
+0,Ugw1lztNHWo_FMA1nH14AaABAg,Bài Hiếu Thứ Hai là hay nhất đợt 1:49:09  solo 1 này rồi từ nghe bắt tai bố trí bố cục bài nghe đi nghe lại hoài vẫn rất hay🎉🎉🎉. Bài Ry về nhạc thì mình cảm thấy không đc bắt tai nhưng vì trong bài Ry thể hiện nhiều tài năng tài lẻ mang vào bài.,Hiếu Thứ Hai,positive,bài Hiếu Thứ Hai là hay nhất đợt,strong,SONG
+1,Ugw1lztNHWo_FMA1nH14AaABAg,Bài Hiếu Thứ Hai là hay nhất đợt 1:49:09  solo 1 này rồi từ nghe bắt tai bố trí bố cục bài nghe đi nghe lại hoài vẫn rất hay🎉🎉🎉. Bài Ry về nhạc thì mình cảm thấy không đc bắt tai nhưng vì trong bài Ry thể hiện nhiều tài năng tài lẻ mang vào bài.,Ry,negative,bài Ry về nhạc thì mình cảm thấy không đc bắt tai,mild,SONG
+2,Ugw1lztNHWo_FMA1nH14AaABAg,Bài Hiếu Thứ Hai là hay nhất đợt 1:49:09  solo 1 này rồi từ nghe bắt tai bố trí bố cục bài nghe đi nghe lại hoài vẫn rất hay🎉🎉🎉. Bài Ry về nhạc thì mình cảm thấy không đc bắt tai nhưng vì trong bài Ry thể hiện nhiều tài năng tài lẻ mang vào bài.,Ry,positive,thể hiện nhiều tài năng tài lẻ mang vào bài,strong,PERFORMANCE
+5,Ugw4GTsSGeFoTwq9DCl4AaABAg,Hurrykang lần này bứt phá thật sự thêm Negav viết rap rất hay. Nói chung team anh Xái đỉnh chóp nha. Ngân Nga mãi đỉnh,Hurrykang,positive,bứt phá thật sự,strong,GENERAL
+6,Ugw4GTsSGeFoTwq9DCl4AaABAg,Hurrykang lần này bứt phá thật sự thêm Negav viết rap rất hay. Nói chung team anh Xái đỉnh chóp nha. Ngân Nga mãi đỉnh,Negav,positive,viết rap rất hay,moderate,PERFORMANCE
+7,Ugw4GTsSGeFoTwq9DCl4AaABAg,Hurrykang lần này bứt phá thật sự thêm Negav viết rap rất hay. Nói chung team anh Xái đỉnh chóp nha. Ngân Nga mãi đỉnh,team anh Xái,positive,team anh Xái đỉnh chóp nha,strong,TEAMWORK
+8,Ugw5Bhlxhbl-YiEcgAt4AaABAg,Sao lúc này Dương ít nói kiểu im im nghiêm nghiêm z nhỉ. Giờ nhìn hài hài sao á,Dương,neutral,giờ nhìn hài hài sao á,moderate,PERSONALITY
+9,Ugw5Bhlxhbl-YiEcgAt4AaABAg,Sao lúc này Dương ít nói kiểu im im nghiêm nghiêm z nhỉ. Giờ nhìn hài hài sao á,Dương,neutral,ít nói kiểu im im nghiêm nghiêm,moderate,PERSONALITY
+10,Ugw5TjeoVBpG0379g754AaABAg,"hydra với dlow tập sau tóc nhìn xấu quá,còn tez thì tóc xấu vcl ,double2t nhìn tự tin v ngẩng cao đầu",hydra,negative,tóc nhìn xấu quá,strong,VISUAL
+11,Ugw5TjeoVBpG0379g754AaABAg,"hydra với dlow tập sau tóc nhìn xấu quá,còn tez thì tóc xấu vcl ,double2t nhìn tự tin v ngẩng cao đầu",double2t,positive,nhìn tự tin v ngẩng cao đầu,strong,PERFORMANCE
+12,Ugw5TjeoVBpG0379g754AaABAg,"hydra với dlow tập sau tóc nhìn xấu quá,còn tez thì tóc xấu vcl ,double2t nhìn tự tin v ngẩng cao đầu",tez,negative,tóc xấu vcl,strong,VISUAL
+13,Ugw5TjeoVBpG0379g754AaABAg,"hydra với dlow tập sau tóc nhìn xấu quá,còn tez thì tóc xấu vcl ,double2t nhìn tự tin v ngẩng cao đầu",dlow,negative,tóc nhìn xấu quá,strong,VISUAL
+14,Ugw6zYQ4SIjepgzDBWB4AaABAg,Hiếu trễ nhưng rất thông minh và biết tính toán. Quá sáng suốt ❤!!,Hiếu,negative,trễ,mild,GENERAL
+15,Ugw6zYQ4SIjepgzDBWB4AaABAg,Hiếu trễ nhưng rất thông minh và biết tính toán. Quá sáng suốt ❤!!,Hiếu,positive,rất thông minh và biết tính toán,strong,PERSONALITY
+16,Ugw6zYQ4SIjepgzDBWB4AaABAg,Hiếu trễ nhưng rất thông minh và biết tính toán. Quá sáng suốt ❤!!,Hiếu,positive,sáng suốt,strong,PERSONALITY
+18,UgwBPlat47GZD8JY8q14AaABAg,DT2 xứng đáng mà. Mà ai top9 cg xứng đáng quá luôn,DT2,positive,xứng đáng mà,strong,GENERAL
+19,UgwBPlat47GZD8JY8q14AaABAg,DT2 xứng đáng mà. Mà ai top9 cg xứng đáng quá luôn,top9,positive,xứng đáng quá luôn,strong,GENERAL
+21,UgwH8lr3KCsWJGO-Fxh4AaABAg,"Ôi Lâm Bảo Ngọc với team Quân AP mn quá đỉnh, xem nổi da gà mà còn tua lại mấy lần 🥰",Lâm Bảo Ngọc,positive,quá đỉnh,strong,GENERAL
+22,UgwH8lr3KCsWJGO-Fxh4AaABAg,"Ôi Lâm Bảo Ngọc với team Quân AP mn quá đỉnh, xem nổi da gà mà còn tua lại mấy lần 🥰",Lâm Bảo Ngọc với team Quân AP,positive,mn quá đỉnh,strong,TEAMWORK
+23,UgwHwBprt65X0Is9Q9V4AaABAg,"bài của Liu mình nghe nổi da gà, quá hay quá xứng đáng, Hurrykng cũng xứng đáng vào vòng trong không kém, nhưng tiêu chí chương trình là ra quốc tế nên LG vào là đúng, còn HurryKng chắc sẽ có nón vàng thôi.",Hurrykng,positive,Hurrykng cũng xứng đáng vào vòng trong không kém,moderate,GENERAL
+24,UgwHwBprt65X0Is9Q9V4AaABAg,"bài của Liu mình nghe nổi da gà, quá hay quá xứng đáng, Hurrykng cũng xứng đáng vào vòng trong không kém, nhưng tiêu chí chương trình là ra quốc tế nên LG vào là đúng, còn HurryKng chắc sẽ có nón vàng thôi.",LG,positive,tiêu chí chương trình là ra quốc tế nên LG vào là đúng,moderate,GENERAL
+25,UgwHwBprt65X0Is9Q9V4AaABAg,"bài của Liu mình nghe nổi da gà, quá hay quá xứng đáng, Hurrykng cũng xứng đáng vào vòng trong không kém, nhưng tiêu chí chương trình là ra quốc tế nên LG vào là đúng, còn HurryKng chắc sẽ có nón vàng thôi.",Liu,positive,"bài của Liu mình nghe nổi da gà, quá hay quá xứng đáng",strong,SONG
+26,UgwIR5sT0JHroVXtO0R4AaABAg,"Tui coi ATSH cừi mún xỉu , thấy mấy anh rất là dthuong kiểu làm gì cx thấy duyên cơ . Đến khi mà thấy có ctrinh EXSH tui hào hứng dữ lắm mà đến bây giờ tui chỉ coi đúng tập 1 thôi à , mà thấy kiểu coi thấy mấy chị cứ sượng sượng sao á . Nói chung là kiểu tui lại thấy ATSH vuii hơn với nhạc hay hơn ý(ykr mong mng kh toxic)",ATSH,positive,kiểu tui lại thấy ATSH vuii hơn,strong,GENERAL
+27,UgwIR5sT0JHroVXtO0R4AaABAg,"Tui coi ATSH cừi mún xỉu , thấy mấy anh rất là dthuong kiểu làm gì cx thấy duyên cơ . Đến khi mà thấy có ctrinh EXSH tui hào hứng dữ lắm mà đến bây giờ tui chỉ coi đúng tập 1 thôi à , mà thấy kiểu coi thấy mấy chị cứ sượng sượng sao á . Nói chung là kiểu tui lại thấy ATSH vuii hơn với nhạc hay hơn ý(ykr mong mng kh toxic)",EXSH,negative,chỉ coi đúng tập 1,mild,GENERAL
+30,UgwM9DQksm78KBJvrsB4AaABAg,Những người a thái chọn rất tài năng năm nay quán quân là Đội a Thái  nhá em tin a có thể làm được những thứ khán giả đang mong chúc a và đội thành công ❤,Những người a thái chọn,positive,rất tài năng,strong,GENERAL
+31,UgwM9DQksm78KBJvrsB4AaABAg,Những người a thái chọn rất tài năng năm nay quán quân là Đội a Thái  nhá em tin a có thể làm được những thứ khán giả đang mong chúc a và đội thành công ❤,Đội a Thái,positive,em tin a có thể làm được những thứ khán giả đang mong,strong,TEAMWORK
+33,UgwObajW9OLnauRrFOB4AaABAg,"Bài caption khóc quá trời, xúc động quá. Nhg qua bài rhyder phải công nhận rất đỉnh, e ấy đã toả sáng vẫn giữ được màu sắc riêng. Hay quá chúc mừng 2e",Bài caption,positive,"khóc quá trời, xúc động quá",strong,SONG
+34,UgwObajW9OLnauRrFOB4AaABAg,"Bài caption khóc quá trời, xúc động quá. Nhg qua bài rhyder phải công nhận rất đỉnh, e ấy đã toả sáng vẫn giữ được màu sắc riêng. Hay quá chúc mừng 2e",bài rhyder,positive,"rất đỉnh, e ấy đã toả sáng vẫn giữ được màu sắc riêng",strong,PERFORMANCE
+36,UgwRKHdjyIKh4sbni7x4AaABAg,Sao Sơn Tùng đã ra tới nước ngoài hát. Rồi thằng Icạac còn ở đây. Khuôn mặt giống sơn tùng. Hát như cái tên,Icạac,negative,còn ở đây. Khuôn mặt giống sơn tùng. Hát như cái tên,strong,PERSONALITY
+37,UgwRKHdjyIKh4sbni7x4AaABAg,Sao Sơn Tùng đã ra tới nước ngoài hát. Rồi thằng Icạac còn ở đây. Khuôn mặt giống sơn tùng. Hát như cái tên,Sơn Tùng,positive,ra tới nước ngoài hát,strong,PERSONALITY
+38,UgwRzbhBRjh6BG9F1194AaABAg,Anh Big đúng kiểu biến team mình từ những thí sinh bị đánh giá thấp hơn thành quái vật tưởng lép vế mà nhai nát mấy team còn lại luôn đỉnh của chóp. Hi vọng sẽ có nón vàng cho Khang 🥹,Anh Big,positive,từ những thí sinh bị đánh giá thấp hơn thành quái vật tưởng lép vế mà nhai nát mấy team còn lại luôn đỉnh của chóp,strong,TEAMWORK
+39,UgwRzbhBRjh6BG9F1194AaABAg,Anh Big đúng kiểu biến team mình từ những thí sinh bị đánh giá thấp hơn thành quái vật tưởng lép vế mà nhai nát mấy team còn lại luôn đỉnh của chóp. Hi vọng sẽ có nón vàng cho Khang 🥹,Khang,positive,Hi vọng sẽ có nón vàng cho Khang,moderate,PERFORMANCE
+40,UgwSPPOZ3KUHsbHCYRt4AaABAg,Issac đẹp trai quá đẹp hơn cả HT2,HT2,negative,đẹp hơn cả HT2,moderate,PERSONALITY
+41,UgwSPPOZ3KUHsbHCYRt4AaABAg,Issac đẹp trai quá đẹp hơn cả HT2,Issac,positive,đẹp trai quá,strong,PERSONALITY
+42,UgwSPasyYX3PHdZrULN4AaABAg,"Pháp Kiều và Double2T là 2 lựa chọn chính xác rồi, có điều vẫn tiếc cho Tọi và Long nón lá, hi vọng gặp lai dc 2 bạn vào mùa 4 nha........",Double2T,positive,là 2 lựa chọn chính xác rồi,moderate,GENERAL
+43,UgwSPasyYX3PHdZrULN4AaABAg,"Pháp Kiều và Double2T là 2 lựa chọn chính xác rồi, có điều vẫn tiếc cho Tọi và Long nón lá, hi vọng gặp lai dc 2 bạn vào mùa 4 nha........",Pháp Kiều,positive,là 2 lựa chọn chính xác rồi,moderate,GENERAL
+44,UgwSPasyYX3PHdZrULN4AaABAg,"Pháp Kiều và Double2T là 2 lựa chọn chính xác rồi, có điều vẫn tiếc cho Tọi và Long nón lá, hi vọng gặp lai dc 2 bạn vào mùa 4 nha........",Tọi,positive,"tiếc cho Tọi và Long nón lá, hi vọng gặp lai dc 2 bạn vào mùa 4 nha",mild,GENERAL
+45,UgwSWF8rfmjxnulHg_54AaABAg,"thấy mấy anh trai cổ vũ sp nhau dth và vui tht sự, a NICky cũng đến để sp cho mn quá dth luôn như 1 gdd vậy còn anh PQui nữa",mấy anh trai,positive,cổ vũ sp nhau dth và vui tht sự,strong,TEAMWORK
+46,UgwSWF8rfmjxnulHg_54AaABAg,"thấy mấy anh trai cổ vũ sp nhau dth và vui tht sự, a NICky cũng đến để sp cho mn quá dth luôn như 1 gdd vậy còn anh PQui nữa",a NICky,positive,sp cho mn quá dth luôn như 1 gdd,strong,PERSONALITY
+47,UgwSWF8rfmjxnulHg_54AaABAg,"thấy mấy anh trai cổ vũ sp nhau dth và vui tht sự, a NICky cũng đến để sp cho mn quá dth luôn như 1 gdd vậy còn anh PQui nữa",anh PQui,positive,sp cho mn quá dth luôn như 1 gdd,strong,PERSONALITY
+48,UgwT98R8dvXvjaqeisN4AaABAg,"Đúng là cái gì hay đặc biệt thường để ở cuối.
+ Hổng Có Ưa hay lắm… Đánh giá cao Pháp Kiều à nha. Nhẹ nhàng dễ nghe.. Snoopdee vocal cũng chất luôn.. Tiết mục tuyệt vời ❤️",Hổng Có Ưa,positive,đánh giá cao Pháp Kiều à nha,strong,SONG
+49,UgwT98R8dvXvjaqeisN4AaABAg,"Đúng là cái gì hay đặc biệt thường để ở cuối.
+ Hổng Có Ưa hay lắm… Đánh giá cao Pháp Kiều à nha. Nhẹ nhàng dễ nghe.. Snoopdee vocal cũng chất luôn.. Tiết mục tuyệt vời ❤️",Hổng Có Ưa,positive,tiết mục tuyệt vời ❤️,strong,SONG
+50,UgwT98R8dvXvjaqeisN4AaABAg,"Đúng là cái gì hay đặc biệt thường để ở cuối.
+ Hổng Có Ưa hay lắm… Đánh giá cao Pháp Kiều à nha. Nhẹ nhàng dễ nghe.. Snoopdee vocal cũng chất luôn.. Tiết mục tuyệt vời ❤️",Snoopdee,positive,vocal cũng chất luôn,strong,VOCAL
+52,UgwX9aTDxPelr1TvdnV4AaABAg,"bài của DT hay nhất vòng này đối với mình, HLV gây thất vọng nhất, Andree",Andree,negative,HLV gây thất vọng nhất,strong,PERSONALITY
+53,UgwX9aTDxPelr1TvdnV4AaABAg,"bài của DT hay nhất vòng này đối với mình, HLV gây thất vọng nhất, Andree",DT,positive,bài của DT hay nhất vòng này,strong,SONG
+54,UgwYyjZt8_rsEAMqBp94AaABAg,"Tui chit thích nghe Quang Hùng và bác Trấn Thành của con gái thôi! Đỉnh thật, ngoài từ quá giỏi ra không biết nói gì",Quang Hùng,positive,tui chit thích nghe,strong,VOCAL
+55,UgwYyjZt8_rsEAMqBp94AaABAg,"Tui chit thích nghe Quang Hùng và bác Trấn Thành của con gái thôi! Đỉnh thật, ngoài từ quá giỏi ra không biết nói gì",bác Trấn Thành,positive,đỉnh thật,strong,PERSONALITY
+57,UgwbpgOL3ybq7VZunPp4AaABAg,"Pháp Kiều đúng đỉnh trưởng thành qua từng tập bài nào của Kiều cũng đều hay đều bắt tay mỗi bào đều mang 1 ý nghĩa đều rất sôi động hiện tại đối với khán giả Kiều đã rất thành công rùi rất ủng hộ lối đi riêng của Kiều
+Respect Bigdaddy 1 người thầy thực thụ",Bigdaddy,positive,1 người thầy thực thụ,strong,PERSONALITY
+58,UgwbpgOL3ybq7VZunPp4AaABAg,"Pháp Kiều đúng đỉnh trưởng thành qua từng tập bài nào của Kiều cũng đều hay đều bắt tay mỗi bào đều mang 1 ý nghĩa đều rất sôi động hiện tại đối với khán giả Kiều đã rất thành công rùi rất ủng hộ lối đi riêng của Kiều
+Respect Bigdaddy 1 người thầy thực thụ",Pháp Kiều,positive,trưởng thành qua từng tập bài nào của Kiều cũng đều hay,strong,PERFORMANCE
+59,UgwbpgOL3ybq7VZunPp4AaABAg,"Pháp Kiều đúng đỉnh trưởng thành qua từng tập bài nào của Kiều cũng đều hay đều bắt tay mỗi bào đều mang 1 ý nghĩa đều rất sôi động hiện tại đối với khán giả Kiều đã rất thành công rùi rất ủng hộ lối đi riêng của Kiều
+Respect Bigdaddy 1 người thầy thực thụ",Pháp Kiều,positive,đã rất thành công rùi rất ủng hộ lối đi riêng của Kiều,strong,GENERAL
+60,Ugwcby9OG36ucAOJRbx4AaABAg,"bài của ai cx hay hết á 
+ryhder 
+dương domic 
+đức phúc 🥹🥹",ryhder,positive,bài của ai cx hay hết á,strong,SONG
+61,Ugwcby9OG36ucAOJRbx4AaABAg,"bài của ai cx hay hết á 
+ryhder 
+dương domic 
+đức phúc 🥹🥹",đức phúc,positive,bài của ai cx hay hết á,strong,SONG
+62,Ugwcby9OG36ucAOJRbx4AaABAg,"bài của ai cx hay hết á 
+ryhder 
+dương domic 
+đức phúc 🥹🥹",dương domic,positive,bài của ai cx hay hết á,strong,SONG
+63,UgwdAD-u6IPiDCCT5TB4AaABAg,"Chủ đề về đất nước rất dễ thắng trên sk đặc biệt team giỏi của Erik
+Team Atus yếu nhất, bà về mẹ dù dễ đánh cảm xúc nhưng cũng rất dễ sến và qtrong là ý tưởng trình diễn nổi bật rất khó. 
+Bỏ qua cảm xúc thì màn trình diễn phần nhìn của Atus quá xuất sắc đi. 
+Chiến thắng hoàn toàn xứng đáng. 
+
+Sau đêm nay là bài quá dã man, với 1 ng nghe nhạc bình thường dễ nghe hơn 3 bài còn lại, trình diễn siêu hoành tráng chuyên nghiệp! Tiếc là bài phải thi chọn 3-4.",Team Atus,negative,yếu nhất,strong,TEAMWORK
+64,UgwdAD-u6IPiDCCT5TB4AaABAg,"Chủ đề về đất nước rất dễ thắng trên sk đặc biệt team giỏi của Erik
+Team Atus yếu nhất, bà về mẹ dù dễ đánh cảm xúc nhưng cũng rất dễ sến và qtrong là ý tưởng trình diễn nổi bật rất khó. 
+Bỏ qua cảm xúc thì màn trình diễn phần nhìn của Atus quá xuất sắc đi. 
+Chiến thắng hoàn toàn xứng đáng. 
+
+Sau đêm nay là bài quá dã man, với 1 ng nghe nhạc bình thường dễ nghe hơn 3 bài còn lại, trình diễn siêu hoành tráng chuyên nghiệp! Tiếc là bài phải thi chọn 3-4.",Erik,positive,team giỏi,strong,TEAMWORK
+65,UgwdAD-u6IPiDCCT5TB4AaABAg,"Chủ đề về đất nước rất dễ thắng trên sk đặc biệt team giỏi của Erik
+Team Atus yếu nhất, bà về mẹ dù dễ đánh cảm xúc nhưng cũng rất dễ sến và qtrong là ý tưởng trình diễn nổi bật rất khó. 
+Bỏ qua cảm xúc thì màn trình diễn phần nhìn của Atus quá xuất sắc đi. 
+Chiến thắng hoàn toàn xứng đáng. 
+
+Sau đêm nay là bài quá dã man, với 1 ng nghe nhạc bình thường dễ nghe hơn 3 bài còn lại, trình diễn siêu hoành tráng chuyên nghiệp! Tiếc là bài phải thi chọn 3-4.",Atus,positive,Bỏ qua cảm xúc thì màn trình diễn phần nhìn của Atus quá xuất sắc đi,strong,VISUAL
+67,UgweM2Ra0JQUtsH9TBV4AaABAg,Hurrykng rap hay mà ko được chọn. Con bé Liu Grace rap tệ vậy mà được vô vòng cung kết. Thật nhảm,Hurrykng,positive,rap hay mà ko được chọn,strong,PERFORMANCE
+68,UgweM2Ra0JQUtsH9TBV4AaABAg,Hurrykng rap hay mà ko được chọn. Con bé Liu Grace rap tệ vậy mà được vô vòng cung kết. Thật nhảm,Liu Grace,negative,rap tệ vậy mà được vô vòng cung kết,strong,PERFORMANCE
+70,Ugwpw5D8ZRJTSzTo4yd4AaABAg,"Mình rất thích Love Sand với Catch me, nhưng mà Thi Sĩ thực sự rất cảm xúc làm mình khó quên được 🎉",Love Sand,positive,mình rất thích,moderate,SONG
+71,Ugwpw5D8ZRJTSzTo4yd4AaABAg,"Mình rất thích Love Sand với Catch me, nhưng mà Thi Sĩ thực sự rất cảm xúc làm mình khó quên được 🎉",Thi Sĩ,positive,thực sự rất cảm xúc,strong,SONG
+72,Ugwpw5D8ZRJTSzTo4yd4AaABAg,"Mình rất thích Love Sand với Catch me, nhưng mà Thi Sĩ thực sự rất cảm xúc làm mình khó quên được 🎉",Catch me,positive,Mình rất thích,strong,SONG
+75,UgwsBvLvLm7p7o7juMB4AaABAg,Xem rap việt mùa 3 mới biết Bray và các HLV mới này..vip..,Bray,positive,vip,moderate,PERSONALITY
+76,UgwsBvLvLm7p7o7juMB4AaABAg,Xem rap việt mùa 3 mới biết Bray và các HLV mới này..vip..,các HLV mới,positive,vip,moderate,PERSONALITY
+77,Ugwnk4bh-ghgP5d2GUx4AaABAg,"Trời ơi xem mấy a trai làm tui quá nhiều cảm xúc vui mừng.buồn tiếc ( vũ thịnh, tage)còn 5 ông giảm khảo làm tui nổi da ga cục cục ❤❤❤❤❤quá hay🎉🎉🎉🎉🎉🎉",5 ông giảm khảo,positive,làm tui nổi da ga,moderate,GENERAL
+78,Ugwnk4bh-ghgP5d2GUx4AaABAg,"Trời ơi xem mấy a trai làm tui quá nhiều cảm xúc vui mừng.buồn tiếc ( vũ thịnh, tage)còn 5 ông giảm khảo làm tui nổi da ga cục cục ❤❤❤❤❤quá hay🎉🎉🎉🎉🎉🎉",vũ thịnh,neutral,buồn tiếc,moderate,PERSONALITY
+79,Ugwnk4bh-ghgP5d2GUx4AaABAg,"Trời ơi xem mấy a trai làm tui quá nhiều cảm xúc vui mừng.buồn tiếc ( vũ thịnh, tage)còn 5 ông giảm khảo làm tui nổi da ga cục cục ❤❤❤❤❤quá hay🎉🎉🎉🎉🎉🎉",tage,neutral,buồn tiếc,moderate,PERSONALITY
+80,UgwbAtI6VHiYbONvfwN4AaABAg,"Trời oiii, Jsol đẹp trai quá aạaaaa. Love Sand mãi đỉnhh",Jsol,positive,đẹp trai quá,strong,VISUAL
+81,UgwbAtI6VHiYbONvfwN4AaABAg,"Trời oiii, Jsol đẹp trai quá aạaaaa. Love Sand mãi đỉnhh",Love Sand,positive,đỉnhh,strong,SONG
+82,UgwWTMGYfhQzi2aHL094AaABAg,"Hâm mộ a Big thật sự. Các thí sinh đều lột xác đỉnh caoooo… 
+Năm nay hầu như các thí sinh đều có màu riêng rõ nét. Ko ai giống ai. Xem cuốn thật sự. Hóng phần chung kết quá… mong double2T sẽ dc đi tiếpppppp…",Big,positive,Hâm mộ a Big thật sự.,strong,PERSONALITY
+83,UgwWTMGYfhQzi2aHL094AaABAg,"Hâm mộ a Big thật sự. Các thí sinh đều lột xác đỉnh caoooo… 
+Năm nay hầu như các thí sinh đều có màu riêng rõ nét. Ko ai giống ai. Xem cuốn thật sự. Hóng phần chung kết quá… mong double2T sẽ dc đi tiếpppppp…",double2T,positive,mong double2T sẽ dc đi tiếp,strong,GENERAL
+84,UgwsMOL1iVrSC4ed4sx4AaABAg,"Quang Hùng chọn người chuẩn thế. Ghi trong Giấy là Negav, Pháp Kiều, Erik là hợp ý luôn",Negav,positive,hợp ý luôn,strong,PERSONALITY
+85,UgwsMOL1iVrSC4ed4sx4AaABAg,"Quang Hùng chọn người chuẩn thế. Ghi trong Giấy là Negav, Pháp Kiều, Erik là hợp ý luôn",Quang Hùng,positive,chọn người chuẩn thế,moderate,PERSONALITY
+86,UgwsMOL1iVrSC4ed4sx4AaABAg,"Quang Hùng chọn người chuẩn thế. Ghi trong Giấy là Negav, Pháp Kiều, Erik là hợp ý luôn",Pháp Kiều,positive,hợp ý luôn,strong,PERSONALITY
+87,UgwsMOL1iVrSC4ed4sx4AaABAg,"Quang Hùng chọn người chuẩn thế. Ghi trong Giấy là Negav, Pháp Kiều, Erik là hợp ý luôn",Erik,positive,hợp ý luôn,strong,PERSONALITY
+88,Ugws_m4ttHtmeICznqd4AaABAg,❤  Đôi atus hay hơn đôi hurryknh nhiều,đôi atus,positive,hay hơn đôi hurryknh nhiều,strong,TEAMWORK
+89,Ugws_m4ttHtmeICznqd4AaABAg,❤  Đôi atus hay hơn đôi hurryknh nhiều,đôi hurryknh,negative,Đôi atus hay hơn đôi hurryknh nhiều,moderate,TEAMWORK
+90,UgwtH7_R-jbH2pNUADN4AaABAg,"Coi 2 tập gần đây nhất mình phải quay lại để dành lời khen cho anh Dương K, nhạc nào cũng hay, anh Big thì tất nhiên có sự training thí sinh xịn xò, tất cả các bài của team đều là siêu phẩm.",Big,positive,training thí sinh xịn xò,strong,TEAMWORK
+91,UgwtH7_R-jbH2pNUADN4AaABAg,"Coi 2 tập gần đây nhất mình phải quay lại để dành lời khen cho anh Dương K, nhạc nào cũng hay, anh Big thì tất nhiên có sự training thí sinh xịn xò, tất cả các bài của team đều là siêu phẩm.",Dương K,positive,nhạc nào cũng hay,strong,SONG
+92,UgwtH7_R-jbH2pNUADN4AaABAg,"Coi 2 tập gần đây nhất mình phải quay lại để dành lời khen cho anh Dương K, nhạc nào cũng hay, anh Big thì tất nhiên có sự training thí sinh xịn xò, tất cả các bài của team đều là siêu phẩm.",Big,positive,tất cả các bài của team đều là siêu phẩm,strong,SONG
+93,UgwtwpszGHyWAvrCFLp4AaABAg.A5plBFIYJEyA5srLpZkhVm,Như này k cần xem nữa cũng  biết Hiếu Thứ 2 nhất. Bài k ra làm sao thì nhất. Bài top 1 thì 4/4. Thôi từ sau khỏi xem.,Hiếu Thứ 2,negative,Như này k cần xem nữa cũng  biết Hiếu Thứ 2 nhất,strong,PERSONALITY
+94,UgwtwpszGHyWAvrCFLp4AaABAg.A5plBFIYJEyA5srLpZkhVm,Như này k cần xem nữa cũng  biết Hiếu Thứ 2 nhất. Bài k ra làm sao thì nhất. Bài top 1 thì 4/4. Thôi từ sau khỏi xem.,Rap Việt,negative,Bài k ra làm sao thì nhất. Bài top 1 thì 4/4. Thôi từ sau khỏi xem.,strong,SHOW_FORMAT
+95,UgwvK6YacamleapVeBl4AaABAg.ABAFeBJQ9NeACL_o0MJuZs,"thấy ali ko hợp mảng hát lắm,  nhảy với diễn thì ổng giỏi nha, bữa chơi game rương với hiếu ổng diễn đỉnh mà ko ai ngờ lun",ali,negative,ko hợp mảng hát lắm,moderate,VOCAL
+96,UgwvK6YacamleapVeBl4AaABAg.ABAFeBJQ9NeACL_o0MJuZs,"thấy ali ko hợp mảng hát lắm,  nhảy với diễn thì ổng giỏi nha, bữa chơi game rương với hiếu ổng diễn đỉnh mà ko ai ngờ lun",ali,positive,nhảy với diễn thì ổng giỏi,strong,PERFORMANCE
+97,UgwxT6uCLny6WMfM69h4AaABAg,Xem từ giữa chương trình và h quay lại xem từ tập 1..thấy no far no star và 10/10  hay nhất nhưng sốc kết quả của 10/10 quá,Rap Việt,negative,sốc kết quả của 10/10 quá,strong,SHOW_FORMAT
+98,UgwxT6uCLny6WMfM69h4AaABAg,Xem từ giữa chương trình và h quay lại xem từ tập 1..thấy no far no star và 10/10  hay nhất nhưng sốc kết quả của 10/10 quá,no far no star,positive,hay nhất,strong,SONG
+99,UgwxT6uCLny6WMfM69h4AaABAg,Xem từ giữa chương trình và h quay lại xem từ tập 1..thấy no far no star và 10/10  hay nhất nhưng sốc kết quả của 10/10 quá,10/10,positive,hay nhất,strong,SONG
+100,Ugwym2aBW51TETAnwm54AaABAg,"Quang Hùng hay quá ,trí tuệ tuyệt vời ,Winle cũng giỏi nữa ❤❤❤❤❤❤",Quang Hùng,positive,"hay quá ,trí tuệ tuyệt vời",strong,VOCAL
+101,Ugwym2aBW51TETAnwm54AaABAg,"Quang Hùng hay quá ,trí tuệ tuyệt vời ,Winle cũng giỏi nữa ❤❤❤❤❤❤",Winle,positive,giỏi nữa,moderate,VOCAL
+102,UgwzRvUI4EyWVZOYsZZ4AaABAg,"đoán Mikelodic năm nay đi hơi xa đấy:)))) còn Hydra thì Andree biến thành Rapstar thôi , peace!",Hydra,positive,biến thành Rapstar thôi,strong,GENERAL
+103,UgwzRvUI4EyWVZOYsZZ4AaABAg,"đoán Mikelodic năm nay đi hơi xa đấy:)))) còn Hydra thì Andree biến thành Rapstar thôi , peace!",Mikelodic,positive,năm nay đi hơi xa đấy,moderate,GENERAL
+104,UgwzRvUI4EyWVZOYsZZ4AaABAg,"đoán Mikelodic năm nay đi hơi xa đấy:)))) còn Hydra thì Andree biến thành Rapstar thôi , peace!",Rap Việt,positive,peace!,strong,GENERAL
+107,Ugx4Kv60C_8It4auS4Z4AaABAg,Negav hơi lù mờ với khách mời nha. Khách mời hát làm mình wow luôn😮😮,Khách mời,positive,hát làm mình wow luôn,strong,VOCAL
+108,Ugx4Kv60C_8It4auS4Z4AaABAg,Negav hơi lù mờ với khách mời nha. Khách mời hát làm mình wow luôn😮😮,Negav,negative,lù mờ,moderate,VOCAL
+110,Ugx5KXhOOQoEADtlEyp4AaABAg,"tập này bài nào cũng hay khó mà xếp hạng luôn nhỉ, tính ra bài nào cũng có phần kết quá bùng nổ, khó chọn thật, toàn 9.5 với 9.8 ko",bài,positive,bài nào cũng hay,moderate,SONG
+111,Ugx5KXhOOQoEADtlEyp4AaABAg,"tập này bài nào cũng hay khó mà xếp hạng luôn nhỉ, tính ra bài nào cũng có phần kết quá bùng nổ, khó chọn thật, toàn 9.5 với 9.8 ko",bài,positive,phần kết quá bùng nổ,strong,PERFORMANCE
+112,Ugx6NTMmxUfej9054dB4AaABAg,Khang với An gánh ko nổi,An,positive,gánh ko nổi,strong,TEAMWORK
+113,Ugx6NTMmxUfej9054dB4AaABAg,Khang với An gánh ko nổi,Khang,positive,gánh ko nổi,strong,PERSONALITY
+114,Ugx7125ZGRUV2szla4l4AaABAg,"DLow rời ra Karik là thành mới tập Rap. Ko lên dc
+Số phận nó vậy. Biết đâu vog sau Bray đưa lên như Karik từng làm mùa trc.",DLow,positive,Bray đưa lên,moderate,TEAMWORK
+115,Ugx7125ZGRUV2szla4l4AaABAg,"DLow rời ra Karik là thành mới tập Rap. Ko lên dc
+Số phận nó vậy. Biết đâu vog sau Bray đưa lên như Karik từng làm mùa trc.",DLow,negative,rời ra Karik là thành mới tập Rap,moderate,TEAMWORK
+117,Ugx71xLry-sRyUJtHD54AaABAg,Tập này mê Hydra qá. Các bạn ca sĩ hỗ trợ cũng quá đỉnh luôn,Hydra,positive,Tập này mê Hydra qá,strong,PERSONALITY
+118,Ugx71xLry-sRyUJtHD54AaABAg,Tập này mê Hydra qá. Các bạn ca sĩ hỗ trợ cũng quá đỉnh luôn,ca sĩ hỗ trợ,positive,cũng quá đỉnh luôn,strong,PERSONALITY
+120,UgxGOHqtyaeBgqJodBx4AaABAg,Giọng QT hợp với bài này ghê. Giọng SL cũng hay nha.❤❤❤,QT,positive,hợp với bài này ghê,strong,VOCAL
+121,UgxGOHqtyaeBgqJodBx4AaABAg,Giọng QT hợp với bài này ghê. Giọng SL cũng hay nha.❤❤❤,SL,positive,cũng hay nha,strong,VOCAL
+123,UgxJbp3WX13gAFkeSWJ4AaABAg,"mình đoán 24k năm nay quán quân, 2T á quân",24K,positive,quán quân,moderate,GENERAL
+124,UgxJbp3WX13gAFkeSWJ4AaABAg,"mình đoán 24k năm nay quán quân, 2T á quân",2T,positive,á quân,moderate,GENERAL
+125,UgxJiGd9rN-2R4bgCyt4AaABAg,Tui thích Tage với Song Luân quá. Đoạn 2 người ôm nhau khóc tui xúc động quá. Coi lại tự nhiên thấy rung động hơn lần đầu,Song Luân,positive,tui thích Tage với Song Luân quá,strong,PERSONALITY
+126,UgxJiGd9rN-2R4bgCyt4AaABAg,Tui thích Tage với Song Luân quá. Đoạn 2 người ôm nhau khóc tui xúc động quá. Coi lại tự nhiên thấy rung động hơn lần đầu,Tage,positive,tui thích Tage với Song Luân quá,strong,PERSONALITY
+127,UgxMt_QkQ9UyhmqPv0l4AaABAg,"Respect for 4 hits!! Huỳnh Công Hiếu is a masterpiece of lyricals, Just unlucky for Umie a little but she gonna doing something great in her journey. Thanks & Respect Thái V.G for his word & the thing he do!!! Thanks BRay!! - Some word from ur big fan",BRay,positive,Thanks BRay!!,strong,GENERAL
+128,UgxMt_QkQ9UyhmqPv0l4AaABAg,"Respect for 4 hits!! Huỳnh Công Hiếu is a masterpiece of lyricals, Just unlucky for Umie a little but she gonna doing something great in her journey. Thanks & Respect Thái V.G for his word & the thing he do!!! Thanks BRay!! - Some word from ur big fan",Huỳnh Công Hiếu,positive,masterpiece of lyricals,strong,PERFORMANCE
+129,UgxMt_QkQ9UyhmqPv0l4AaABAg,"Respect for 4 hits!! Huỳnh Công Hiếu is a masterpiece of lyricals, Just unlucky for Umie a little but she gonna doing something great in her journey. Thanks & Respect Thái V.G for his word & the thing he do!!! Thanks BRay!! - Some word from ur big fan",Thái V.G,positive,Thanks & Respect Thái V.G for his word & the thing he do,strong,PERSONALITY
+130,UgxMt_QkQ9UyhmqPv0l4AaABAg,"Respect for 4 hits!! Huỳnh Công Hiếu is a masterpiece of lyricals, Just unlucky for Umie a little but she gonna doing something great in her journey. Thanks & Respect Thái V.G for his word & the thing he do!!! Thanks BRay!! - Some word from ur big fan",Umie,mixed,Just unlucky for Umie a little but she gonna doing something great in her journey,moderate,GENERAL
+133,UgxT2HTc6FY6qusWBbt4AaABAg,"Tập 7 tui coi khoảng 10 lần và mỗi lần coi đều tua đi tua lại cái khoảng giật áo chuyển từ đen sang đủ màu của bài Ngáo ngơ, cả sân khấu bừng sáng đúng như Trấn thành nói là khai mạc festival biển, rất tuyệt vời",Ngáo ngơ,positive,"cả sân khấu bừng sáng đúng như Trấn thành nói là khai mạc festival biển, rất tuyệt vời",strong,STAGE_PRODUCTION
+134,UgxT2HTc6FY6qusWBbt4AaABAg,"Tập 7 tui coi khoảng 10 lần và mỗi lần coi đều tua đi tua lại cái khoảng giật áo chuyển từ đen sang đủ màu của bài Ngáo ngơ, cả sân khấu bừng sáng đúng như Trấn thành nói là khai mạc festival biển, rất tuyệt vời",Ngáo ngơ,positive,cái khoảng giật áo chuyển từ đen sang đủ màu của bài Ngáo ngơ,strong,PERFORMANCE
+135,UgxT2HTc6FY6qusWBbt4AaABAg,"Tập 7 tui coi khoảng 10 lần và mỗi lần coi đều tua đi tua lại cái khoảng giật áo chuyển từ đen sang đủ màu của bài Ngáo ngơ, cả sân khấu bừng sáng đúng như Trấn thành nói là khai mạc festival biển, rất tuyệt vời",Tập 7,positive,tui coi khoảng 10 lần và mỗi lần coi đều tua đi tua lại,strong,GENERAL
+136,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",Captian,positive,Captian với Umie hay quá,strong,GENERAL
+137,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",Umie,positive,Captian với Umie hay quá,strong,GENERAL
+138,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",bài hát,positive,Giai điệu cuốn thật,strong,SONG
+139,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",Captian,positive,Captian thể hiện quá tốt,strong,PERFORMANCE
+140,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",Captian,positive,Hát đã hay,strong,VOCAL
+141,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",Umie,positive,Umie hay quá,strong,GENERAL
+142,UgxT6--kDZCCCUaeGRt4AaABAg,"Captian với Umie hay quá. 
+
+Giai điệu cuốn thật..
+  Captian thể hiện quá tốt.. Hát đã hay ... 
+
+Umie hay quá - bài hot",bài hát,positive,bài hot,moderate,SONG
+143,UgxTSN9dtzqOON3IhUh4AaABAg,Bài của song luân hay nhà phối nhạc nhân gian hiện đại nghe cuối phết,Bài của song luân,positive,hay,strong,SONG
+144,UgxTSN9dtzqOON3IhUh4AaABAg,Bài của song luân hay nhà phối nhạc nhân gian hiện đại nghe cuối phết,nhà phối nhạc,positive,nghe cuối phết,strong,SONG
+145,UgxV2BxrH4GWqVB5eKh4AaABAg,"Quá đỉnh luôn, thích Hu, Liu, DT và đặc biệt HTH. Mê rap vì câu từ rất thấm :)",DT,positive,"Quá đỉnh luôn, thích Hu, Liu, DT",strong,PERSONALITY
+146,UgxV2BxrH4GWqVB5eKh4AaABAg,"Quá đỉnh luôn, thích Hu, Liu, DT và đặc biệt HTH. Mê rap vì câu từ rất thấm :)",HTH,positive,"Quá đỉnh luôn, thích Hu, Liu, DT và đặc biệt HTH",strong,PERSONALITY
+147,UgxV2BxrH4GWqVB5eKh4AaABAg,"Quá đỉnh luôn, thích Hu, Liu, DT và đặc biệt HTH. Mê rap vì câu từ rất thấm :)",Hu,positive,"Quá đỉnh luôn, thích Hu",strong,PERSONALITY
+148,UgxV2BxrH4GWqVB5eKh4AaABAg,"Quá đỉnh luôn, thích Hu, Liu, DT và đặc biệt HTH. Mê rap vì câu từ rất thấm :)",Liu,positive,"Quá đỉnh luôn, thích Hu, Liu",strong,PERSONALITY
+149,UgxV2BxrH4GWqVB5eKh4AaABAg,"Quá đỉnh luôn, thích Hu, Liu, DT và đặc biệt HTH. Mê rap vì câu từ rất thấm :)",rap,positive,Mê rap vì câu từ rất thấm,strong,VOCAL
+150,UgxVrFizCxchPj3vzxt4AaABAg,"Team Editor Rap Việt vui lòng xử lý hậu kỳ chuyên nghiệp tí đi ạ, nghe rác tạp âm thôi rồi luôn, nào tiếng chat chit nhảy loạn xạ, nào bị cắt âm ngắt đoạn... Quá uổng phí cho thí sinh tài năng năm nay!",Team Editor Rap Việt,negative,quá uổng phí cho thí sinh tài năng năm nay!,strong,GENERAL
+151,UgxVrFizCxchPj3vzxt4AaABAg,"Team Editor Rap Việt vui lòng xử lý hậu kỳ chuyên nghiệp tí đi ạ, nghe rác tạp âm thôi rồi luôn, nào tiếng chat chit nhảy loạn xạ, nào bị cắt âm ngắt đoạn... Quá uổng phí cho thí sinh tài năng năm nay!",Team Editor Rap Việt,negative,"vui lòng xử lý hậu kỳ chuyên nghiệp tí đi ạ, nghe rác tạp âm thôi rồi luôn",strong,STAGE_PRODUCTION
+152,UgxX22c1Pvfp31DeaZl4AaABAg,"cá nhân mình thấy Team a Big có 4 bài thi hay nhất luôn, hay hơn cả bài của 24KvsYuno( cặp đôi đại chiến nón vàng). team a Big thi cuối thiệt thòi thật đấy",24KvsYuno,negative,hay hơn cả bài của 24KvsYuno,moderate,GENERAL
+153,UgxX22c1Pvfp31DeaZl4AaABAg,"cá nhân mình thấy Team a Big có 4 bài thi hay nhất luôn, hay hơn cả bài của 24KvsYuno( cặp đôi đại chiến nón vàng). team a Big thi cuối thiệt thòi thật đấy",Team a Big,positive,cá nhân mình thấy Team a Big có 4 bài thi hay nhất luôn,strong,SONG
+154,UgxX22c1Pvfp31DeaZl4AaABAg,"cá nhân mình thấy Team a Big có 4 bài thi hay nhất luôn, hay hơn cả bài của 24KvsYuno( cặp đôi đại chiến nón vàng). team a Big thi cuối thiệt thòi thật đấy",Team a Big,positive,team a Big thi cuối thiệt thòi thật đấy,moderate,TEAMWORK
+155,UgxXKTmLOAnLsfchHxZ4AaABAg,"Yuno bai nay hay ne , nhung anh T da co 2 ban vao ck roi , tui hieu vi sao HCH vào",HCH,negative,"nhung anh T da co 2 ban vao ck roi , tui hieu vi sao HCH vào",mild,GENERAL
+156,UgxXKTmLOAnLsfchHxZ4AaABAg,"Yuno bai nay hay ne , nhung anh T da co 2 ban vao ck roi , tui hieu vi sao HCH vào",Yuno,positive,bai nay hay ne,moderate,SONG
+158,UgxXpwV597l7N0bO6dt4AaABAg,Có 1 năm nhưng thấy Rhyder phát triển rất đỉnh. Phần trình diễn ATSH rất tuyệt vời!,Rhyder,positive,có 1 năm nhưng thấy Rhyder phát triển rất đỉnh,strong,PERSONALITY
+159,UgxXpwV597l7N0bO6dt4AaABAg,Có 1 năm nhưng thấy Rhyder phát triển rất đỉnh. Phần trình diễn ATSH rất tuyệt vời!,Rhyder,positive,Phần trình diễn ATSH rất tuyệt vời,strong,STAGE_PRODUCTION
+161,UgxaiCpx9jLMkT88ySp4AaABAg,"Hào quang vs Catch me quá đỉnh, mình k biết cách đánh giá chra khán giả tại trường quay ntn",Hào quang,positive,quá đỉnh,strong,SONG
+162,UgxaiCpx9jLMkT88ySp4AaABAg,"Hào quang vs Catch me quá đỉnh, mình k biết cách đánh giá chra khán giả tại trường quay ntn",Catch me,positive,quá đỉnh,moderate,GENERAL
+163,UgxaiCpx9jLMkT88ySp4AaABAg,"Hào quang vs Catch me quá đỉnh, mình k biết cách đánh giá chra khán giả tại trường quay ntn",khán giả tại trường quay,negative,mình k biết cách đánh giá chra khán giả tại trường quay ntn,moderate,GENERAL
+164,UgxapWY7w5EmLbsIaNF4AaABAg,"Rap việt mong có suboi và Justatee,karik làm bạn giám khảo",Justatee,positive,"mong có suboi và Justatee,karik làm bạn giám khảo",moderate,GENERAL
+165,UgxapWY7w5EmLbsIaNF4AaABAg,"Rap việt mong có suboi và Justatee,karik làm bạn giám khảo",suboi,positive,"mong có suboi và Justatee,karik làm bạn giám khảo",moderate,GENERAL
+166,UgxapWY7w5EmLbsIaNF4AaABAg,"Rap việt mong có suboi và Justatee,karik làm bạn giám khảo",karik,positive,"mong có suboi và Justatee,karik làm bạn giám khảo",moderate,GENERAL
+169,UgxhIOIaYyQv5S3Rmp14AaABAg,Xem chương trình này toàn đàn ông rất là vui vẻ hoà đồng thân thiện vs nhau . Xem sang the face toàn mấy mẻ làm khó làm dễ giận hờn rồi đủ thứ mệt ẻ 😂,anh trai say hi,positive,Xem chương trình này toàn đàn ông rất là vui vẻ hoà đồng thân thiện vs nhau,strong,GENERAL
+170,UgxhIOIaYyQv5S3Rmp14AaABAg,Xem chương trình này toàn đàn ông rất là vui vẻ hoà đồng thân thiện vs nhau . Xem sang the face toàn mấy mẻ làm khó làm dễ giận hờn rồi đủ thứ mệt ẻ 😂,the face,negative,Xem sang the face toàn mấy mẻ làm khó làm dễ giận hờn rồi đủ thứ mệt ẻ,strong,GENERAL
+174,Ugxl8gjALmrQ28GUv4p4AaABAg,"Regret hay tuyệt luôn ấy, Ali trong bài này rất sáng, kiểu phô dc giọng hát của ảnh",Ali,positive,"trong bài này rất sáng, kiểu phô dc giọng hát của ảnh",strong,VOCAL
+175,Ugxl8gjALmrQ28GUv4p4AaABAg,"Regret hay tuyệt luôn ấy, Ali trong bài này rất sáng, kiểu phô dc giọng hát của ảnh",Regret,positive,hay tuyệt luôn ấy,strong,SONG
+176,Ugxm5bq1-Ys9CTUE1JJ4AaABAg,Má ông krik lại bảo smo95 về với anh bâu phí vcl nghe như kiểu ông clg cũng hay ý,krik,negative,nghe như kiểu ông clg cũng hay ý,strong,PERSONALITY
+177,Ugxm5bq1-Ys9CTUE1JJ4AaABAg,Má ông krik lại bảo smo95 về với anh bâu phí vcl nghe như kiểu ông clg cũng hay ý,anh bâu,negative,về với anh bâu phí vcl,strong,GENERAL
+178,Ugxm5bq1-Ys9CTUE1JJ4AaABAg,Má ông krik lại bảo smo95 về với anh bâu phí vcl nghe như kiểu ông clg cũng hay ý,smo95,neutral,về với anh bâu phí vcl,strong,GENERAL
+179,UgxpjgzE500UtbRkQ114AaABAg,"Coi lại từ đầu,coi hoài luôn lụy CT quá ủng hộ 31 anh trai, mãi yêu NeGav.",31 anh trai,positive,ủng hộ 31 anh trai,strong,GENERAL
+180,UgxpjgzE500UtbRkQ114AaABAg,"Coi lại từ đầu,coi hoài luôn lụy CT quá ủng hộ 31 anh trai, mãi yêu NeGav.",CT,positive,lụy CT quá ủng hộ,strong,SHOW_FORMAT
+182,UgxtAOY8R9UdOAsO8l54AaABAg,"Nhìn Tee khóc thấy thương ghê, Karik chạy qua ôm cũng thương nữa",Karik,positive,chạy qua ôm cũng thương nữa,moderate,PERSONALITY
+183,UgxtAOY8R9UdOAsO8l54AaABAg,"Nhìn Tee khóc thấy thương ghê, Karik chạy qua ôm cũng thương nữa",Tee,positive,khóc thấy thương ghê,moderate,PERSONALITY
+184,UgxxnesQzO2Ec3AI-254AaABAg,"K ưa nỗi từ phạm đình thái ngân vừa tính ngưu vừa tỏ ra nguy hiểm, k ưa từ tỏ tình hoàn mỹ",phạm đình thái ngân,negative,K ưa nỗi từ phạm đình thái ngân vừa tính ngưu vừa tỏ ra nguy hiểm,strong,PERSONALITY
+185,UgxxnesQzO2Ec3AI-254AaABAg,"K ưa nỗi từ phạm đình thái ngân vừa tính ngưu vừa tỏ ra nguy hiểm, k ưa từ tỏ tình hoàn mỹ",tỏ tình hoàn mỹ,negative,k ưa từ tỏ tình hoàn mỹ,strong,SONG
+186,Ugy0cvMfWQX2v0f6iJd4AaABAg,Nổi Da Gà Mike Với Long,Long,positive,Nổi Da Gà Mike Với Long,strong,GENERAL
+187,Ugy0cvMfWQX2v0f6iJd4AaABAg,Nổi Da Gà Mike Với Long,Mike,positive,Nổi Da Gà Mike Với Long,strong,GENERAL
+189,Ugy2zPHXQg8iTyntwlR4AaABAg,"=)buồn vậy khán giả bình chọn kiểu gì vậy cứ thấy bất công, bài ngáo ngơ và regret hit nha mà đứng hạng quá thấp😢",khán giả,negative,khán giả bình chọn kiểu gì vậy cứ thấy bất công,strong,SHOW_FORMAT
+190,Ugy2zPHXQg8iTyntwlR4AaABAg,"=)buồn vậy khán giả bình chọn kiểu gì vậy cứ thấy bất công, bài ngáo ngơ và regret hit nha mà đứng hạng quá thấp😢",ngáo ngơ,positive,hit nha mà đứng hạng quá thấp,strong,SONG
+191,Ugy2zPHXQg8iTyntwlR4AaABAg,"=)buồn vậy khán giả bình chọn kiểu gì vậy cứ thấy bất công, bài ngáo ngơ và regret hit nha mà đứng hạng quá thấp😢",regret,positive,hit nha mà đứng hạng quá thấp,strong,SONG
+192,Ugy8C2le8OMB2V_aMt94AaABAg,"Sao mình vẫn thấy Rap Việt đỉnh mãi đỉnh nhỉ. Cuốn thật sự và TT dẫn vẫn hay như ngày nào ❤❤❤ delivery của Pháp Kiều đúng chất Nicki Minaj nha ❤❤ đỉnh đỉnh , mà ca sĩ hỗ trợ cũng hay.
+Ôi luống cuống khi type cmt vì quá keo đi àhhhhh",Rap Việt,positive,Rap Việt đỉnh mãi đỉnh nhỉ. Cuốn thật sự,strong,GENERAL
+193,Ugy8C2le8OMB2V_aMt94AaABAg,"Sao mình vẫn thấy Rap Việt đỉnh mãi đỉnh nhỉ. Cuốn thật sự và TT dẫn vẫn hay như ngày nào ❤❤❤ delivery của Pháp Kiều đúng chất Nicki Minaj nha ❤❤ đỉnh đỉnh , mà ca sĩ hỗ trợ cũng hay.
+Ôi luống cuống khi type cmt vì quá keo đi àhhhhh",TT,positive,dẫn vẫn hay như ngày nào,strong,PERFORMANCE
+194,Ugy8C2le8OMB2V_aMt94AaABAg,"Sao mình vẫn thấy Rap Việt đỉnh mãi đỉnh nhỉ. Cuốn thật sự và TT dẫn vẫn hay như ngày nào ❤❤❤ delivery của Pháp Kiều đúng chất Nicki Minaj nha ❤❤ đỉnh đỉnh , mà ca sĩ hỗ trợ cũng hay.
+Ôi luống cuống khi type cmt vì quá keo đi àhhhhh",Pháp Kiều,positive,delivery của Pháp Kiều đúng chất Nicki Minaj nha ❤❤ đỉnh đỉnh,strong,PERFORMANCE
+195,Ugy8C2le8OMB2V_aMt94AaABAg,"Sao mình vẫn thấy Rap Việt đỉnh mãi đỉnh nhỉ. Cuốn thật sự và TT dẫn vẫn hay như ngày nào ❤❤❤ delivery của Pháp Kiều đúng chất Nicki Minaj nha ❤❤ đỉnh đỉnh , mà ca sĩ hỗ trợ cũng hay.
+Ôi luống cuống khi type cmt vì quá keo đi àhhhhh",ca sĩ hỗ trợ,positive,ca sĩ hỗ trợ cũng hay,strong,GENERAL
+196,Ugy8WUn3QJg9q4qJlpZ4AaABAg,Mike hay nhưng vòng này k có gì bứt phá và ấn tượng. Mk nghĩ D2T xứng đáng thắng vòng này hơn tiếc thật 😢,Mike,mixed,hay nhưng vòng này k có gì bứt phá và ấn tượng,moderate,PERFORMANCE
+197,Ugy8WUn3QJg9q4qJlpZ4AaABAg,Mike hay nhưng vòng này k có gì bứt phá và ấn tượng. Mk nghĩ D2T xứng đáng thắng vòng này hơn tiếc thật 😢,D2T,positive,xứng đáng thắng vòng này hơn,strong,PERFORMANCE
+198,Ugy9l2TYM5J85KMoRYp4AaABAg,team hiếu thu 2  2 bài đều hay voi bài của đức phúc hay nua,team hiếu thu,positive,team hiếu thu 2  2 bài đều hay,strong,SONG
+199,Ugy9l2TYM5J85KMoRYp4AaABAg,team hiếu thu 2  2 bài đều hay voi bài của đức phúc hay nua,Đức Phúc,positive,bài của đức phúc hay nua,strong,SONG
+200,UgyAkwUHvqBApcPNEHt4AaABAg,"Tiếc cho Alen, tiếc cho a Thái VG vì mất viên ngọc quý và thực sự phẫn nộ với kiểu bình chọn của khán giả.Chả lẽ h cứ phải đc quẩy như đi vào bar mới xứng đáng được đi tiếp à😢😢😢",Alen,neutral,Tiếc cho Alen,moderate,GENERAL
+201,UgyAkwUHvqBApcPNEHt4AaABAg,"Tiếc cho Alen, tiếc cho a Thái VG vì mất viên ngọc quý và thực sự phẫn nộ với kiểu bình chọn của khán giả.Chả lẽ h cứ phải đc quẩy như đi vào bar mới xứng đáng được đi tiếp à😢😢😢",Alen,positive,viên ngọc quý,strong,GENERAL
+202,UgyAkwUHvqBApcPNEHt4AaABAg,"Tiếc cho Alen, tiếc cho a Thái VG vì mất viên ngọc quý và thực sự phẫn nộ với kiểu bình chọn của khán giả.Chả lẽ h cứ phải đc quẩy như đi vào bar mới xứng đáng được đi tiếp à😢😢😢",a Thái VG,negative,tiếc cho a Thái VG vì mất viên ngọc quý,moderate,GENERAL
+203,UgyAkwUHvqBApcPNEHt4AaABAg,"Tiếc cho Alen, tiếc cho a Thái VG vì mất viên ngọc quý và thực sự phẫn nộ với kiểu bình chọn của khán giả.Chả lẽ h cứ phải đc quẩy như đi vào bar mới xứng đáng được đi tiếp à😢😢😢",khán giả,negative,chả lẽ h cứ phải đc quẩy như đi vào bar mới xứng đáng được đi tiếp à,strong,SHOW_FORMAT
+204,UgyAsRQAJDW84oQ66WJ4AaABAg,Trong 3 team mình thik team Andree và team anh Thái nhất,team Andree,positive,thik team Andree và team anh Thái nhất,moderate,TEAMWORK
+205,UgyAsRQAJDW84oQ66WJ4AaABAg,Trong 3 team mình thik team Andree và team anh Thái nhất,team anh Thái,positive,thik team Andree và team anh Thái nhất,moderate,TEAMWORK
+206,UgyBc-qnF7_txLrttxB4AaABAg,"Bài Người Tình Của Nắng nó dở ác thiệt chứ :))) Lily đúng dớp vào chương trình nào cũng flop, kéo theo luôn cả team có bả.",Lily,negative,"đúng dớp vào chương trình nào cũng flop, kéo theo luôn cả team có bả",strong,PERSONALITY
+207,UgyBc-qnF7_txLrttxB4AaABAg,"Bài Người Tình Của Nắng nó dở ác thiệt chứ :))) Lily đúng dớp vào chương trình nào cũng flop, kéo theo luôn cả team có bả.",Bài Người Tình Của Nắng,negative,dở ác thiệt chứ,strong,SONG
+208,UgyD2tbmHPOiKJMJout4AaABAg,"thích nhát bài của Quang Hùng , cậu này với Xuân Định có tài",Quang Hùng,positive,thích nhát bài của Quang Hùng,strong,SONG
+209,UgyD2tbmHPOiKJMJout4AaABAg,"thích nhát bài của Quang Hùng , cậu này với Xuân Định có tài",Xuân Định,positive,có tài,strong,PERSONALITY
+210,UgyD2tbmHPOiKJMJout4AaABAg,"thích nhát bài của Quang Hùng , cậu này với Xuân Định có tài",Quang Hùng,positive,cậu này với Xuân Định có tài,strong,PERSONALITY
+211,UgyD6QLocgC6-G2SfbV4AaABAg,"Chương trình Ráp Việt rất hay nhưng MC cần thay đổi , Thành không phù hợp cho chương trình..!",MC,negative,MC cần thay đổi,moderate,GENERAL
+212,UgyD6QLocgC6-G2SfbV4AaABAg,"Chương trình Ráp Việt rất hay nhưng MC cần thay đổi , Thành không phù hợp cho chương trình..!",Ráp Việt,positive,Chương trình Ráp Việt rất hay,strong,GENERAL
+213,UgyD6QLocgC6-G2SfbV4AaABAg,"Chương trình Ráp Việt rất hay nhưng MC cần thay đổi , Thành không phù hợp cho chương trình..!",Thành,negative,Thành không phù hợp cho chương trình,strong,PERSONALITY
+214,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,Cap,positive,rất tiếc cho Cap,moderate,SHOW_FORMAT
+215,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,Cap,positive,đã toả sáng trong chương trình,strong,PERFORMANCE
+216,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,2khang,positive,rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi,moderate,SHOW_FORMAT
+217,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,2khang,positive,đã toả sáng trong chương trình,strong,PERFORMANCE
+218,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,live show,positive,rất đỉnh bùng nổ hết,strong,GENERAL
+219,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,live show,positive,best dance thực sự,strong,PERFORMANCE
+220,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,live show,positive,lụy quá huhu,strong,GENERAL
+221,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,các anh trai,positive,bái phục các anh trai,strong,GENERAL
+222,UgyEER43yudA5vZf0rx4AaABAg,Coi đi coi lại rất tiếc cho Cap và 2khang khi k thể hiện trong phần thi nhưng đã toả sáng trong chương trình và live show này rất đỉnh bùng nổ hết best dance thực sự bái phục các anh trai và giám khảo lụy quá huhu,giám khảo,positive,bái phục các anh trai và giám khảo,strong,GENERAL
+225,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",team hieuthuhai,positive,cả team visual,strong,VISUAL
+226,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",team hieuthuhai,positive,nói chung nhóm này phải gọi là đỉnh,strong,SHOW_FORMAT
+227,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",hieuthuhai,positive,ko cần nói r,moderate,GENERAL
+228,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",erik,positive,ko cần nói r,moderate,GENERAL
+229,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",atus,positive,"vocal rất đặc biệt,rất trong",strong,VOCAL
+230,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",atus,positive,rap cx hay,moderate,PERFORMANCE
+231,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",atus,positive,hay hài hài,moderate,PERSONALITY
+232,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",jsol,positive,là một người rất tài giỏi,strong,GENERAL
+233,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",jsol,positive,nên đc tìm thêm nhiều tài năng nữa,moderate,GENERAL
+234,UgyOidXCDOxYmFuwcGB4AaABAg,"oiii,team hieuthuhai đội trưởng,erik,jsol,atus cả team visual.hieuthuhai vs erik thì ko cần nói r.atus thì vocal rất đặc biệt,rất trong,rap cx hay.jsol là một người rất tài giỏi.T nghĩ jsol nên đc tìm thêm nhiều tài năng nữa.atus và jsol hay hài hài.nói chung nhóm này phải gọi là đỉnh",jsol,positive,hay hài hài,moderate,PERSONALITY
+236,UgyQEVJRIWyj_KNd9Ml4AaABAg,"h mới xem atsh, mới biết Tage cx tham gia, thích ổng từ bài lớp 12, ko hiểu sao h mặt ổng có nhìn hơi cọc vs dữ nhưng mà tui vẫn thấy mắc cười á :)), ổng cười còn đẹp dth nữa chứ",Tage,positive,thích ổng từ bài lớp 12,moderate,SONG
+237,UgyQEVJRIWyj_KNd9Ml4AaABAg,"h mới xem atsh, mới biết Tage cx tham gia, thích ổng từ bài lớp 12, ko hiểu sao h mặt ổng có nhìn hơi cọc vs dữ nhưng mà tui vẫn thấy mắc cười á :)), ổng cười còn đẹp dth nữa chứ",Tage,neutral,nhìn hơi cọc vs dữ,mild,VISUAL
+238,UgyQEVJRIWyj_KNd9Ml4AaABAg,"h mới xem atsh, mới biết Tage cx tham gia, thích ổng từ bài lớp 12, ko hiểu sao h mặt ổng có nhìn hơi cọc vs dữ nhưng mà tui vẫn thấy mắc cười á :)), ổng cười còn đẹp dth nữa chứ",Tage,positive,tui vẫn thấy mắc cười á :)),moderate,PERSONALITY
+239,UgyQEVJRIWyj_KNd9Ml4AaABAg,"h mới xem atsh, mới biết Tage cx tham gia, thích ổng từ bài lớp 12, ko hiểu sao h mặt ổng có nhìn hơi cọc vs dữ nhưng mà tui vẫn thấy mắc cười á :)), ổng cười còn đẹp dth nữa chứ",Tage,positive,ổng cười còn đẹp dth nữa chứ,strong,VISUAL
+241,UgySC0j-wahdzczHIIJ4AaABAg,Xem đi xem lại vẫn cứ thích bài 10/10 nhất luôn ấy nhưng sao mọi người ở trường quay lại vote top 6,bài 10/10,positive,thích bài 10/10 nhất,strong,VOCAL
+242,UgySC0j-wahdzczHIIJ4AaABAg,Xem đi xem lại vẫn cứ thích bài 10/10 nhất luôn ấy nhưng sao mọi người ở trường quay lại vote top 6,mọi người ở trường quay,negative,nhưng sao mọi người ở trường quay lại vote top 6,moderate,SHOW_FORMAT
+244,UgyTpXqRRW5KQDIO9lZ4AaABAg,Dương domic với Hùng huỳnh lúc nào mặt cũng sáng trưng như gắn đèn vậy.,Dương domic,mixed,lúc nào mặt cũng sáng trưng như gắn đèn,strong,VISUAL
+245,UgyTpXqRRW5KQDIO9lZ4AaABAg,Dương domic với Hùng huỳnh lúc nào mặt cũng sáng trưng như gắn đèn vậy.,Hùng huỳnh,mixed,lúc nào mặt cũng sáng trưng như gắn đèn,strong,VISUAL
+246,UgyXfuwJxDnIcAjrR8Z4AaABAg,Đã mê Dương Domic rồi h nghe bài Bao lời con chưa nói còn mê hơn. Thích ctrinh atsh quá,Dương Domic,positive,Đã mê Dương Domic rồi,strong,PERSONALITY
+247,UgyXfuwJxDnIcAjrR8Z4AaABAg,Đã mê Dương Domic rồi h nghe bài Bao lời con chưa nói còn mê hơn. Thích ctrinh atsh quá,ctrinh atsh,positive,thích ctrinh atsh quá,strong,SHOW_FORMAT
+248,UgyXfuwJxDnIcAjrR8Z4AaABAg,Đã mê Dương Domic rồi h nghe bài Bao lời con chưa nói còn mê hơn. Thích ctrinh atsh quá,Dương Domic,positive,h nghe bài Bao lời con chưa nói còn mê hơn,strong,SONG
+249,UgyYGKAm3HGVyJbhz5N4AaABAg,"DT và Hurry hai bài rap quá đỉnh ,  vào luôn chung kết cho nhanh .
+ Riêng Minh Lai phế vãi , Liu G thì có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được .",DT,positive,bài rap quá đỉnh,strong,PERFORMANCE
+250,UgyYGKAm3HGVyJbhz5N4AaABAg,"DT và Hurry hai bài rap quá đỉnh ,  vào luôn chung kết cho nhanh .
+ Riêng Minh Lai phế vãi , Liu G thì có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được .",DT,positive,vào luôn chung kết cho nhanh,strong,GENERAL
+251,UgyYGKAm3HGVyJbhz5N4AaABAg,"DT và Hurry hai bài rap quá đỉnh ,  vào luôn chung kết cho nhanh .
+ Riêng Minh Lai phế vãi , Liu G thì có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được .",Hurry,positive,bài rap quá đỉnh,strong,PERFORMANCE
+252,UgyYGKAm3HGVyJbhz5N4AaABAg,"DT và Hurry hai bài rap quá đỉnh ,  vào luôn chung kết cho nhanh .
+ Riêng Minh Lai phế vãi , Liu G thì có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được .",Hurry,positive,vào luôn chung kết cho nhanh,strong,GENERAL
+253,UgyYGKAm3HGVyJbhz5N4AaABAg,"DT và Hurry hai bài rap quá đỉnh ,  vào luôn chung kết cho nhanh .
+ Riêng Minh Lai phế vãi , Liu G thì có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được .",Minh Lai,negative,phế vãi,strong,PERSONALITY
+254,UgyYGKAm3HGVyJbhz5N4AaABAg,"DT và Hurry hai bài rap quá đỉnh ,  vào luôn chung kết cho nhanh .
+ Riêng Minh Lai phế vãi , Liu G thì có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được .",Liu G,negative,"có cái màu rap mãi phát ngán , đây là cái show giải trí đấy chứ thi rap thực sự thì đu theo thế đéo nào được",strong,PERFORMANCE
+255,UgyYTqOm_DTQeLz6VfF4AaABAg,"Bao lời con chưa nói của team Atus thật sự xúc động, Dương viết quá tốt luôn ạ",Dương,positive,Dương viết quá tốt luôn ạ,strong,SONG
+256,UgyYTqOm_DTQeLz6VfF4AaABAg,"Bao lời con chưa nói của team Atus thật sự xúc động, Dương viết quá tốt luôn ạ",team Atus,positive,Bao lời con chưa nói của team Atus thật sự xúc động,strong,TEAMWORK
+257,UgyYTqOm_DTQeLz6VfF4AaABAg,"Bao lời con chưa nói của team Atus thật sự xúc động, Dương viết quá tốt luôn ạ",Bao lời con chưa nói,positive,thật sự xúc động,strong,SONG
+259,Ugy_3_sf0uNcV5cjyAB4AaABAg,"Từ em xinh qua xem cái này, thấy mấy anh trai dù thắng hay thua vẫn tỏ sự vui vẻ và respect với đội bạn , nhưng trong em xinh nhiều khi thấy đội bạn thắng cái là ngồi buồn luôn nó hơi cảm giác hơn thua quá lun",mấy anh trai,positive,dù thắng hay thua vẫn tỏ sự vui vẻ và respect với đội bạn,strong,PERSONALITY
+260,Ugy_3_sf0uNcV5cjyAB4AaABAg,"Từ em xinh qua xem cái này, thấy mấy anh trai dù thắng hay thua vẫn tỏ sự vui vẻ và respect với đội bạn , nhưng trong em xinh nhiều khi thấy đội bạn thắng cái là ngồi buồn luôn nó hơi cảm giác hơn thua quá lun",em xinh,negative,thấy đội bạn thắng cái là ngồi buồn luôn nó hơi cảm giác hơn thua quá lun,moderate,PERSONALITY
+262,UgyggLkJUiek2CPB3QV4AaABAg,""" Anh biết rồi"" là bài hát ngày nào mình cũng nghe mấy chục lần mỗi ngày mà không biết chán là gì, mê cái giai điệu này quá đi. Một phần trình diễn phải nói là hoàn hảo, cuốn quá luôn. Một mùa hè ý nghĩa khi có ATSH đối với một người yêu  âm nhạc như mình, toàn những bài nhạc mới và hay. Đặc biệt ấn tượng bởi anh trai Rhyder, siêu mê.",Anh biết rồi,positive,"bài hát ngày nào mình cũng nghe mấy chục lần mỗi ngày mà không biết chán là gì, mê cái giai điệu này quá đi",strong,SONG
+263,UgyggLkJUiek2CPB3QV4AaABAg,""" Anh biết rồi"" là bài hát ngày nào mình cũng nghe mấy chục lần mỗi ngày mà không biết chán là gì, mê cái giai điệu này quá đi. Một phần trình diễn phải nói là hoàn hảo, cuốn quá luôn. Một mùa hè ý nghĩa khi có ATSH đối với một người yêu  âm nhạc như mình, toàn những bài nhạc mới và hay. Đặc biệt ấn tượng bởi anh trai Rhyder, siêu mê.",Anh biết rồi,positive,"Một phần trình diễn phải nói là hoàn hảo, cuốn quá luôn",strong,PERFORMANCE
+264,UgyggLkJUiek2CPB3QV4AaABAg,""" Anh biết rồi"" là bài hát ngày nào mình cũng nghe mấy chục lần mỗi ngày mà không biết chán là gì, mê cái giai điệu này quá đi. Một phần trình diễn phải nói là hoàn hảo, cuốn quá luôn. Một mùa hè ý nghĩa khi có ATSH đối với một người yêu  âm nhạc như mình, toàn những bài nhạc mới và hay. Đặc biệt ấn tượng bởi anh trai Rhyder, siêu mê.",ATSH,positive,Một mùa hè ý nghĩa khi có ATSH đối với một người yêu  âm nhạc như mình,strong,SONG
+265,UgyggLkJUiek2CPB3QV4AaABAg,""" Anh biết rồi"" là bài hát ngày nào mình cũng nghe mấy chục lần mỗi ngày mà không biết chán là gì, mê cái giai điệu này quá đi. Một phần trình diễn phải nói là hoàn hảo, cuốn quá luôn. Một mùa hè ý nghĩa khi có ATSH đối với một người yêu  âm nhạc như mình, toàn những bài nhạc mới và hay. Đặc biệt ấn tượng bởi anh trai Rhyder, siêu mê.",Rhyder,positive,"Đặc biệt ấn tượng bởi anh trai Rhyder, siêu mê",strong,GENERAL
+266,UgyhmZjm_1sPPgNsOrR4AaABAg,Nhìn ông Tú vs ông Kong hài vãi,ông Kong,positive,Nhìn ông Tú vs ông Kong hài vãi,strong,PERSONALITY
+267,UgyhmZjm_1sPPgNsOrR4AaABAg,Nhìn ông Tú vs ông Kong hài vãi,ông Tú,positive,Nhìn ông Tú vs ông Kong hài vãi,strong,PERSONALITY
+270,UgyjxafyynUnY4aQt7x4AaABAg,"ôi giọng Dương, Quang Trung hát bài này siêu cảm động 🥹",Dương,positive,hát bài này siêu cảm động,strong,VOCAL
+271,UgyjxafyynUnY4aQt7x4AaABAg,"ôi giọng Dương, Quang Trung hát bài này siêu cảm động 🥹",Quang Trung,positive,hát bài này siêu cảm động,strong,VOCAL
+273,UgylnGnJVgzVEFCVZ3F4AaABAg,"cái khúc 2:22:52 thấy m.n nhảy đằng trước bỗng thấp thoáng 1 mình TAGE phiêu phía sau, nhìn cưng dễ sợ, rất cute.
+M thấy chung kết 2 chất lượng bài hát tốt hơn chung kết 1 á. Thật sự ấn tượng với concept và giọng hát Đức Phúc, Tú Voi và Quang Hùng. Nhạc hay quá trời, nổi da gà nhất là đoạn cao trào của Tú Voi.",TAGE,positive,"phiêu phía sau, nhìn cưng dễ sợ, rất cute",strong,PERSONALITY
+274,UgylnGnJVgzVEFCVZ3F4AaABAg,"cái khúc 2:22:52 thấy m.n nhảy đằng trước bỗng thấp thoáng 1 mình TAGE phiêu phía sau, nhìn cưng dễ sợ, rất cute.
+M thấy chung kết 2 chất lượng bài hát tốt hơn chung kết 1 á. Thật sự ấn tượng với concept và giọng hát Đức Phúc, Tú Voi và Quang Hùng. Nhạc hay quá trời, nổi da gà nhất là đoạn cao trào của Tú Voi.",chung kết 2,positive,chất lượng bài hát tốt hơn chung kết 1,strong,SONG
+275,UgylnGnJVgzVEFCVZ3F4AaABAg,"cái khúc 2:22:52 thấy m.n nhảy đằng trước bỗng thấp thoáng 1 mình TAGE phiêu phía sau, nhìn cưng dễ sợ, rất cute.
+M thấy chung kết 2 chất lượng bài hát tốt hơn chung kết 1 á. Thật sự ấn tượng với concept và giọng hát Đức Phúc, Tú Voi và Quang Hùng. Nhạc hay quá trời, nổi da gà nhất là đoạn cao trào của Tú Voi.","Đức Phúc, Tú Voi và Quang Hùng",positive,Thật sự ấn tượng với concept,strong,STAGE_PRODUCTION
+276,UgylnGnJVgzVEFCVZ3F4AaABAg,"cái khúc 2:22:52 thấy m.n nhảy đằng trước bỗng thấp thoáng 1 mình TAGE phiêu phía sau, nhìn cưng dễ sợ, rất cute.
+M thấy chung kết 2 chất lượng bài hát tốt hơn chung kết 1 á. Thật sự ấn tượng với concept và giọng hát Đức Phúc, Tú Voi và Quang Hùng. Nhạc hay quá trời, nổi da gà nhất là đoạn cao trào của Tú Voi.","Đức Phúc, Tú Voi và Quang Hùng",positive,Thật sự ấn tượng với concept và giọng hát,strong,VOCAL
+277,UgylnGnJVgzVEFCVZ3F4AaABAg,"cái khúc 2:22:52 thấy m.n nhảy đằng trước bỗng thấp thoáng 1 mình TAGE phiêu phía sau, nhìn cưng dễ sợ, rất cute.
+M thấy chung kết 2 chất lượng bài hát tốt hơn chung kết 1 á. Thật sự ấn tượng với concept và giọng hát Đức Phúc, Tú Voi và Quang Hùng. Nhạc hay quá trời, nổi da gà nhất là đoạn cao trào của Tú Voi.",bài hát,positive,Nhạc hay quá trời,strong,SONG
+278,UgylnGnJVgzVEFCVZ3F4AaABAg,"cái khúc 2:22:52 thấy m.n nhảy đằng trước bỗng thấp thoáng 1 mình TAGE phiêu phía sau, nhìn cưng dễ sợ, rất cute.
+M thấy chung kết 2 chất lượng bài hát tốt hơn chung kết 1 á. Thật sự ấn tượng với concept và giọng hát Đức Phúc, Tú Voi và Quang Hùng. Nhạc hay quá trời, nổi da gà nhất là đoạn cao trào của Tú Voi.",Tú Voi,positive,nổi da gà nhất là đoạn cao trào của Tú Voi,strong,VOCAL
+279,UgypfmydWz0eSAXYPs54AaABAg,Nói thẳng ra là SMO về team anh Thái VG khai thác tìm năng là quán quân chắc,SMO,positive,quán quân chắc,strong,GENERAL
+280,UgypfmydWz0eSAXYPs54AaABAg,Nói thẳng ra là SMO về team anh Thái VG khai thác tìm năng là quán quân chắc,anh Thái VG,positive,về team anh Thái VG khai thác tìm năng là quán quân chắc,strong,TEAMWORK
+282,UgyubzMDxFqfKTyEHLt4AaABAg,xem lại thấy phần dance của Vũ Thịnh hay mà khán giả chấm lại thấp😢,Vũ Thịnh,positive,phần dance của Vũ Thịnh hay,moderate,PERFORMANCE
+283,UgyubzMDxFqfKTyEHLt4AaABAg,xem lại thấy phần dance của Vũ Thịnh hay mà khán giả chấm lại thấp😢,khán giả,negative,khán giả chấm lại thấp😢,moderate,SHOW_FORMAT
+284,UgyvRUofaRh8e2R0gjd4AaABAg,Thương đội vũ thịnh quá khán giả quá bất công,đội vũ thịnh,positive,Thương đội vũ thịnh quá,strong,GENERAL
+285,UgyvRUofaRh8e2R0gjd4AaABAg,Thương đội vũ thịnh quá khán giả quá bất công,khán giả,negative,quá bất công,strong,SHOW_FORMAT
+288,Ugyy7_s5OQ_UYvjimjh4AaABAg,Vũ Thịnh nhảy giỏi và cố gắng rõ luôn mà khán giả bình chọn bất công quá trời luôn,Vũ Thịnh,positive,nhảy giỏi và cố gắng rõ luôn,strong,PERFORMANCE
+289,Ugyy7_s5OQ_UYvjimjh4AaABAg,Vũ Thịnh nhảy giỏi và cố gắng rõ luôn mà khán giả bình chọn bất công quá trời luôn,khán giả,negative,bình chọn bất công quá trời luôn,strong,SHOW_FORMAT
+291,UgyzVKCMtw1WMBHkoNF4AaABAg,Rhyder với Captain giỏi lắm luôn ý❤❤😊,Captain,positive,giỏi lắm luôn ý❤❤😊,strong,GENERAL
+292,UgyzVKCMtw1WMBHkoNF4AaABAg,Rhyder với Captain giỏi lắm luôn ý❤❤😊,Rhyder,positive,giỏi lắm luôn ý❤❤😊,strong,GENERAL
+295,Ugz1n_xPcdCXijbPe514AaABAg,"Thật sự Bray làm hlv rất tốt, nguyên cả team ai cũng bùng nổ và cải thiện hay hơn, rất tiếc khi Umie đã ra về nhưng cũng mong hành trình sự nghiệp tới của Umie sau Rap Việt, đây sẽ là bước tiến trong con đường của chị ❤",Bray,positive,làm hlv rất tốt,strong,GENERAL
+296,Ugz1n_xPcdCXijbPe514AaABAg,"Thật sự Bray làm hlv rất tốt, nguyên cả team ai cũng bùng nổ và cải thiện hay hơn, rất tiếc khi Umie đã ra về nhưng cũng mong hành trình sự nghiệp tới của Umie sau Rap Việt, đây sẽ là bước tiến trong con đường của chị ❤",team Bray,positive,nguyên cả team ai cũng bùng nổ và cải thiện hay hơn,strong,TEAMWORK
+297,Ugz1n_xPcdCXijbPe514AaABAg,"Thật sự Bray làm hlv rất tốt, nguyên cả team ai cũng bùng nổ và cải thiện hay hơn, rất tiếc khi Umie đã ra về nhưng cũng mong hành trình sự nghiệp tới của Umie sau Rap Việt, đây sẽ là bước tiến trong con đường của chị ❤",Umie,negative,rất tiếc khi Umie đã ra về,moderate,SHOW_FORMAT
+298,Ugz1n_xPcdCXijbPe514AaABAg,"Thật sự Bray làm hlv rất tốt, nguyên cả team ai cũng bùng nổ và cải thiện hay hơn, rất tiếc khi Umie đã ra về nhưng cũng mong hành trình sự nghiệp tới của Umie sau Rap Việt, đây sẽ là bước tiến trong con đường của chị ❤",Umie,positive,"mong hành trình sự nghiệp tới của Umie sau Rap Việt, đây sẽ là bước tiến trong con đường của chị ❤",strong,GENERAL
+299,Ugz2QfJZCHOG0_GKJRR4AaABAg,Dàn HLV này có mỗi Adree là sâu sắc. Thai VG thì ko bàn vì cậu ta ko hiểu tiếng Việt nhiều. Nhưng Big Daddy hay Bray thì nông cạn lắm. Chỉ chọn thí sinh hát nhạc giải trí thôi,Big Daddy,negative,nông cạn lắm. Chỉ chọn thí sinh hát nhạc giải trí thôi,strong,PERSONALITY
+300,Ugz2QfJZCHOG0_GKJRR4AaABAg,Dàn HLV này có mỗi Adree là sâu sắc. Thai VG thì ko bàn vì cậu ta ko hiểu tiếng Việt nhiều. Nhưng Big Daddy hay Bray thì nông cạn lắm. Chỉ chọn thí sinh hát nhạc giải trí thôi,Bray,negative,nông cạn lắm. Chỉ chọn thí sinh hát nhạc giải trí thôi,strong,PERSONALITY
+301,Ugz2QfJZCHOG0_GKJRR4AaABAg,Dàn HLV này có mỗi Adree là sâu sắc. Thai VG thì ko bàn vì cậu ta ko hiểu tiếng Việt nhiều. Nhưng Big Daddy hay Bray thì nông cạn lắm. Chỉ chọn thí sinh hát nhạc giải trí thôi,Thai VG,neutral,Thai VG thì ko bàn vì cậu ta ko hiểu tiếng Việt nhiều,moderate,GENERAL
+302,Ugz2jRgEajzDPR-1lPt4AaABAg,Cmt kh thấy ai khen Dương Domic ta :))) bài Tràn bộ nhớ hay vch tới viruss cũng khen mà sao lạ nhỉ,Dương Domic,positive,Cmt kh thấy ai khen Dương Domic ta :))) bài Tràn bộ nhớ hay vch tới viruss cũng khen mà sao lạ nhỉ,strong,GENERAL
+303,Ugz2jRgEajzDPR-1lPt4AaABAg,Cmt kh thấy ai khen Dương Domic ta :))) bài Tràn bộ nhớ hay vch tới viruss cũng khen mà sao lạ nhỉ,Tràn bộ nhớ,positive,hay vch tới viruss cũng khen,strong,SONG
+304,Ugz2wYX-bLkmwLfBlUh4AaABAg,hay quá vẫn thích bài của Dlow vs H,Dlow,positive,hay quá vẫn thích bài của Dlow,strong,PERFORMANCE
+305,Ugz2wYX-bLkmwLfBlUh4AaABAg,hay quá vẫn thích bài của Dlow vs H,H,positive,hay quá vẫn thích bài của Dlow vs H,strong,PERFORMANCE
+306,Ugz39I1Ej4oYD0q7MHJ4AaABAg,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh, Right thật sự xứng đáng cho ngôi quán quân, cái hit À Lôi ngay trong thời gian diễn ra chương trình đã kéo hết phiếu bình chọn của fan hâm mộ cho D2T, nhưng dù sao âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ, mình hoàn toàn đồng ý với kết quả này, chương trình năm nay rất thành công",bài của BRay,positive,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh",strong,SONG
+307,Ugz39I1Ej4oYD0q7MHJ4AaABAg,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh, Right thật sự xứng đáng cho ngôi quán quân, cái hit À Lôi ngay trong thời gian diễn ra chương trình đã kéo hết phiếu bình chọn của fan hâm mộ cho D2T, nhưng dù sao âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ, mình hoàn toàn đồng ý với kết quả này, chương trình năm nay rất thành công",Right,positive,thật sự xứng đáng cho ngôi quán quân,strong,GENERAL
+308,Ugz39I1Ej4oYD0q7MHJ4AaABAg,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh, Right thật sự xứng đáng cho ngôi quán quân, cái hit À Lôi ngay trong thời gian diễn ra chương trình đã kéo hết phiếu bình chọn của fan hâm mộ cho D2T, nhưng dù sao âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ, mình hoàn toàn đồng ý với kết quả này, chương trình năm nay rất thành công",À Lôi,positive,kéo hết phiếu bình chọn của fan hâm mộ cho D2T,strong,SONG
+309,Ugz39I1Ej4oYD0q7MHJ4AaABAg,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh, Right thật sự xứng đáng cho ngôi quán quân, cái hit À Lôi ngay trong thời gian diễn ra chương trình đã kéo hết phiếu bình chọn của fan hâm mộ cho D2T, nhưng dù sao âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ, mình hoàn toàn đồng ý với kết quả này, chương trình năm nay rất thành công",D2T,positive,âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ,strong,SONG
+310,Ugz39I1Ej4oYD0q7MHJ4AaABAg,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh, Right thật sự xứng đáng cho ngôi quán quân, cái hit À Lôi ngay trong thời gian diễn ra chương trình đã kéo hết phiếu bình chọn của fan hâm mộ cho D2T, nhưng dù sao âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ, mình hoàn toàn đồng ý với kết quả này, chương trình năm nay rất thành công",Rap Việt,positive,mình hoàn toàn đồng ý với kết quả này,strong,SHOW_FORMAT
+311,Ugz39I1Ej4oYD0q7MHJ4AaABAg,"nghe bài của BRay cảm giác rùng mình, thật sự quá đỉnh, Right thật sự xứng đáng cho ngôi quán quân, cái hit À Lôi ngay trong thời gian diễn ra chương trình đã kéo hết phiếu bình chọn của fan hâm mộ cho D2T, nhưng dù sao âm nhạc của D2T đã truyền cảm hứng cho rất nhiều bạn trẻ, mình hoàn toàn đồng ý với kết quả này, chương trình năm nay rất thành công",Rap Việt,positive,chương trình năm nay rất thành công,strong,GENERAL
+313,Ugz6LCbO16QDwRfU2Gx4AaABAg,A Big và a dương K hợp nhau lắm nói chuyện hiểu ý nhau,A Big,negative,K hợp nhau lắm nói chuyện hiểu ý nhau,moderate,TEAMWORK
+314,Ugz6LCbO16QDwRfU2Gx4AaABAg,A Big và a dương K hợp nhau lắm nói chuyện hiểu ý nhau,a dương,negative,K hợp nhau lắm nói chuyện hiểu ý nhau,moderate,TEAMWORK
+316,UgzCOxvYnWh0OSv1cAZ4AaABAg.A5DYjdG2lQ1A5IL1nYZ2dN,"Lê Dương Bảo Lâm nói chuyện vô duyên quá ,chương trình nên cho Lê Lâm ngừng xuất hiện thì sẽ hấp dẫn hơn",Lê Dương Bảo Lâm,negative,nói chuyện vô duyên quá,strong,PERSONALITY
+317,UgzCOxvYnWh0OSv1cAZ4AaABAg.A5DYjdG2lQ1A5IL1nYZ2dN,"Lê Dương Bảo Lâm nói chuyện vô duyên quá ,chương trình nên cho Lê Lâm ngừng xuất hiện thì sẽ hấp dẫn hơn",Lê Lâm,negative,chương trình nên cho Lê Lâm ngừng xuất hiện thì sẽ hấp dẫn hơn,strong,GENERAL
+318,UgzTVhSA-czTW3mI35d4AaABAg,"Ryder , mình thấy a Thái nhận xét quá chuẩn . Đây là Rap Việt , em ko rap em chỉ hát",Ryder,negative,"Đây là Rap Việt , em ko rap em chỉ hát",moderate,PERSONALITY
+319,UgzTVhSA-czTW3mI35d4AaABAg,"Ryder , mình thấy a Thái nhận xét quá chuẩn . Đây là Rap Việt , em ko rap em chỉ hát",a Thái,positive,nhận xét quá chuẩn,strong,PERSONALITY
+320,UgzKS-5JAf9IAAqwXAp4AaABAg,"Mik thấy Pháp Kiều rap nhanh thậc sự, tuôn 1 tràng ra nhanh khiếp luôn. Đây là cuộc th rap mà, mik nghĩ Pháp Kiều với Tez cũng rap hay ấy chứ, thấy ng nào hát hay xong cho vô vòng trong ???!! Cuộc thi rap hay hát vậy😒.. Thấy cuộc thi ảo",Pháp Kiều,positive,"rap nhanh thậc sự, tuôn 1 tràng ra nhanh khiếp luôn",strong,PERFORMANCE
+321,UgzKS-5JAf9IAAqwXAp4AaABAg,"Mik thấy Pháp Kiều rap nhanh thậc sự, tuôn 1 tràng ra nhanh khiếp luôn. Đây là cuộc th rap mà, mik nghĩ Pháp Kiều với Tez cũng rap hay ấy chứ, thấy ng nào hát hay xong cho vô vòng trong ???!! Cuộc thi rap hay hát vậy😒.. Thấy cuộc thi ảo",Rap Việt,negative,thấy ng nào hát hay xong cho vô vòng trong ???!! Cuộc thi rap hay hát vậy😒.. Thấy cuộc thi ảo,strong,SHOW_FORMAT
+322,UgzKS-5JAf9IAAqwXAp4AaABAg,"Mik thấy Pháp Kiều rap nhanh thậc sự, tuôn 1 tràng ra nhanh khiếp luôn. Đây là cuộc th rap mà, mik nghĩ Pháp Kiều với Tez cũng rap hay ấy chứ, thấy ng nào hát hay xong cho vô vòng trong ???!! Cuộc thi rap hay hát vậy😒.. Thấy cuộc thi ảo",Tez,positive,Pháp Kiều với Tez cũng rap hay ấy chứ,strong,PERFORMANCE
+323,UgzKS-5JAf9IAAqwXAp4AaABAg,"Mik thấy Pháp Kiều rap nhanh thậc sự, tuôn 1 tràng ra nhanh khiếp luôn. Đây là cuộc th rap mà, mik nghĩ Pháp Kiều với Tez cũng rap hay ấy chứ, thấy ng nào hát hay xong cho vô vòng trong ???!! Cuộc thi rap hay hát vậy😒.. Thấy cuộc thi ảo",Pháp Kiều,positive,Pháp Kiều với Tez cũng rap hay ấy chứ,strong,PERFORMANCE
+325,Ugzse0nxNOrhWjQh_WR4AaABAg,thái vd hay thật mà mấy ông hlv vs bgk nâng bi ghê quá,bgk,negative,mấy ông hlv vs bgk nâng bi ghê quá,strong,SHOW_FORMAT
+326,Ugzse0nxNOrhWjQh_WR4AaABAg,thái vd hay thật mà mấy ông hlv vs bgk nâng bi ghê quá,thái vd,positive,hay thật,strong,GENERAL
+327,Ugzse0nxNOrhWjQh_WR4AaABAg,thái vd hay thật mà mấy ông hlv vs bgk nâng bi ghê quá,hlv,negative,mấy ông hlv vs bgk nâng bi ghê quá,strong,SHOW_FORMAT
+328,UgzbrgmgYYQQT6kFnjJ4AaABAg,"Nói thật là mình thấy kỹ năng của Cad ở vòng 1 không tốt, nhưng qua khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt. Qua phần thi với Vol có thể nói là phần trình diễn rất thuyết phục. Nể phục khả năng của anh Thái. RESPECT",Cad,negative,kỹ năng của Cad ở vòng 1 không tốt,moderate,PERFORMANCE
+329,UgzbrgmgYYQQT6kFnjJ4AaABAg,"Nói thật là mình thấy kỹ năng của Cad ở vòng 1 không tốt, nhưng qua khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt. Qua phần thi với Vol có thể nói là phần trình diễn rất thuyết phục. Nể phục khả năng của anh Thái. RESPECT",Cad,positive,em đã tốt lên rõ rệt,strong,PERFORMANCE
+330,UgzbrgmgYYQQT6kFnjJ4AaABAg,"Nói thật là mình thấy kỹ năng của Cad ở vòng 1 không tốt, nhưng qua khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt. Qua phần thi với Vol có thể nói là phần trình diễn rất thuyết phục. Nể phục khả năng của anh Thái. RESPECT",anh Thái,positive,khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt,strong,PERSONALITY
+331,UgzbrgmgYYQQT6kFnjJ4AaABAg,"Nói thật là mình thấy kỹ năng của Cad ở vòng 1 không tốt, nhưng qua khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt. Qua phần thi với Vol có thể nói là phần trình diễn rất thuyết phục. Nể phục khả năng của anh Thái. RESPECT",Cad,positive,phần trình diễn rất thuyết phục,strong,PERFORMANCE
+332,UgzbrgmgYYQQT6kFnjJ4AaABAg,"Nói thật là mình thấy kỹ năng của Cad ở vòng 1 không tốt, nhưng qua khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt. Qua phần thi với Vol có thể nói là phần trình diễn rất thuyết phục. Nể phục khả năng của anh Thái. RESPECT",Vol,positive,phần trình diễn rất thuyết phục,strong,PERFORMANCE
+333,UgzbrgmgYYQQT6kFnjJ4AaABAg,"Nói thật là mình thấy kỹ năng của Cad ở vòng 1 không tốt, nhưng qua khả năng dạy dỗ của a Thái em đã tốt lên rõ rệt. Qua phần thi với Vol có thể nói là phần trình diễn rất thuyết phục. Nể phục khả năng của anh Thái. RESPECT",anh Thái,positive,Nể phục khả năng của anh Thái. RESPECT,strong,GENERAL
