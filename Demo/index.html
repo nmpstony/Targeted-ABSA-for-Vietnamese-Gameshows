@@ -135,41 +135,29 @@
       </div>
 
       <!-- Stats Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
           <div class="flex items-center justify-between">
-            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng bình luận thô</span>
+            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng số bình luận</span>
             <i class="fa-solid fa-comments text-brand-400 text-xl"></i>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white">8,276</span>
-            <span class="text-xs text-slate-500">RV: 3.2k \| ATSH: 5k</span>
+            <span class="text-4xl font-bold text-white" id="stat-comments">...</span>
+            <span class="text-xs text-brand-400"><i class="fa-solid fa-hashtag"></i> comment_id.unique</span>
           </div>
-          <p class="mt-2 text-xs text-slate-400">Thu thập trực tiếp từ YouTube API v3</p>
+          <p class="mt-2 text-xs text-slate-400">Số lượng bình luận độc nhất trong dataset</p>
         </div>
 
         <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
           <div class="flex items-center justify-between">
-            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Bình luận có nhãn</span>
-            <i class="fa-solid fa-comment-dots text-emerald-400 text-xl"></i>
-          </div>
-          <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white">2,825</span>
-            <span class="text-xs text-emerald-500"><i class="fa-solid fa-check"></i> Đã làm sạch</span>
-          </div>
-          <p class="mt-2 text-xs text-slate-400">Sau khi lọc spam và bình luận rác</p>
-        </div>
-
-        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
-          <div class="flex items-center justify-between">
-            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng bộ tứ ý kiến</span>
+            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng số bộ 3 ý kiến</span>
             <i class="fa-solid fa-cube text-fuchsia-400 text-xl"></i>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white">8,098</span>
-            <span class="text-xs text-fuchsia-400">Quadruples</span>
+            <span class="text-4xl font-bold text-white" id="stat-triples">...</span>
+            <span class="text-xs text-fuchsia-400">Triples</span>
           </div>
-          <p class="mt-2 text-xs text-slate-400">Trung bình 2.87 ý kiến/bình luận</p>
+          <p class="mt-2 text-xs text-slate-400">Tổng số bộ (Target, Aspect, Sentiment)</p>
         </div>
 
         <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
@@ -178,8 +166,8 @@
             <i class="fa-solid fa-handshake-angle text-amber-400 text-xl"></i>
           </div>
           <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white" id="kappa-score">0.6559</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Đáng kể</span>
+            <span class="text-4xl font-bold text-white" id="kappa-score">...</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20" id="kappa-label">...</span>
           </div>
           <p class="mt-2 text-xs text-slate-400">Đo bằng Gold vs LLM Val datasets</p>
         </div>
@@ -421,10 +409,10 @@
         <!-- Type Selector -->
         <div class="flex bg-slate-950 p-1 rounded-lg border border-slate-800 shrink-0">
           <button onclick="switchDatasetType('silver')" id="db-type-silver" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-brand-600 text-white transition">
-            Silver (8,098 bộ tứ)
+            Silver (11,368 bộ 3)
           </button>
           <button onclick="switchDatasetType('gold')" id="db-type-gold" class="px-3 py-1.5 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition">
-            Gold (334 bộ tứ)
+            Gold (151 bộ 3)
           </button>
         </div>
       </div>
@@ -707,8 +695,19 @@
         const response = await fetch('/api/stats');
         statsData = await response.json();
         
-        // Update Cohen's Kappa score UI
-        document.getElementById('kappa-score').innerText = statsData.cohens_kappa.toFixed(4);
+        // Update Stats Cards
+        document.getElementById('stat-comments').innerText = statsData.total_comments.toLocaleString();
+        document.getElementById('stat-triples').innerText = statsData.total_quadruples.toLocaleString();
+        
+        const kappa = statsData.cohens_kappa;
+        document.getElementById('kappa-score').innerText = kappa.toFixed(4);
+        
+        let label = "Kém";
+        if (kappa >= 0.8) label = "Hoàn hảo";
+        else if (kappa >= 0.6) label = "Đáng kể";
+        else if (kappa >= 0.4) label = "Trung bình";
+        else if (kappa >= 0.2) label = "Thấp";
+        document.getElementById('kappa-label').innerText = label;
         
         // Render charts
         renderCharts(statsData);
@@ -1241,14 +1240,14 @@
         const startIdx = (page - 1) * datasetLimit + 1;
         const endIdx = Math.min(page * datasetLimit, total);
         
-        document.getElementById('dataset-total-info').innerText = total > 0 ? `Hiển thị ${startIdx}-${endIdx} của ${total.toLocaleString()} bộ tứ ý kiến` : `Hiển thị 0 của 0 bộ tứ`;
+        document.getElementById('dataset-total-info').innerText = total > 0 ? `Hiển thị ${startIdx}-${endIdx} của ${total.toLocaleString()} bộ 3 ý kiến` : `Hiển thị 0 của 0 bộ 3`;
         document.getElementById('dataset-page-info').innerText = `Trang ${page} / ${totalPages || 1}`;
         
         document.getElementById('btn-page-prev').disabled = (page === 1);
         document.getElementById('btn-page-next').disabled = (page === totalPages || total === 0);
 
       } catch (err) {
-        tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-rose-500">Lỗi nạp dữ liệu!</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-rose-500">Lỗi nạp dữ liệu!</td></tr>`;
         console.error(err);
       }
     }

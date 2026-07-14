@@ -736,7 +736,6 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
         search = query.get("search", [""])[0].lower()
         aspect = query.get("aspect", [""])[0].upper()
         sentiment = query.get("sentiment", [""])[0].lower()
-        source = query.get("source", [""])[0]
         has_span = query.get("has_span", [""])[0]
         dataset_type = query.get("type", ["silver"])[0]
         
@@ -744,10 +743,6 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
         
         filtered = []
         for c in db:
-            # Source filter
-            if source and c["source"] != source:
-                continue
-                
             # Text/Target search
             if search:
                 text_match = search in c["text"].lower()
@@ -777,7 +772,6 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
                 filtered.append({
                     "comment_id": c["comment_id"],
                     "text": c["text"],
-                    "source": c["source"],
                     "target": q["target"],
                     "aspect": q["aspect"],
                     "sentiment": q["sentiment"],
