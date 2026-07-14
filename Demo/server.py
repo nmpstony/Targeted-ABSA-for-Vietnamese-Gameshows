@@ -160,7 +160,35 @@ def normalize_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text
 
-def load_data_file(filename, source_name, is_gold=False):
+def determine_source(text, target=""):
+    text_lower = text.lower()
+    target_lower = target.lower()
+    atsh_keywords = [
+        "anh trai", "say hi", "atsh", "dương domic", "hieuthuhai", "quang trung", 
+        "rhyder", "captain", "negav", "isaac", "erik", "quang hùng", "germany", 
+        "anh tú", "song luân", "hải đăng doo", "hurrykng", "wean", "lou hoàng", 
+        "đỗ phú quí", "năn nỉ", "bài hát", "trấn thành", "chương trình"
+    ]
+    rv_keywords = [
+        "rap việt", "rap viet", "rv3", "karik", "justatee", "b ray", "suboi", 
+        "thai vg", "andree", "double2t", "24k.right", "liu grace", "mikelodic", 
+        "tez", "gducky", "rap", "flow", "lyrics"
+    ]
+    for kw in atsh_keywords:
+        if kw in target_lower:
+            return "Anh Trai Say Hi"
+    for kw in rv_keywords:
+        if kw in target_lower:
+            return "Rap Việt"
+    for kw in atsh_keywords:
+        if kw in text_lower:
+            return "Anh Trai Say Hi"
+    for kw in rv_keywords:
+        if kw in text_lower:
+            return "Rap Việt"
+    return "Anh Trai Say Hi"
+
+def load_data_file(filename, source_name=None, is_gold=False):
     filepath = os.path.join(DATA_DIR, filename)
     if not os.path.exists(filepath):
         print(f"[WARNING] File not found: {filepath}")
@@ -184,11 +212,16 @@ def load_data_file(filename, source_name, is_gold=False):
             opinion_span = r.get("opinion_span", "").strip()
             intensity = r.get("intensity", "").strip().lower()
             
+            # Determine source dynamically if not provided
+            curr_source = source_name
+            if not curr_source:
+                curr_source = determine_source(text, target)
+                
             if cid not in grouped_comments:
                 grouped_comments[cid] = {
                     "comment_id": cid,
                     "text": text,
-                    "source": source_name,
+                    "source": curr_source,
                     "quadruples": []
                 }
             
@@ -209,10 +242,8 @@ def init_databases():
     global silver_comments, gold_comments, comment_lookup
     print("[INFO] Loading datasets from CSV files...")
     
-    # Load Silver
-    rv_comments = load_data_file("absa_GT_RV_1000.csv", "Rap Việt")
-    atsh_comments = load_data_file("absa_GT_ATSH_2000.csv", "Anh Trai Say Hi")
-    silver_comments = rv_comments + atsh_comments
+    # Load Silver from FINAL_DATASET.csv (consolidated and preprocessed)
+    silver_comments = load_data_file("FINAL_DATASET.csv")
     
     # Load Gold
     gold_comments = load_data_file("gold_targeted_absa.csv", "Gold Standard", is_gold=True)
