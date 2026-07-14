@@ -759,27 +759,6 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
         
         elapsed_ms = int((time.time() - start_time) * 1000)
         
-        # Add to silver database if not already there, so it displays in Dataset Explorer
-        norm_txt = normalize_text(text)
-        if norm_txt not in comment_lookup:
-            new_comment = {
-                "comment_id": f"live_{int(time.time())}",
-                "text": text,
-                "quadruples": []
-            }
-            for t in prediction_res.get("targets", []):
-                new_comment["quadruples"].append({
-                    "target": t.get("target", "").strip(),
-                    "aspect": t.get("aspect", "PERFORMANCE").strip().upper(),
-                    "sentiment": t.get("sentiment", "neutral").strip().lower(),
-                    "opinion_span": "",
-                    "intensity": t.get("intensity", "moderate").strip().lower()
-                })
-            
-            # Insert at index 0 so it appears first in silver comments
-            silver_comments.insert(0, new_comment)
-            comment_lookup[norm_txt] = new_comment
-            
         response = {
             "model": model_key,
             "text": text,
@@ -799,7 +778,7 @@ def run_server():
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
     handler = ABSADemoHandler
-    with socketserver.TCPServer(("", PORT), handler) as httpd:
+    with socketserver.ThreadingTCPServer(("", PORT), handler) as httpd:
         print(f"[RUNNING] ABSA Web Demo Dashboard active at http://localhost:{PORT}")
         try:
             httpd.serve_forever()
