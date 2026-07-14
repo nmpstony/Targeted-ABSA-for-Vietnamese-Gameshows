@@ -434,7 +434,6 @@
             <option value="positive">positive</option>
             <option value="negative">negative</option>
             <option value="neutral">neutral</option>
-            <option value="mixed">mixed</option>
           </select>
         </div>
 
@@ -808,9 +807,9 @@
 
       // 2. Sentiment Doughnut
       const sentimentCtx = document.getElementById('chart-sentiments').getContext('2d');
-      const sentimentLabels = ['positive', 'negative', 'neutral', 'mixed'];
+      const sentimentLabels = ['positive', 'negative', 'neutral'];
       const sentimentValues = sentimentLabels.map(l => data.sentiment_distribution[l] || 0);
-      const sentimentColors = ['#10b981', '#f43f5e', '#6b7280', '#a855f7'];
+      const sentimentColors = ['#10b981', '#f43f5e', '#6b7280'];
 
       if (chartSentiments) chartSentiments.destroy();
       chartSentiments = new Chart(sentimentCtx, {
