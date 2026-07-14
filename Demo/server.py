@@ -395,6 +395,9 @@ def local_llm_predict(text, model_type):
         model = loaded_models[model_type]["model"]
         tokenizer = loaded_models[model_type]["tokenizer"]
         
+        # Start prediction timing (excludes model load time)
+        start_time_predict = time.time()
+        
         # Build prompt using specific format
         if model_type == "qwen":
             prompt = build_prompt_qwen(text)
@@ -419,6 +422,9 @@ def local_llm_predict(text, model_type):
         result = parse_robust_json(raw_out)
         if result is None:
             raise ValueError(f"Failed to parse or salvage JSON from raw output: {raw_out[:100]}...")
+            
+        elapsed_predict_ms = int((time.time() - start_time_predict) * 1000)
+        result["predict_time_ms"] = elapsed_predict_ms
         return result
     except Exception as e:
         print(f"[ERROR] Error running local LLM prediction ({model_name}): {e}")
@@ -490,6 +496,9 @@ def local_bert_predict(text, model_type):
         tokenizer = loaded_models[model_type]["tokenizer"]
         device = next(model.parameters()).device
         
+        # Start prediction timing (excludes model load time)
+        start_time_predict = time.time()
+        
         # Tokenize and run inference
         inputs = tokenizer(text, max_length=128, truncation=True, return_offsets_mapping=True, return_tensors="pt").to(device)
         offsets = inputs.pop("offset_mapping")[0].cpu().tolist()
@@ -533,7 +542,8 @@ def local_bert_predict(text, model_type):
         unique = [s for s in spans if s["text"] and not (s["text"] in seen or seen.add(s["text"]))]
         
         if not unique:
-            return {"targets": []}
+            elapsed_predict_ms = int((time.time() - start_time_predict) * 1000)
+            return {"targets": [], "predict_time_ms": elapsed_predict_ms}
             
         # Classify each span for aspect and sentiment
         aspects_list = ["PERFORMANCE", "PERSONALITY", "SHOW_FORMAT", "SONG", "TEAMWORK", "VISUAL"]
@@ -569,7 +579,8 @@ def local_bert_predict(text, model_type):
                 "intensity": "moderate"
             })
             
-        return {"targets": targets}
+        elapsed_predict_ms = int((time.time() - start_time_predict) * 1000)
+        return {"targets": targets, "predict_time_ms": elapsed_predict_ms}
         
     except Exception as e:
         print(f"[ERROR] Error running local BERT prediction ({model_name}): {e}")
@@ -765,7 +776,11 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
         # Get predictions
         prediction_res = get_prediction(text, model_key)
         
-        elapsed_ms = int((time.time() - start_time) * 1000)
+        # Determine prediction-only time (excluding lazy loading time)
+        if prediction_res and "predict_time_ms" in prediction_res:
+            elapsed_ms = prediction_res["predict_time_ms"]
+        else:
+            elapsed_ms = int((time.time() - start_time) * 1000)
         
         response = {
             "model": model_key,
