@@ -438,6 +438,7 @@ def local_bert_predict(text, model_type):
     global loaded_models
     import torch
     import torch.nn as nn
+    import torch.nn.functional as F
     from transformers import AutoTokenizer, AutoModel
     
     model_name = "ViBERT-Base" if model_type == "vibert" else "XLM-RoBERTa-Large"
@@ -462,16 +463,16 @@ def local_bert_predict(text, model_type):
                     super().__init__()
                     self.backbone = AutoModel.from_pretrained(backbone_model_name)
                     H = self.backbone.config.hidden_size
-                    self.dropout = nn.Dropout(0.1)
+                    self.dropout = nn.Dropout(0.2)
                     self.ner_head = nn.Linear(H, 3)          # BIO NER head
                     self.asp_head = nn.Linear(H, num_aspects) # Aspect classification head
                     self.sent_head = nn.Linear(H, 3)         # Sentiment classification head
 
                 def forward(self, input_ids, attention_mask):
                     out = self.backbone(input_ids=input_ids, attention_mask=attention_mask)
-                    sequence_output = out.last_hidden_state  # (B, L, H)
-                    logits_ner = self.ner_head(self.dropout(sequence_output)) # (B, L, 3)
-                    return logits_ner, sequence_output
+                    hidden = out.last_hidden_state  # (B, L, H)
+                    logits_ner = self.ner_head(self.dropout(hidden)) # (B, L, 3)
+                    return logits_ner, hidden
             
             device = "cuda" if torch.cuda.is_available() else "cpu"
             model = ABSAModel(backbone_name, num_aspects=6)
@@ -490,71 +491,78 @@ def local_bert_predict(text, model_type):
         device = next(model.parameters()).device
         
         # Tokenize and run inference
-        inputs = tokenizer(text, return_offsets_mapping=True, return_tensors="pt").to(device)
-        offsets = inputs["offset_mapping"][0].cpu().tolist()
+        inputs = tokenizer(text, max_length=128, truncation=True, return_offsets_mapping=True, return_tensors="pt").to(device)
+        offsets = inputs.pop("offset_mapping")[0].cpu().tolist()
         
         with torch.no_grad():
-            logits_ner, seq_out = model(inputs["input_ids"], inputs["attention_mask"])
+            logits_ner, hidden = model(inputs["input_ids"], inputs["attention_mask"])
             preds = torch.argmax(logits_ner, dim=-1)[0].cpu().tolist() # (L,)
+            hidden_0 = hidden[0]                                     # (L, H)
             
         # Decode BIO tag spans: 1 is B-TGT, 2 is I-TGT, 0 is O
         spans = []
-        start_idx = None
-        for i, pred in enumerate(preds):
+        in_span = False
+        span_s = span_e = 0
+        span_tokens = []
+        
+        for tok_i, (pred, (cs, ce)) in enumerate(zip(preds, offsets)):
+            if cs == 0 and ce == 0:
+                if in_span:
+                    spans.append({"text": text[span_s:span_e].strip(), "token_ids": span_tokens[:]})
+                in_span = False
+                span_tokens = []
+                continue
             if pred == 1: # B-TGT
-                if start_idx is not None:
-                    spans.append((start_idx, i - 1))
-                start_idx = i
-            elif pred == 2: # I-TGT
-                if start_idx is None:
-                    start_idx = i
+                if in_span:
+                    spans.append({"text": text[span_s:span_e].strip(), "token_ids": span_tokens[:]})
+                in_span, span_s, span_e = True, cs, ce
+                span_tokens = [tok_i]
+            elif pred == 2 and in_span: # I-TGT
+                span_e = ce
+                span_tokens.append(tok_i)
             else: # O (0)
-                if start_idx is not None:
-                    spans.append((start_idx, i - 1))
-                    start_idx = None
-        if start_idx is not None:
-            spans.append((start_idx, len(preds) - 1))
+                if in_span:
+                    spans.append({"text": text[span_s:span_e].strip(), "token_ids": span_tokens[:]})
+                in_span = False
+                span_tokens = []
+        if in_span:
+            spans.append({"text": text[span_s:span_e].strip(), "token_ids": span_tokens[:]})
             
-        # Filter valid token spans mapping to actual characters
-        valid_spans = []
-        for s_tok, e_tok in spans:
-            if s_tok < len(offsets) and e_tok < len(offsets):
-                char_start = offsets[s_tok][0]
-                char_end = offsets[e_tok][1]
-                # Skip special tokens with zero width offset mapping
-                if char_start != char_end:
-                    valid_spans.append((s_tok, e_tok, char_start, char_end))
-                    
-        # Implicit target handling
-        if not valid_spans:
-            valid_spans = [(0, 0, 0, 0)] # CLS token mapping
+        # Deduplicate
+        seen = set()
+        unique = [s for s in spans if s["text"] and not (s["text"] in seen or seen.add(s["text"]))]
+        
+        if not unique:
+            return {"targets": []}
             
         # Classify each span for aspect and sentiment
-        # Aspects list must match the training alphabetical order:
         aspects_list = ["PERFORMANCE", "PERSONALITY", "SHOW_FORMAT", "SONG", "TEAMWORK", "VISUAL"]
         sent_map = {0: "negative", 1: "neutral", 2: "positive"}
         
         targets = []
-        for s_tok, e_tok, char_start, char_end in valid_spans:
-            # Extract span representation using mean pooling (or h_0 for implicit)
-            if char_start == 0 and char_end == 0:
-                v_s = seq_out[0, 0] # CLS representation
-                target_str = "[IMPLICIT]"
-            else:
-                v_s = seq_out[0, s_tok : e_tok + 1].mean(dim=0)
-                target_str = text[char_start:char_end].strip()
-                if not target_str:
-                    target_str = "[IMPLICIT]"
-                    
-            with torch.no_grad():
-                logits_asp = model.asp_head(v_s)
-                logits_sent = model.sent_head(v_s)
-                
-            asp_idx = torch.argmax(logits_asp).item()
-            sent_idx = torch.argmax(logits_sent).item()
+        for span in unique:
+            span_h = hidden_0[span["token_ids"], :] # (n_tokens, H)
+            span_pooled = span_h.mean(dim=0, keepdim=True) # (1, H)
             
+            with torch.no_grad():
+                logits_asp = model.asp_head(span_pooled)
+                logits_sent = model.sent_head(span_pooled)
+                
+            asp_probs = F.softmax(logits_asp[0], dim=-1)
+            sent_probs = F.softmax(logits_sent[0], dim=-1)
+            
+            asp_idx = asp_probs.argmax().item()
+            
+            # Neutral class threshold logic from se365555.ipynb
+            NEU_THRESHOLD = 0.25
+            neu_idx = 1
+            if sent_probs[neu_idx].item() >= NEU_THRESHOLD:
+                sent_idx = neu_idx
+            else:
+                sent_idx = sent_probs.argmax().item()
+                
             targets.append({
-                "target": target_str,
+                "target": span["text"],
                 "aspect": aspects_list[asp_idx],
                 "sentiment": sent_map[sent_idx],
                 "opinion_span": None,
