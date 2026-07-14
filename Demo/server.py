@@ -160,35 +160,7 @@ def normalize_text(text):
     text = re.sub(r'\s+', ' ', text)
     return text
 
-def determine_source(text, target=""):
-    text_lower = text.lower()
-    target_lower = target.lower()
-    atsh_keywords = [
-        "anh trai", "say hi", "atsh", "dương domic", "hieuthuhai", "quang trung", 
-        "rhyder", "captain", "negav", "isaac", "erik", "quang hùng", "germany", 
-        "anh tú", "song luân", "hải đăng doo", "hurrykng", "wean", "lou hoàng", 
-        "đỗ phú quí", "năn nỉ", "bài hát", "trấn thành", "chương trình"
-    ]
-    rv_keywords = [
-        "rap việt", "rap viet", "rv3", "karik", "justatee", "b ray", "suboi", 
-        "thai vg", "andree", "double2t", "24k.right", "liu grace", "mikelodic", 
-        "tez", "gducky", "rap", "flow", "lyrics"
-    ]
-    for kw in atsh_keywords:
-        if kw in target_lower:
-            return "Anh Trai Say Hi"
-    for kw in rv_keywords:
-        if kw in target_lower:
-            return "Rap Việt"
-    for kw in atsh_keywords:
-        if kw in text_lower:
-            return "Anh Trai Say Hi"
-    for kw in rv_keywords:
-        if kw in text_lower:
-            return "Rap Việt"
-    return "Anh Trai Say Hi"
-
-def load_data_file(filename, source_name=None, is_gold=False):
+def load_data_file(filename, is_gold=False):
     filepath = os.path.join(DATA_DIR, filename)
     if not os.path.exists(filepath):
         print(f"[WARNING] File not found: {filepath}")
@@ -212,16 +184,10 @@ def load_data_file(filename, source_name=None, is_gold=False):
             opinion_span = r.get("opinion_span", "").strip()
             intensity = r.get("intensity", "").strip().lower()
             
-            # Determine source dynamically if not provided
-            curr_source = source_name
-            if not curr_source:
-                curr_source = determine_source(text, target)
-                
             if cid not in grouped_comments:
                 grouped_comments[cid] = {
                     "comment_id": cid,
                     "text": text,
-                    "source": curr_source,
                     "quadruples": []
                 }
             
@@ -246,7 +212,7 @@ def init_databases():
     silver_comments = load_data_file("FINAL_DATASET.csv")
     
     # Load Gold
-    gold_comments = load_data_file("gold_targeted_absa.csv", "Gold Standard", is_gold=True)
+    gold_comments = load_data_file("gold_targeted_absa.csv", is_gold=True)
     
     # Build Lookup Index
     for c in silver_comments:
@@ -739,10 +705,8 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
         # Aspect distribution
         aspect_counter = {}
         sentiment_counter = {}
-        source_counter = {"Rap Việt": 0, "Anh Trai Say Hi": 0}
         
         for c in silver_comments:
-            source_counter[c["source"]] = source_counter.get(c["source"], 0) + 1
             for q in c["quadruples"]:
                 asp = q["aspect"]
                 sent = q["sentiment"]
@@ -758,8 +722,7 @@ class ABSADemoHandler(http.server.SimpleHTTPRequestHandler):
             "total_gold_quadruples": total_gold_quads,
             "cohens_kappa": cohens_kappa_score_val,
             "aspect_distribution": aspect_counter,
-            "sentiment_distribution": sentiment_counter,
-            "source_distribution": source_counter
+            "sentiment_distribution": sentiment_counter
         }
         
         self.send_response(200)

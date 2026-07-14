@@ -194,18 +194,10 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
-          <div class="glass-panel p-6 rounded-xl">
-            <h3 class="text-base font-semibold text-white mb-4"><i class="fa-solid fa-chart-pie mr-2 text-emerald-400"></i>Phân cực cảm xúc (Sentiment)</h3>
-            <div class="h-44 relative flex justify-center">
-              <canvas id="chart-sentiments"></canvas>
-            </div>
-          </div>
-          <div class="glass-panel p-6 rounded-xl">
-            <h3 class="text-base font-semibold text-white mb-4"><i class="fa-solid fa-chart-pie mr-2 text-fuchsia-400"></i>Nguồn dữ liệu (Source Ratio)</h3>
-            <div class="h-44 relative flex justify-center">
-              <canvas id="chart-sources"></canvas>
-            </div>
+        <div class="glass-panel p-6 rounded-xl">
+          <h3 class="text-lg font-semibold text-white mb-4"><i class="fa-solid fa-chart-pie mr-2 text-emerald-400"></i>Phân cực cảm xúc (Sentiment)</h3>
+          <div class="h-80 relative flex justify-center items-center">
+            <canvas id="chart-sentiments"></canvas>
           </div>
         </div>
       </div>
@@ -424,12 +416,6 @@
             <option value="neutral">neutral</option>
             <option value="mixed">mixed</option>
           </select>
-
-          <select id="dataset-source" onchange="loadDataset(1)" class="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg p-2 focus:outline-none focus:border-brand-500 transition">
-            <option value="">Tất cả Nguồn (Source)</option>
-            <option value="Rap Việt">Rap Việt</option>
-            <option value="Anh Trai Say Hi">Anh Trai Say Hi</option>
-          </select>
         </div>
 
         <!-- Type Selector -->
@@ -448,7 +434,6 @@
         <table class="w-full text-sm text-left text-slate-200 border-collapse">
           <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800 sticky top-0 z-10">
             <tr>
-              <th scope="col" class="px-6 py-4 w-[100px]">Nguồn</th>
               <th scope="col" class="px-6 py-4 min-w-[300px]">Nội dung bình luận (Highlight Opinion Span)</th>
               <th scope="col" class="px-6 py-4 w-[150px]">Đối tượng</th>
               <th scope="col" class="px-6 py-4 w-[160px]">Khía cạnh</th>
@@ -715,7 +700,6 @@
     // Charts objects
     let chartAspects = null;
     let chartSentiments = null;
-    let chartSources = null;
 
     // Load initial stats
     async function loadStats() {
@@ -809,35 +793,6 @@
         }
       });
 
-      // 3. Source Ratio Doughnut
-      const sourceCtx = document.getElementById('chart-sources').getContext('2d');
-      const sourceLabels = Object.keys(data.source_distribution);
-      const sourceValues = sourceLabels.map(l => data.source_distribution[l]);
-      const sourceColors = ['#ec4899', '#06b6d4'];
-
-      if (chartSources) chartSources.destroy();
-      chartSources = new Chart(sourceCtx, {
-        type: 'pie',
-        data: {
-          labels: sourceLabels,
-          datasets: [{
-            data: sourceValues,
-            backgroundColor: sourceColors,
-            borderColor: 'rgba(15, 23, 42, 0.8)',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: {
-              position: 'right',
-              labels: { color: '#94a3b8', boxWidth: 12 }
-            }
-          }
-        }
-      });
     }
 
     // Switch Tabs
@@ -1248,10 +1203,10 @@
       const search = document.getElementById('dataset-search').value;
       const aspect = document.getElementById('dataset-aspect').value;
       const sentiment = document.getElementById('dataset-sentiment').value;
-      const source = document.getElementById('dataset-source').value;
+      const source = "";
       
       const tableBody = document.getElementById('dataset-table-body');
-      tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-slate-500"><i class="fa-solid fa-spinner animate-spin text-lg mr-2"></i> Đang tải dữ liệu...</td></tr>`;
+      tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-slate-500"><i class="fa-solid fa-spinner animate-spin text-lg mr-2"></i> Đang tải dữ liệu...</td></tr>`;
 
       try {
         const response = await fetch(`/api/dataset?page=${page}&limit=${datasetLimit}&search=${encodeURIComponent(search)}&aspect=${aspect}&sentiment=${sentiment}&source=${encodeURIComponent(source)}&type=${datasetType}`);
@@ -1264,11 +1219,9 @@
             const aspectBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300">${item.aspect}</span>`;
             const sentimentBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold ${getSentimentClass(item.sentiment)}">${item.sentiment}</span>`;
             const textHighlighted = highlightText(item.text, [{ target: item.target, aspect: item.aspect, sentiment: item.sentiment, opinion_span: item.opinion_span }], true);
-            const sourceBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${item.source === 'Rap Việt' ? 'bg-pink-950/40 text-pink-400 border border-pink-900/50' : 'bg-cyan-950/40 text-cyan-400 border border-cyan-900/50'}">${item.source}</span>`;
             
             tableBody.innerHTML += `
               <tr class="hover:bg-slate-900/20 transition text-slate-300">
-                <td class="px-6 py-4">${sourceBadge}</td>
                 <td class="px-6 py-4 leading-relaxed font-normal">${textHighlighted}</td>
                 <td class="px-6 py-4 font-semibold text-white">${item.target}</td>
                 <td class="px-6 py-4">${aspectBadge}</td>
@@ -1278,7 +1231,7 @@
             `;
           });
         } else {
-          tableBody.innerHTML = `<tr><td colspan="6" class="px-6 py-12 text-center text-slate-500">Không tìm thấy dữ liệu phù hợp với bộ lọc.</td></tr>`;
+          tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-12 text-center text-slate-500">Không tìm thấy dữ liệu phù hợp với bộ lọc.</td></tr>`;
         }
 
         // Update Pagination Info
