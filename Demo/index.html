@@ -488,178 +488,133 @@
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
         
         <!-- Table 1: Model performance -->
-        <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
-          <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
-            <i class="fa-solid fa-trophy text-amber-400"></i> Bảng 1: Đối sánh hiệu năng các mô hình (Strict Match)
-          </h3>
-          <p class="text-xs text-slate-400">Kết quả kiểm thử trên bộ đánh giá Gold Standard (150 bình luận - 334 bộ tứ). Mô hình được đánh giá trên tiêu chí so khớp bộ ba tuyệt đối.</p>
-          <div class="overflow-x-auto rounded-lg border border-slate-800/80">
-            <table class="w-full text-sm text-left text-slate-300">
-              <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
-                <tr>
-                  <th scope="col" class="px-4 py-3">Mô hình / Kiến trúc</th>
-                  <th scope="col" class="px-4 py-3 text-center">Joint F1</th>
-                  <th scope="col" class="px-4 py-3 text-center">Joint Accuracy</th>
-                  <th scope="col" class="px-4 py-3">Đặc trưng</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
-                <tr class="bg-brand-950/20 border-l-2 border-brand-500">
-                  <td class="px-4 py-3.5 font-semibold text-white">XLM-RoBERTa-Large (Đề xuất)</td>
-                  <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.2700</td>
-                  <td class="px-4 py-3.5 text-center font-bold text-brand-400">39.09%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Mã hóa đa ngữ tốt, chịu lỗi teencode, suy luận nhanh (20ms)</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">ViBERT-Base</td>
-                  <td class="px-4 py-3.5 text-center">0.2400</td>
-                  <td class="px-4 py-3.5 text-center">36.06%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Đơn ngữ tốt, nhưng khó xử lý các từ mượn code-mixing tiếng Anh</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">Llama-3.2-3B-Instruct (Zero-shot)</td>
-                  <td class="px-4 py-3.5 text-center">0.1560</td>
-                  <td class="px-4 py-3.5 text-center">8.00%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Khả năng suy luận tốt nhưng hay ảo giác và trượt ranh giới từ</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">Qwen2.5-3B-Instruct (Zero-shot)</td>
-                  <td class="px-4 py-3.5 text-center">0.1240</td>
-                  <td class="px-4 py-3.5 text-center">5.33%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Hiểu ngữ nghĩa tốt nhưng điểm thấp do đánh giá Strict Exact Match</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-trophy text-amber-400"></i> Bảng 6.1: Đối sánh hiệu năng các kiến trúc
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">Kết quả đối sánh thực nghiệm giữa kiến trúc đề xuất (tinh chỉnh XLM-R) với các mô hình ngôn ngữ khác và mô hình ngôn ngữ lớn (LLMs) chạy ở chế độ Zero-shot.</p>
+            <div class="overflow-x-auto rounded-lg border border-slate-800/80 mt-4">
+              <table class="w-full text-sm text-left text-slate-300">
+                <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
+                  <tr>
+                    <th scope="col" class="px-4 py-3 w-1/3">Cấu hình / Mô hình</th>
+                    <th scope="col" class="px-4 py-3 text-center">F1 Target</th>
+                    <th scope="col" class="px-4 py-3 text-center">F1 Aspect | Target</th>
+                    <th scope="col" class="px-4 py-3 text-center">F1 Sentiment | Target</th>
+                    <th scope="col" class="px-4 py-3 text-center">Độ trễ / câu</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
+                  <tr class="bg-brand-950/20 border-l-2 border-brand-500">
+                    <td class="px-4 py-3.5 font-semibold text-white">XLM-RoBERTa-base (Đề xuất)</td>
+                    <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.8452</td>
+                    <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.7728</td>
+                    <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.8930</td>
+                    <td class="px-4 py-3.5 text-center text-slate-300 font-semibold">10.3 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">ViBERT-base</td>
+                    <td class="px-4 py-3.5 text-center">0.8401</td>
+                    <td class="px-4 py-3.5 text-center">0.7313</td>
+                    <td class="px-4 py-3.5 text-center">0.7391</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">9.3 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">Bert-Multilingual-base</td>
+                    <td class="px-4 py-3.5 text-center">0.8312</td>
+                    <td class="px-4 py-3.5 text-center">0.7058</td>
+                    <td class="px-4 py-3.5 text-center">0.6524</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">9.1 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">Phobert-base</td>
+                    <td class="px-4 py-3.5 text-center">0.6582</td>
+                    <td class="px-4 py-3.5 text-center">0.6610</td>
+                    <td class="px-4 py-3.5 text-center">0.6030</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">10.3 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">Qwen2.5-3B-Instruct (Zero-shot)</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">0.6068</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">0.3244</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">0.5432</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">2939.0 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">Llama-3.2-3B-Instruct (Zero-shot)</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">0.5570</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">0.2897</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">0.4789</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">5351.7 ms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="p-4 bg-slate-900/40 rounded-xl border border-slate-800/80 mt-4">
+            <h4 class="text-xs font-bold text-white mb-1"><i class="fa-solid fa-circle-info text-brand-400 mr-1"></i>Nhận xét từ kết quả:</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed">Kiến trúc XLM-RoBERTa-base đề xuất cho thấy sự vượt trội toàn diện ở mọi màng lọc đánh giá (đạt F1 Sentiment 0.8930) cùng tốc độ suy luận cực kỳ lý tưởng (10.3 ms/câu) cho môi trường chạy ứng dụng thực tế, theo sát ngay sau đó là ViBERT-base. Các LLM chạy ở chế độ Zero-shot cho kết quả kém và độ trễ quá lớn.</p>
           </div>
         </div>
 
         <!-- Table 2: Ablation Study -->
-        <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
-          <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
-            <i class="fa-solid fa-vials text-indigo-400"></i> Bảng 2: Nghiên cứu cắt bỏ thành phần (Ablation Study)
-          </h3>
-          <p class="text-xs text-slate-400">Sử dụng XLM-RoBERTa-Large làm backbone lõi để tinh chỉnh và kiểm tra sự thay đổi khi cắt bỏ/gộp thêm các kiến trúc tối ưu hóa.</p>
-          <div class="overflow-x-auto rounded-lg border border-slate-800/80">
-            <table class="w-full text-sm text-left text-slate-300">
-              <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
-                <tr>
-                  <th scope="col" class="px-4 py-3">Cấu hình tinh chỉnh</th>
-                  <th scope="col" class="px-4 py-3 text-center">Joint F1</th>
-                  <th scope="col" class="px-4 py-3 text-center">Joint Accuracy</th>
-                  <th scope="col" class="px-4 py-3">Phân tích tác động</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">Merge Dataset (Gộp 3 câu)</td>
-                  <td class="px-4 py-3.5 text-center">0.2480</td>
-                  <td class="px-4 py-3.5 text-center">37.58%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">F1 giảm do chuỗi dài hơn, nhưng ép mô hình học được ngữ cảnh dài</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">Feature Fusion (Local + Global CLS)</td>
-                  <td class="px-4 py-3.5 text-center">0.2550</td>
-                  <td class="px-4 py-3.5 text-center">38.18%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Ghép vector đoạn với token CLS giúp tăng hiệu năng phân loại</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">Fusion + Focal Loss</td>
-                  <td class="px-4 py-3.5 text-center font-semibold text-brand-400">0.2620</td>
-                  <td class="px-4 py-3.5 text-center font-semibold text-brand-400">36.97%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Focal loss ép mô hình chú ý nhãn hiếm (F1 tăng, Acc giảm nhẹ)</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">Fusion + Focal Loss + CRF</td>
-                  <td class="px-4 py-3.5 text-center text-red-400">0.2180</td>
-                  <td class="px-4 py-3.5 text-center text-red-400">31.82%</td>
-                  <td class="px-4 py-3.5 text-xs text-slate-400">Lớp CRF tối ưu hóa NER quá đà làm giảm chất lượng biểu diễn aspect</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg flex flex-col justify-between">
+          <div>
+            <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-vials text-indigo-400"></i> Bảng 6.2: Nghiên cứu cắt bỏ thành phần (Ablation Study)
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">Đánh giá tác động của các chiến lược hàm loss và cơ chế pooling đặc trưng khác nhau sử dụng mô hình xương sống XLM-RoBERTa-base.</p>
+            <div class="overflow-x-auto rounded-lg border border-slate-800/80 mt-4">
+              <table class="w-full text-sm text-left text-slate-300">
+                <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
+                  <tr>
+                    <th scope="col" class="px-4 py-3 w-1/3">Chiến lược / Cấu hình</th>
+                    <th scope="col" class="px-4 py-3 text-center">F1 Target</th>
+                    <th scope="col" class="px-4 py-3 text-center">F1 Aspect | Target</th>
+                    <th scope="col" class="px-4 py-3 text-center">F1 Sentiment | Target</th>
+                    <th scope="col" class="px-4 py-3 text-center">Độ trễ / câu</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">Focal_loss</td>
+                    <td class="px-4 py-3.5 text-center">0.8750</td>
+                    <td class="px-4 py-3.5 text-center text-red-400">0.6995</td>
+                    <td class="px-4 py-3.5 text-center text-red-400">0.6998</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">10.3 ms</td>
+                  </tr>
+                  <tr class="bg-brand-950/20 border-l-2 border-brand-500">
+                    <td class="px-4 py-3.5 font-semibold text-white">Gated_loss (Đề xuất)</td>
+                    <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.8312</td>
+                    <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.7610</td>
+                    <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.8307</td>
+                    <td class="px-4 py-3.5 text-center text-slate-300 font-semibold">10.3 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">Attention pooling</td>
+                    <td class="px-4 py-3.5 text-center">0.8287</td>
+                    <td class="px-4 py-3.5 text-center text-emerald-400 font-semibold">0.7763</td>
+                    <td class="px-4 py-3.5 text-center">0.8086</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">10.9 ms</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3.5 font-medium text-slate-200">CLS pooling</td>
+                    <td class="px-4 py-3.5 text-center">0.8457</td>
+                    <td class="px-4 py-3.5 text-center">0.7686</td>
+                    <td class="px-4 py-3.5 text-center">0.8238</td>
+                    <td class="px-4 py-3.5 text-center text-slate-400">10.7 ms</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="p-4 bg-slate-900/40 rounded-xl border border-slate-800/80 mt-4">
+            <h4 class="text-xs font-bold text-white mb-1"><i class="fa-solid fa-circle-info text-indigo-400 mr-1"></i>Nhận xét từ kết quả:</h4>
+            <p class="text-[11px] text-slate-400 leading-relaxed">Có sự đánh đổi rõ rệt giữa các tác vụ: Focal_loss tối ưu cực tốt cho nhận diện thực thể (Target F1 đạt 0.8750) nhưng lại suy giảm ở phân loại Aspect/Sentiment. Ngược lại, Gated_loss chứng minh được sự cân bằng xuất sắc nhất cho toàn bộ chuỗi pipeline đa nhiệm.</p>
           </div>
         </div>
-      </div>
 
-      <!-- Heatmap Table for Sentiment Classifier -->
-      <div class="glass-panel p-6 rounded-xl space-y-4 shadow-lg">
-        <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
-          <i class="fa-solid fa-fire text-fuchsia-400"></i> Bảng 3: Heatmap Phân tích mô-đun Phân loại cảm xúc độc lập (Sentiment-only Upper bound)
-        </h3>
-        <p class="text-xs text-slate-400">Đánh giá độc lập mô-đun Sentiment bằng cấu trúc phân loại chuỗi đôi (Sequence-Pair Classification) khi giả định vị trí Target hoàn hảo. Giúp tìm ra ngưỡng tối đa lý thuyết (Upper Bound).</p>
-        
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-          <div class="overflow-x-auto rounded-lg border border-slate-800/80">
-            <table class="w-full text-xs text-left text-slate-300 table-fixed">
-              <thead class="text-[10px] text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
-                <tr>
-                  <th scope="col" class="px-3 py-2.5 w-1/4">Attention Mode</th>
-                  <th scope="col" class="px-3 py-2.5 w-1/4">Loss Function</th>
-                  <th scope="col" class="px-3 py-2.5 text-center w-1/4">Accuracy</th>
-                  <th scope="col" class="px-3 py-2.5 text-center w-1/4">Macro-F1</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-slate-800/60 bg-slate-900/10">
-                <tr class="bg-emerald-950/20">
-                  <td class="px-3 py-2 font-medium text-slate-200">gated_fusion</td>
-                  <td class="px-3 py-2 font-medium text-slate-200">CrossEntropy</td>
-                  <td class="px-3 py-2 text-center font-bold text-emerald-400 bg-emerald-500/10">0.8873</td>
-                  <td class="px-3 py-2 text-center font-bold text-emerald-400 bg-emerald-500/10">0.7462</td>
-                </tr>
-                <tr class="bg-emerald-950/10">
-                  <td class="px-3 py-2">cls</td>
-                  <td class="px-3 py-2">CrossEntropy</td>
-                  <td class="px-3 py-2 text-center text-emerald-400 bg-emerald-500/5">0.8873</td>
-                  <td class="px-3 py-2 text-center">0.7433</td>
-                </tr>
-                <tr class="bg-emerald-950/10">
-                  <td class="px-3 py-2">cls</td>
-                  <td class="px-3 py-2">FocalLoss</td>
-                  <td class="px-3 py-2 text-center text-emerald-400 bg-emerald-500/5">0.8839</td>
-                  <td class="px-3 py-2 text-center">0.7392</td>
-                </tr>
-                <tr class="bg-emerald-950/10">
-                  <td class="px-3 py-2">attention_pooling</td>
-                  <td class="px-3 py-2">CrossEntropy</td>
-                  <td class="px-3 py-2 text-center">0.8851</td>
-                  <td class="px-3 py-2 text-center">0.7377</td>
-                </tr>
-                <tr class="bg-emerald-950/10">
-                  <td class="px-3 py-2">gated_fusion</td>
-                  <td class="px-3 py-2">FocalLoss</td>
-                  <td class="px-3 py-2 text-center">0.8861</td>
-                  <td class="px-3 py-2 text-center font-medium">0.7453</td>
-                </tr>
-                <tr class="bg-amber-950/10">
-                  <td class="px-3 py-2">cls</td>
-                  <td class="px-3 py-2">WeightedCrossEntropy</td>
-                  <td class="px-3 py-2 text-center text-amber-500">0.8551</td>
-                  <td class="px-3 py-2 text-center">0.7188</td>
-                </tr>
-                <tr class="bg-amber-950/10">
-                  <td class="px-3 py-2">attention_pooling</td>
-                  <td class="px-3 py-2">WeightedCrossEntropy</td>
-                  <td class="px-3 py-2 text-center text-amber-500">0.8543</td>
-                  <td class="px-3 py-2 text-center">0.7236</td>
-                </tr>
-                <tr class="bg-red-950/10">
-                  <td class="px-3 py-2">gated_fusion</td>
-                  <td class="px-3 py-2">WeightedCrossEntropy</td>
-                  <td class="px-3 py-2 text-center text-red-400">0.8461</td>
-                  <td class="px-3 py-2 text-center">0.7120</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          <div class="space-y-3 text-sm text-slate-300 bg-slate-900/40 p-5 rounded-xl border border-slate-800 leading-relaxed">
-            <h4 class="font-bold text-white flex items-center gap-2"><i class="fa-solid fa-lightbulb text-amber-400"></i>Nhận xét từ kết quả:</h4>
-            <ul class="list-disc pl-5 space-y-2 text-xs text-slate-400">
-              <li>Mô hình đạt độ chính xác phân loại cảm xúc cực kỳ ấn tượng là <strong>88.73%</strong> (F1 ~74%) khi biết trước vị trí Target chính xác.</li>
-              <li>Khi kết nối toàn trình (End-to-End), Sentiment-F1 tụt xuống chỉ còn <strong>~60%</strong>. Điều này chứng minh nút thắt hiệu năng nằm ở nhánh nhận dạng thực thể <strong>NER (Target Detection)</strong>.</li>
-              <li>Sự chênh lệch này thể hiện hiện tượng <strong>Lan truyền lỗi (Error Propagation)</strong> trong kiến trúc học đa nhiệm song song.</li>
-            </ul>
-          </div>
-        </div>
       </div>
 
       <!-- Case study of Typical Errors -->
@@ -673,7 +628,7 @@
             <p class="text-xs font-semibold text-white">Xung đột cảm xúc trên cùng 1 target</p>
             <div class="text-[11px] bg-slate-950 p-2.5 rounded border border-slate-900 text-slate-400 font-mono space-y-1">
               <div><strong>Text:</strong> "...ali ko hợp mảng hát lắm, nhảy với diễn thì ổng giỏi..."</div>
-              <div class="text-emerald-400"><strong>Gold:</strong> VOCAL (-) & PERFORMANCE (+)</div>
+              <div class="text-emerald-400"><strong>Gold:</strong> SONG (-) & PERFORMANCE (+)</div>
               <div class="text-red-400"><strong>Pred:</strong> PERFORMANCE (-)</div>
             </div>
             <p class="text-xs text-slate-400 leading-relaxed"><strong>Nguyên nhân:</strong> Cơ chế Mean Pooling gộp chung toàn bộ ngữ cảnh của target 'ali' làm nhiễu cảm xúc khen chê trái ngược nhau trong cùng một câu.</p>
