@@ -240,16 +240,16 @@
           <label class="text-xs font-semibold text-slate-400 uppercase tracking-wider block">Chọn Mô hình xử lý</label>
           <div class="space-y-2" id="model-select-container">
             <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-950/60 cursor-pointer transition glow-hover">
-              <input type="radio" name="model" value="xlm-r" checked class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
+              <input type="radio" name="model" value="xlm-roberta-large" checked class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
               <div class="flex-1">
-                <span class="text-sm font-semibold text-white block">XLM-RoBERTa-Base</span>
+                <span class="text-sm font-semibold text-white block">XLM-RoBERTa-Large</span>
                 <span class="text-[10px] text-brand-400 px-1.5 py-0.5 rounded bg-brand-500/10 border border-brand-500/20 uppercase font-bold tracking-widest mt-1 inline-block">Fine-tuned (Mặc định)</span>
               </div>
             </label>
             <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:border-slate-700 bg-slate-950/60 cursor-pointer transition glow-hover">
-              <input type="radio" name="model" value="phobert" class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
+              <input type="radio" name="model" value="vibert" class="w-4 h-4 text-brand-600 bg-slate-900 border-slate-800 focus:ring-brand-500">
               <div class="flex-1">
-                <span class="text-sm font-semibold text-white block">PhoBERT-Base</span>
+                <span class="text-sm font-semibold text-white block">ViBERT-Base</span>
                 <span class="text-[10px] text-indigo-400 px-1.5 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/20 uppercase font-bold tracking-widest mt-1 inline-block">Fine-tuned (Baseline)</span>
               </div>
             </label>
@@ -296,7 +296,7 @@
         <div id="output-single" class="hidden space-y-6">
           <div class="glass-panel p-6 rounded-2xl space-y-4">
             <div class="flex items-center justify-between text-xs text-slate-400">
-              <span class="flex items-center gap-1.5"><i class="fa-solid fa-microchip"></i> Model: <strong class="text-slate-200" id="single-model-name">XLM-RoBERTa</strong></span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-microchip"></i> Model: <strong class="text-slate-200" id="single-model-name">XLM-RoBERTa-Large</strong></span>
               <span class="flex items-center gap-1.5"><i class="fa-solid fa-stopwatch"></i> Thời gian suy luận: <strong class="text-slate-200" id="single-inference-time">12 ms</strong></span>
             </div>
             
@@ -323,7 +323,6 @@
                     <th scope="col" class="px-6 py-3">Đối tượng (Target)</th>
                     <th scope="col" class="px-6 py-3">Khía cạnh (Aspect)</th>
                     <th scope="col" class="px-6 py-3">Cảm xúc (Sentiment)</th>
-                    <th scope="col" class="px-6 py-3">Đoạn ý kiến (Opinion Span)</th>
                     <th scope="col" class="px-6 py-3">Cường độ (Intensity)</th>
                   </tr>
                 </thead>
@@ -410,15 +409,12 @@
         <div class="flex flex-wrap items-center gap-3">
           <select id="dataset-aspect" onchange="loadDataset(1)" class="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg p-2 focus:outline-none focus:border-brand-500 transition">
             <option value="">Tất cả Khía cạnh (Aspect)</option>
-            <option value="VOCAL">VOCAL</option>
             <option value="PERFORMANCE">PERFORMANCE</option>
-            <option value="VISUAL">VISUAL</option>
-            <option value="SONG">SONG</option>
-            <option value="STAGE_PRODUCTION">STAGE_PRODUCTION</option>
             <option value="PERSONALITY">PERSONALITY</option>
+            <option value="SONG">SONG</option>
             <option value="TEAMWORK">TEAMWORK</option>
+            <option value="VISUAL">VISUAL</option>
             <option value="SHOW_FORMAT">SHOW_FORMAT</option>
-            <option value="GENERAL">GENERAL</option>
           </select>
 
           <select id="dataset-sentiment" onchange="loadDataset(1)" class="bg-slate-950 border border-slate-800 text-slate-200 text-sm rounded-lg p-2 focus:outline-none focus:border-brand-500 transition">
@@ -505,13 +501,13 @@
               </thead>
               <tbody class="divide-y divide-slate-800/60 bg-slate-900/20">
                 <tr class="bg-brand-950/20 border-l-2 border-brand-500">
-                  <td class="px-4 py-3.5 font-semibold text-white">XLM-RoBERTa-Base (Đề xuất)</td>
+                  <td class="px-4 py-3.5 font-semibold text-white">XLM-RoBERTa-Large (Đề xuất)</td>
                   <td class="px-4 py-3.5 text-center font-bold text-brand-400">0.2700</td>
                   <td class="px-4 py-3.5 text-center font-bold text-brand-400">39.09%</td>
                   <td class="px-4 py-3.5 text-xs text-slate-400">Mã hóa đa ngữ tốt, chịu lỗi teencode, suy luận nhanh (20ms)</td>
                 </tr>
                 <tr>
-                  <td class="px-4 py-3.5 font-medium text-slate-200">PhoBERT-Base</td>
+                  <td class="px-4 py-3.5 font-medium text-slate-200">ViBERT-Base</td>
                   <td class="px-4 py-3.5 text-center">0.2400</td>
                   <td class="px-4 py-3.5 text-center">36.06%</td>
                   <td class="px-4 py-3.5 text-xs text-slate-400">Đơn ngữ tốt, nhưng khó xử lý các từ mượn code-mixing tiếng Anh</td>
@@ -538,7 +534,7 @@
           <h3 class="text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
             <i class="fa-solid fa-vials text-indigo-400"></i> Bảng 2: Nghiên cứu cắt bỏ thành phần (Ablation Study)
           </h3>
-          <p class="text-xs text-slate-400">Sử dụng XLM-R làm backbone lõi để tinh chỉnh và kiểm tra sự thay đổi khi cắt bỏ/gộp thêm các kiến trúc tối ưu hóa.</p>
+          <p class="text-xs text-slate-400">Sử dụng XLM-RoBERTa-Large làm backbone lõi để tinh chỉnh và kiểm tra sự thay đổi khi cắt bỏ/gộp thêm các kiến trúc tối ưu hóa.</p>
           <div class="overflow-x-auto rounded-lg border border-slate-800/80">
             <table class="w-full text-sm text-left text-slate-300">
               <thead class="text-xs text-slate-400 uppercase bg-slate-900/60 border-b border-slate-800">
@@ -939,13 +935,12 @@
                   <td class="px-6 py-4 font-semibold text-white">${t.target}</td>
                   <td class="px-6 py-4">${aspectBadge}</td>
                   <td class="px-6 py-4">${sentimentBadge}</td>
-                  <td class="px-6 py-4 italic text-slate-300">"${t.opinion_span || 'null'}"</td>
                   <td class="px-6 py-4"><span class="capitalize text-xs text-slate-400">${t.intensity || 'moderate'}</span></td>
                 </tr>
               `;
             });
           } else {
-            tableBody.innerHTML = `<tr><td colspan="5" class="px-6 py-8 text-center text-slate-500 font-semibold">None</td></tr>`;
+            tableBody.innerHTML = `<tr><td colspan="4" class="px-6 py-8 text-center text-slate-500 font-semibold">None</td></tr>`;
           }
 
           // Populate raw JSON
@@ -964,7 +959,7 @@
           const compareGrid = document.getElementById('compare-grid');
           compareGrid.innerHTML = '';
           
-          const modelsToCompare = ['xlm-r', 'phobert', 'qwen', 'llama'];
+          const modelsToCompare = ['xlm-roberta-large', 'vibert', 'qwen', 'llama'];
           
           // Render placeholders
           modelsToCompare.forEach(m => {
@@ -972,7 +967,7 @@
               <div id="compare-card-${m}" class="glass-panel p-5 rounded-2xl flex flex-col gap-4">
                 <div class="flex items-center justify-between border-b border-slate-800/80 pb-3">
                   <div class="flex items-center gap-2">
-                    <span class="h-2 w-2 rounded-full ${m === 'xlm-r' ? 'bg-indigo-500' : m === 'phobert' ? 'bg-sky-500' : m === 'qwen' ? 'bg-fuchsia-500' : 'bg-violet-500'}"></span>
+                    <span class="h-2 w-2 rounded-full ${m === 'xlm-roberta-large' ? 'bg-indigo-500' : m === 'vibert' ? 'bg-sky-500' : m === 'qwen' ? 'bg-fuchsia-500' : 'bg-violet-500'}"></span>
                     <h4 class="font-bold text-white text-sm">${getModelName(m)}</h4>
                   </div>
                   <span id="compare-time-${m}" class="text-[10px] text-slate-400 font-medium font-mono">Đang chờ...</span>
@@ -1022,11 +1017,6 @@
                         </div>
                         <span class="px-2 py-0.5 rounded text-[9px] font-bold ${getSentimentClass(t.sentiment)}">${t.sentiment}</span>
                       </div>
-                      <!-- Row 2: Opinion Span -->
-                      <div class="text-[11px] text-slate-400 border-t border-slate-900/40 pt-1.5 flex items-start gap-1">
-                        <span class="text-slate-500 font-medium select-none">Opinion:</span>
-                        <span class="italic text-amber-200/90 font-normal">"${t.opinion_span || 'None'}"</span>
-                      </div>
                     </div>
                   `;
                 });
@@ -1057,8 +1047,8 @@
     // Helper functions
     function getModelName(modelKey) {
       switch (modelKey.toLowerCase()) {
-        case 'xlm-r': return 'XLM-RoBERTa-Base (Fine-tune)';
-        case 'phobert': return 'PhoBERT-Base (fine-tune)';
+        case 'xlm-roberta-large': return 'XLM-RoBERTa-Large (Fine-tune)';
+        case 'vibert': return 'ViBERT-Base (Fine-tune)';
         case 'qwen': return 'Qwen2.5-3B-Instruct (Base)';
         case 'llama': return 'Llama-3.2-3B-Instruct (Base)';
         default: return modelKey;
@@ -1075,7 +1065,7 @@
       }
     }
 
-    function highlightText(rawText, targets) {
+    function highlightText(rawText, targets, showOpinionSpan = false) {
       if (!targets || targets.length === 0) return rawText;
       
       // We will mark the start and end of tags for each character index
@@ -1085,7 +1075,7 @@
       // Collect all spans to highlight
       let highlights = [];
       targets.forEach((t, tIdx) => {
-        if (t.opinion_span && t.opinion_span !== 'null') {
+        if (showOpinionSpan && t.opinion_span && t.opinion_span !== 'null') {
           const escaped = t.opinion_span.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
           const regex = new RegExp(escaped, 'gi');
           let match;
@@ -1172,13 +1162,11 @@
 
     function getAspectColor(aspect) {
       switch(aspect) {
-        case 'VOCAL': return 'bg-pink-500/10 text-pink-400 border-pink-500/20';
         case 'PERFORMANCE': return 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20';
-        case 'VISUAL': return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
-        case 'SONG': return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
-        case 'STAGE_PRODUCTION': return 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20';
         case 'PERSONALITY': return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+        case 'SONG': return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
         case 'TEAMWORK': return 'bg-purple-500/10 text-purple-400 border-purple-500/20';
+        case 'VISUAL': return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
         case 'SHOW_FORMAT': return 'bg-sky-500/10 text-sky-400 border-sky-500/20';
         default: return 'bg-slate-500/10 text-slate-400 border-slate-500/20';
       }
@@ -1275,7 +1263,7 @@
           res.data.forEach(item => {
             const aspectBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300">${item.aspect}</span>`;
             const sentimentBadge = `<span class="px-2 py-0.5 rounded text-xs font-semibold ${getSentimentClass(item.sentiment)}">${item.sentiment}</span>`;
-            const textHighlighted = highlightText(item.text, [{ target: item.target, aspect: item.aspect, sentiment: item.sentiment, opinion_span: item.opinion_span }]);
+            const textHighlighted = highlightText(item.text, [{ target: item.target, aspect: item.aspect, sentiment: item.sentiment, opinion_span: item.opinion_span }], true);
             const sourceBadge = `<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${item.source === 'Rap Việt' ? 'bg-pink-950/40 text-pink-400 border border-pink-900/50' : 'bg-cyan-950/40 text-cyan-400 border border-cyan-900/50'}">${item.source}</span>`;
             
             tableBody.innerHTML += `

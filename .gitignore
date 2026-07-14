@@ -1,8 +1,13 @@
 # Ignore model weights but keep Model folder structure
 Model/Qwen2.5-3B-Instruct/
 Model/Llama-3.2-3B-Instruct/
-Model/XLM-RoBERTa-Base/
-Model/PhoBERT-Base/
+Model/ViBERT-Base/
+Model/XLM-RoBERTa-Large/
+Model/*.txt
+Model/*.pt
+*.log
+.ipynb_checkpoints/
+
 
 # Python cache files
 __pycache__/
