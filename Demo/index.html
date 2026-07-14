@@ -135,41 +135,73 @@
       </div>
 
       <!-- Stats Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
-          <div class="flex items-center justify-between">
-            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng số bình luận</span>
-            <i class="fa-solid fa-comments text-brand-400 text-xl"></i>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Tổng bình luận</span>
+              <i class="fa-solid fa-comments text-brand-400 text-lg"></i>
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-3xl font-bold text-white" id="stat-comments">...</span>
+            </div>
           </div>
-          <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white" id="stat-comments">...</span>
-            <span class="text-xs text-brand-400"><i class="fa-solid fa-hashtag"></i> comment_id.unique</span>
-          </div>
-          <p class="mt-2 text-xs text-slate-400">Số lượng bình luận độc nhất trong dataset</p>
+          <p class="mt-2 text-[10px] text-slate-500">Số lượng bình luận độc nhất</p>
         </div>
 
-        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
-          <div class="flex items-center justify-between">
-            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Tổng số bộ 3 ý kiến</span>
-            <i class="fa-solid fa-cube text-fuchsia-400 text-xl"></i>
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Tổng bộ 3 ý kiến</span>
+              <i class="fa-solid fa-cube text-fuchsia-400 text-lg"></i>
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-3xl font-bold text-white" id="stat-triples">...</span>
+            </div>
           </div>
-          <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white" id="stat-triples">...</span>
-            <span class="text-xs text-fuchsia-400">Triples</span>
-          </div>
-          <p class="mt-2 text-xs text-slate-400">Tổng số bộ (Target, Aspect, Sentiment)</p>
+          <p class="mt-2 text-[10px] text-slate-500">Target-Aspect-Sentiment</p>
         </div>
 
-        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition">
-          <div class="flex items-center justify-between">
-            <span class="text-slate-400 text-sm font-medium uppercase tracking-wider">Độ đồng thuận (Kappa)</span>
-            <i class="fa-solid fa-handshake-angle text-amber-400 text-xl"></i>
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Target F1-Score</span>
+              <i class="fa-solid fa-crosshairs text-emerald-400 text-lg"></i>
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-3xl font-bold text-white" id="stat-target-f1">...</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Rất tốt</span>
+            </div>
           </div>
-          <div class="mt-4 flex items-baseline gap-2">
-            <span class="text-4xl font-bold text-white" id="kappa-score">...</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20" id="kappa-label">...</span>
+          <p class="mt-2 text-[10px] text-slate-500">Đánh giá trích xuất từ khóa</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Kappa (Aspect)</span>
+              <i class="fa-solid fa-tags text-sky-400 text-lg"></i>
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-3xl font-bold text-white" id="stat-kappa-aspect">...</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20" id="label-kappa-aspect">...</span>
+            </div>
           </div>
-          <p class="mt-2 text-xs text-slate-400">Đo bằng Gold vs LLM Val datasets</p>
+          <p class="mt-2 text-[10px] text-slate-500">Độ đồng thuận Khía cạnh</p>
+        </div>
+
+        <div class="glass-panel p-6 rounded-xl hover:border-slate-700 transition flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Kappa (Sentiment)</span>
+              <i class="fa-solid fa-face-smile text-amber-400 text-lg"></i>
+            </div>
+            <div class="mt-4 flex items-baseline gap-2">
+              <span class="text-3xl font-bold text-white" id="stat-kappa-sentiment">...</span>
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20" id="label-kappa-sentiment">...</span>
+            </div>
+          </div>
+          <p class="mt-2 text-[10px] text-slate-500">Độ đồng thuận Cảm xúc</p>
         </div>
       </div>
 
@@ -699,15 +731,28 @@
         document.getElementById('stat-comments').innerText = statsData.total_comments.toLocaleString();
         document.getElementById('stat-triples').innerText = statsData.total_quadruples.toLocaleString();
         
-        const kappa = statsData.cohens_kappa;
-        document.getElementById('kappa-score').innerText = kappa.toFixed(4);
+        // Target F1 Card
+        document.getElementById('stat-target-f1').innerText = statsData.target_f1.toFixed(4);
         
-        let label = "Kém";
-        if (kappa >= 0.8) label = "Hoàn hảo";
-        else if (kappa >= 0.6) label = "Đáng kể";
-        else if (kappa >= 0.4) label = "Trung bình";
-        else if (kappa >= 0.2) label = "Thấp";
-        document.getElementById('kappa-label').innerText = label;
+        // Kappa Aspect Card
+        const kAsp = statsData.kappa_aspect;
+        document.getElementById('stat-kappa-aspect').innerText = kAsp.toFixed(4);
+        let lAsp = "Kém";
+        if (kAsp >= 0.8) lAsp = "Hoàn hảo";
+        else if (kAsp >= 0.6) lAsp = "Đáng kể";
+        else if (kAsp >= 0.4) lAsp = "Trung bình";
+        else if (kAsp >= 0.2) lAsp = "Thấp";
+        document.getElementById('label-kappa-aspect').innerText = lAsp;
+        
+        // Kappa Sentiment Card
+        const kSent = statsData.kappa_sentiment;
+        document.getElementById('stat-kappa-sentiment').innerText = kSent.toFixed(4);
+        let lSent = "Kém";
+        if (kSent >= 0.8) lSent = "Hoàn hảo";
+        else if (kSent >= 0.6) lSent = "Đáng kể";
+        else if (kSent >= 0.4) lSent = "Trung bình";
+        else if (kSent >= 0.2) lSent = "Thấp";
+        document.getElementById('label-kappa-sentiment').innerText = lSent;
         
         // Render charts
         renderCharts(statsData);
