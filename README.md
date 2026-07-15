@@ -1,5 +1,7 @@
 # Targeted Aspect-Based Sentiment Analysis (Targeted ABSA) - Web Demo Dashboard
 
+**GitHub Repository:** [https://github.com/nmpstony/Targeted-ABSA-for-Vietnamese-Gameshows](https://github.com/nmpstony/Targeted-ABSA-for-Vietnamese-Gameshows)
+
 Dự án chuyên biệt phục vụ phân tích cảm xúc dựa trên khía cạnh đối tượng (Targeted ABSA) cho bình luận tiếng Việt về hai gameshow âm nhạc lớn: **Anh Trai Say Hi** và **Rap Việt Mùa 3**.
 
 Thư mục chính chứa mã nguồn Web Demo Dashboard, dữ liệu mẫu, và khung mô hình.
@@ -8,13 +10,9 @@ Thư mục chính chứa mã nguồn Web Demo Dashboard, dữ liệu mẫu, và 
 
 ## 1. Cấu trúc thư mục kho lưu trữ
 Kho lưu trữ chứa 3 thư mục chính:
-- **`Data/`:** Chứa 4 tệp tin dữ liệu CSV đã chuẩn hóa phục vụ phân tích phân phối thống kê và đối chiếu Cohen's Kappa score:
-  - `absa_GT_RV_1000.csv` (Silver Rap Việt)
-  - `absa_GT_ATSH_2000.csv` (Silver Anh Trai Say Hi)
-  - `gold_targeted_absa.csv` (Gold Standard thủ công)
-  - `val_gold.csv` (LLMs gán nhãn)
+- **`Data/`:** Chứa dữ liệu CSV đã chuẩn hóa phục vụ phân tích phân phối thống kê và đối chiếu Cohen's Kappa score.
 - **`Demo/`:** Chứa mã nguồn chạy Web Dashboard (giao diện SPA `index.html` và server tĩnh `server.py`).
-- **`Model/`:** Thư mục trống dùng để lưu trữ các local checkpoints cho Qwen và Llama (weights được tự động bỏ qua qua `.gitignore`).
+- **`Model/`:** Thư mục lưu trữ các local checkpoints cho các mô hình (weights được tự động bỏ qua qua `.gitignore`).
 
 ---
 
@@ -27,7 +25,7 @@ Kho lưu trữ chứa 3 thư mục chính:
 
 1. **Clone repository này về máy:**
    ```bash
-   git clone <github-repo-url>
+   git clone https://github.com/nmpstony/Targeted-ABSA-for-Vietnamese-Gameshows.git
    cd Targeted-ABSA-for-Vietnamese-Gameshows
    ```
 2. **Kích hoạt môi trường chạy và cài đặt thư viện phụ thuộc:**
